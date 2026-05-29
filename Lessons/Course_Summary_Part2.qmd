@@ -1,0 +1,662 @@
+# 9
+
+---
+title: "9: Stable Diffusion"
+image: /images/course2022p2l1.jpg
+---
+
+## What you need to know
+
+Here's what you need to know to complete this course:
+
+- The lesson is presented as a video, which you can jump directly to by clicking the table of contents on the right
+- Each video goes through one or more Jupyter notebooks, which you'll need to run and experiment with to get the most out of the course
+- All information needed to complete a lesson (including links to the repo with the notebooks) is in the "lesson resources" section of the lesson page
+- Amongst the lesson resources you'll find a "discuss this lesson" link, which will take you to a Q&A page on our forums for that particular lesson
+- The material covered in this course includes stuff that would normally only be included in post-graduate level programs. We try to present it in the clearest way possible, but you should expect to work hard and put in plenty of hours of study
+- We assume familiarity with the material in part 1 of this course. If you find yourself unsure about some of the foundational deep learning ideas refered to in the lessons, we'd suggest going back to study the lessons in part 1 that cover those ideas
+- If there's mathematical or coding concepts that we use that you're not comfortable with, don't be afraid to seek out other tutorials to help fill in your gaps
+- On [forums.fast.ai](https://forums.fast.ai) there are many other students you can collaborate with, and many folks are looking for study groups or study buddies. Studying in groups has been shown to be more effective for most people than studying alone
+- In many lessons we'll include a challenge for you to complete, some of which involve trying novel research directions where you'll be venturing into the academic unknown.
+
+## Lesson overview
+
+This lesson starts with a tutorial on how to use pipelines in the [Diffusers library](https://huggingface.co/docs/diffusers/index) to generate images. Diffusers is (in our opinion!) the best library available at the moment for image generation. It has many features and is very flexible. We explain how to use its many features, and discuss options for accessing the GPU resources needed to use the library.
+
+We talk about some of the nifty tweaks available when using Stable Diffusion in Diffusers, and show how to use them: guidance scale (for varying the amount the prompt is used), negative prompts (for removing concepts from an image), image initialisation (for starting with an existing image), textual inversion (for adding your own concepts to generated images), Dreambooth (an alternative approach to textual inversion).
+
+The second half of the lesson covers the key concepts involved in Stable Diffusion:
+
+- CLIP embeddings
+- The VAE (variational autoencoder)
+- Predicting noise with the unet
+- Removing noise with schedulers
+
+Jeremy shows a theoretical foundation for how Stable Diffusion works, using a novel interpretation that shows an easily-understood intuition for the theory. He introduces the concept of finite differencing and analytic derivatives, using an example of training a neural network to identify pixel adjustments to make an image look more like a handwritten digit, and describes how the derivatives of such a model can provide the *score* needed to provide the basis of a diffusion process that generates handwritten digits.
+
+The lesson also covers finite differencing, analytic derivatives, autoencoders, and U-Nets. Jeremy introduces the concept of creating a model that can take a sentence and return a vector of numbers representing the image, using two models: a text encoder and an image encoder. The lesson concludes with a discussion of the similarities between diffusion-based models and deep learning optimizers, suggesting new research directions.
+
+## Concepts discussed
+
+- Stable Diffusion
+- Hugging Face's Diffusers library
+- Pre-trained pipelines
+- Guidance scale
+- Negative prompts
+- Image-to-image pipelines
+- Finite differencing
+- Analytic derivatives
+- Autoencoders
+- Textual inversion
+- Dreambooth
+- Latents
+- U-Nets
+- Text encoders and image encoders
+- Contrastive loss function
+- CLIP text encoder
+- Deep learning optimizers
+- Perceptual loss
+
+## Video
+
+<iframe width="514" height="289" src="https://www.youtube-nocookie.com/embed/_7rMfsA24Ls?modestbranding=1" title="fast.ai lesson 9" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+## Lesson resources
+
+- Other Videos
+  - [Lesson 9A video](https://www.youtube.com/watch?v=844LY0vYQhc)---Deep Dive---from @johnowhitaker (with [accompanying notebook](https://github.com/fastai/diffusion-nbs/blob/master/Stable%20Diffusion%20Deep%20Dive.ipynb))
+  - [Lesson 9B video](https://youtu.be/mYpjmM7O-30)---The Math of Diffusion---from @seem and @ilovescience 
+- Jeremy's [lesson notes](https://forums.fast.ai/uploads/short-url/dI0cWOaQQEHFYPKVyM9BkSWY4rQ.pdf)
+- The fastai book:
+  - [Published version](https://www.amazon.com/Deep-Learning-Coders-fastai-PyTorch-ebook-dp-B08C2KM7NR/dp/B08C2KM7NR)
+  - [Free notebook version](https://github.com/fastai/fastbook)
+  - [Sample full chapters](https://fastai.github.io/fastbook2e/)
+- Student notes
+  -- [Lesson Notes](https://rekil156.github.io/rekilblog/posts/lesson9_stableDissufion/Lesson9.html) h/t @barnacl 
+
+## Links from the lesson
+
+- [Discuss this lesson](https://forums.fast.ai/t/lesson-9-official-topic/100562)
+- [Course repo](https://github.com/fastai/course22p2)
+- [diffusion-nbs repo](https://github.com/fastai/diffusion-nbs)
+- [HuggingFace Notebooks](https://github.com/huggingface/notebooks)
+- GPU servers
+  - [Lambda Labs](https://forums.fast.ai/t/lambda-gpu-cloud-for-deep-learning-a100s-at-1-10-gpu-hr-150-sign-up-credit/100942/2)
+  - [Paperspace Gradient](https://www.paperspace.com/gradient)
+  - [Jarvis Labs](https://jarvislabs.ai/)
+  - [vast.ai - crowdsourced GPU service](https://vast.ai/)
+- Prompt Engineering
+  - [Lexica](https://lexica.art/)
+  - [PromptHero](https://prompthero.com/)
+  - [Hexo - 10M Images and Prompts](https://hexo.ai/)
+- [Tools and Resources for AI Art](https://pharmapsychotic.com/tools.html)
+- [fastai repo](https://github.com/fastai/fastai)
+
+## Useful background on fast.ai courses
+
+- [Homework](https://forums.fast.ai/t/did-you-do-the-homework/66034)
+- [Summaries + Things Jeremy Says to do + Qs](/t/podcast-writeup-summaries-things-jeremy-says-to-do-qs/66194)
+- Fastai: A Layered API for Deep Learning paper: [Information Journal](https://www.mdpi.com/2078-2489/11/2/108) or [arxiv](https://arxiv.org/abs/2002.04688) or [fast.ai](https://www.fast.ai/2020/02/13/fastai-A-Layered-API-for-Deep-Learning/)
+- [Providing a Good Education in Deep Learning](https://www.fast.ai/2016/10/08/teaching-philosophy/): fast.ai teaching philosophy
+- ["How not to do fastai” ](https://medium.com/@init_27/how-not-to-do-fast-ai-or-any-ml-mooc-3d34a7e0ab8c)
+- ["FastAI Lesson Zero: video + notes"](https://www.alexstrick.com/blog/fastai-lesson-zero)
+
+---
+
+# 10
+
+---
+title: "10: Diving Deeper"
+---
+
+This lesson creates a complete Diffusers pipeline from the underlying components: the VAE, unet, scheduler, and tokeniser. By putting them together manually, this gives you the flexibility to fully customise every aspect of the inference process.
+
+We also discuss three important new papers that have been released in the last week, which improve inference performance by over 10x, and allow any photo to be "edited" by just describing what the new picture should show.
+
+In the second half of the lesson Jeremy begins the "from scratch" implementation of Stable Diffusion. He introduces the "miniai" library which will be created by students during the course, and discusses organising and simplifying code. The lesson discusses the Python data model, tensors, and random number generation. Jeremy introduces the Wickman-Hill random number generation algorithm and compares the performance of custom and Pytorch's built-in random number generators. The lesson concludes with creating a linear classifier using a tensor.
+
+## Concepts discussed
+
+- Papers:
+  - Progressive Distillation for Fast Sampling of Diffusion Models
+  - On Distillation of Guided Diffusion Models
+  - Imagic
+- Tokenizing input text
+- CLIP encoder for embeddings
+- Scheduler for noise determination
+- Organizing and simplifying code
+- Negative prompts and callbacks
+- Iterators and generators in Python
+- Custom class for matrices
+- Dunder methods
+- Python data model
+- Tensors
+- Pseudo-random number generation
+  - Wickman-Hill algorithm
+  - Random state in deep learning
+- Linear classifier using a tensor
+
+
+## Video
+
+<iframe width="514" height="289" src="https://www.youtube-nocookie.com/embed/6StU6UtZEbU?modestbranding=1" title="fast.ai lesson 10" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+## Lesson resources
+
+- [Discuss this lesson](https://forums.fast.ai/t/lesson-10-official-topic/101171)
+- [Paper walkthrough video](https://www.youtube.com/watch?v=ZXuK6IRJlnk) by @johnowhitaker covering *Progressive Distillation for Fast Sampling of Diffusion Models*
+- [diffusion-nbs repo](https://github.com/fastai/diffusion-nbs) (we continue walking through `stable_diffusion.ipynb` that we touched upon last time)
+- [Fashion-MNIST reimplementation](https://mlops.systems/computervision/fastai/parttwo/2022/10/24/foundations-mnist-basics.html) of the lesson, with notes, by @strickvl 
+
+## Links from the lesson
+
+- [Course 2022p2 repo](https://github.com/fastai/course22p2) 
+- [Progressive Distillation for Fast Sampling of Diffusion Models](https://arxiv.org/abs/2202.00512)
+- [Imagic paper](https://arxiv.org/abs/2210.09276). Within a few hours [stable diffusion versions](https://twitter.com/Buntworthy/status/1582307817884889088?s=20&t=BAiIP4MoZXt6ptq2kp9Xug) are appearing.
+- APL: [Array programming - fast.ai Course Forums](https://forums.fast.ai/c/array-programming/56)
+
+---
+
+# 11
+
+---
+title: "11: Matrix multiplication"
+---
+
+In this lesson, we discuss various techniques and experiments shared by students on the forum, such as interpolating between prompts for visually appealing transitions and improving the update process in text-to-image generation, and a novel approach to decreasing the guidance scale during image generation. We then dive into a new paper called DiffEdit, which focuses on semantic image editing using text-conditioned diffusion models. We walk through the process of reading and understanding the paper, emphasizing the importance of grasping the main idea and not getting bogged down in every detail.
+
+We then embark on a deep exploration of matrix multiplication using Python, compare APL with PyTorch, and introduce the concept of Frobenius norm. We also discuss the powerful concept of broadcasting, which allows for operations between tensors of different shapes, and demonstrate its efficiency in speeding up matrix multiplication. The techniques introduced in this lesson allow us to speed up our initial Python implementation by a factor of around five million, including leveraging the GPU for massive parallelism!
+
+## Concepts discussed
+
+- Diffusion improvements
+  - Interpolating between prompts for visually appealing transitions
+  - Improving the update process in text-to-image generation
+  - Decreasing the guidance scale during image generation
+- Understanding research papers
+- Matrix multiplication using Python and Numba
+- Comparing APL with PyTorch
+- Frobenius norm
+- Broadcasting in deep learning and machine learning code
+
+## Video
+
+<iframe width="514" height="289" src="https://www.youtube-nocookie.com/embed/Tf-8F5q8Xww?modestbranding=1" title="fast.ai lesson 11" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+## Lesson resources
+
+- [Discuss this lesson](https://forums.fast.ai/t/lesson-11-official-topic/101508)
+- [DiffEdit: Diffusion-based semantic image editing with mask guidance](https://arxiv.org/abs/2210.11427)
+- Math notation
+  - [Greek letters](https://en.wikipedia.org/wiki/Greek_alphabet)
+  - [All in one mathematics cheat sheet](https://ourway.keybase.pub/mathematics_cheat_sheet.pdf) (PDF)
+  - [Glossary of mathematical symbols](https://en.wikipedia.org/wiki/Glossary_of_mathematical_symbols#Other_brackets) (wikipedia)
+  - [pix2tex](https://github.com/lukas-blecher/LaTeX-OCR) (open source) or [Mathpix](https://mathpix.com/) (commercial)
+  - [Greek Letters for Deep Learning](https://ankiweb.net/shared/info/2118139507) - Anki deck containing fastai-related Greek letters
+  - [Detexify](https://detexify.kirelabs.org/classify.html) Draw math symbols
+
+---
+
+# 12
+
+---
+title: "12: Mean shift clustering"
+---
+
+In this lesson, we start by discussing the CLIP Interrogator, a Hugging Face Spaces Gradio app that generates text prompts for creating CLIP embeddings. We then dive back into matrix multiplication, using Einstein summation notation and torch.einsum to simplify code and improve performance. We explore GPU acceleration with CUDA and Numba, demonstrating how to write a kernel function for matrix multiplication and launch it on the GPU.
+
+Next up we exercise our tensor programming skills by implementing mean shift clustering, a technique for identifying clusters within a dataset. We create synthetic data, explain the mean shift algorithm, and introduce the Gaussian kernel for penalizing distant points. We implement the mean shift clustering algorithm using PyTorch and discuss the importance of tensor manipulation operations for efficient GPU programming.
+
+Finally, we optimize the mean shift algorithm using PyTorch and GPUs, demonstrating how to calculate weights, multiply matrices, and sum up points to obtain new data points. We explore the impact of changing batch sizes on performance and encourage viewers to research other clustering algorithms.
+
+The lesson concludes with an introduction to calculus, focusing on derivatives and the calculus of infinitesimals.
+
+## Concepts discussed
+
+- CLIP Interrogator
+- Inverse problems
+- Matrix multiplication
+- Einstein summation notation and torch.einsum
+- GPU acceleration and CUDA
+- Numba
+- Mean shift clustering
+- Gaussian kernel
+- Norms
+- Euclidean distance
+- Calculus
+  - Derivatives and Infinitesimals
+
+## Video
+
+<iframe width="514" height="289" src="https://www.youtube-nocookie.com/embed/_xIzPbCgutY?modestbranding=1" title="fast.ai lesson 12" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+## Lesson resources
+
+- [Discuss this lesson](https://forums.fast.ai/t/lesson-12-official-topic/101702)
+- [CLIP Interrogator](https://huggingface.co/spaces/pharma/CLIP-Interrogator)
+- [Essence of calculus](https://www.youtube.com/watch?v=WUvTyaaNkzM) (3blue1brown)
+
+---
+
+# 13
+
+---
+title: "13: Backpropagation & MLP"
+---
+
+In this lesson, we dive into backpropagation and the creation of a simple Multi-Layer Perceptron (MLP) neural network. We start by reviewing basic neural networks and their architecture, then move on to implementing a simple MLP from scratch. We focus on understanding the chain rule and backpropagation in the context of neural networks, and demonstrate how to calculate derivatives using Python and the SimPy library.
+
+We also discuss the importance of the chain rule in calculating the gradient of the mean squared error (MSE) applied to a model, and demonstrate how to use PyTorch to calculate derivatives and simplify the process by creating classes for ReLU and linear functions. We then explore the issues with floating point math and introduce the log sum exp trick to overcome these issues. Finally, we create a training loop for a simple neural network.
+
+## Concepts discussed
+
+- Basic neural network architecture
+- Multi-Layer Perceptron (MLP) implementation
+- Gradients and derivatives
+- Chain rule and backpropagation
+- Python debugger (pdb)
+- PyTorch for calculating derivatives
+- ReLU and linear function classes
+- Log sum exp trick
+- `log_softmax()` function and cross entropy loss
+- Training loop for a simple neural network
+
+## Video
+
+<iframe width="514" height="289" src="https://www.youtube-nocookie.com/embed/vGdB4eI4KBs?modestbranding=1" title="fast.ai lesson 13" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+## Lesson resources
+
+- [Discuss this lesson](https://forums.fast.ai/t/lesson-13-official-topic/101876)
+- [The Intuitive Notion of the Chain Rule](https://webspace.ship.edu/msrenault/geogebracalculus/derivative_intuitive_chain_rule.html)
+- [The Matrix Calculus You Need For Deep Learning](https://explained.ai/matrix-calculus/)
+- [Part 1 Excel workbooks](https://github.com/fastai/course22/tree/master/xl)
+- [Calculus help topic](https://forums.fast.ai/t/calculus-help-topic/102020)
+- [Simple Neural Net Backward Pass](https://nasheqlbrm.github.io/blog/posts/2021-11-13-backward-pass.html)
+
+---
+
+# 14
+
+---
+title: "14: Backpropagation"
+---
+
+In this lesson, we dive into the implementation of the chain rule in neural network training using backpropagation. We refactor our code to make it more efficient and flexible, and explore PyTorch's `nn.Module` and `nn.Sequential`. We also create custom PyTorch modules, build our own implementation of `nn.Module`, and learn about optimizers, DataLoaders, and Datasets. We show how to work with Hugging Face datasets, and introduce the nbdev library.
+
+We look at how to map the code from the previous lesson to the math behind backpropagation. Next, we refactor our code using PyTorch's `nn.Module`, which automatically tracks layers and parameters. We also create a sequential model using `nn.Sequential` and demonstrate how to create custom PyTorch modules. We then introduce the concept of an optimizer, which simplifies the process of updating parameters based on gradients and learning rates. We create a custom SGD optimizer from scratch and explore PyTorch's built-in DataLoader. We also create a proper training loop using PyTorch DataLoader.
+
+Throughout the lesson, we emphasize the importance of understanding the underlying code and not relying solely on other people's code. This allows for greater flexibility and creativity in building custom solutions. We also discuss the use of `**kwargs` and delegates in fastcore, callbacks, and dunder methods in Python's data model.
+
+## Concepts discussed
+
+- Backpropagation and the chain rule
+- Refactoring code for efficiency and flexibility
+- PyTorch's `nn.Module` and `nn.Sequential`
+- Creating custom PyTorch modules
+- Implementing optimizers, DataLoaders, and Datasets
+- Working with Hugging Face datasets
+- Using nbdev to create Python modules from Jupyter notebooks
+- `**kwargs` and delegates
+- Callbacks and dunder methods in Python's data model
+- Building a proper training loop using PyTorch DataLoader
+
+## Video
+
+<iframe width="514" height="289" src="https://www.youtube-nocookie.com/embed/veqj0DsZSXU?modestbranding=1" title="fast.ai lesson 14" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+- [Discuss this lesson](https://forums.fast.ai/t/lesson-14-official-topic/102018)
+
+---
+
+# 15
+
+---
+title: "15: Autoencoders"
+---
+
+We start with a dive into convolutional autoencoders and explore the concept of convolutions. Convolutions help neural networks understand the structure of a problem, making it easier to solve. We learn how to apply a convolution to an image using a kernel and discuss techniques like im2col, padding, and stride. We also create a CNN from scratch using a sequential model and train it on the GPU.
+
+We then attempt to build an autoencoder, but face issues with speed and accuracy. To address these issues, we introduce the concept of a `Learner`, which allows for faster experimentation and better understanding of the model's performance. We create a simple `Learner` and demonstrate its use with a multi-layer perceptron (MLP) model.
+
+Finally, we discuss the importance of understanding Python concepts such as try-except blocks, decorators, getattr, and debugging to reduce cognitive load while learning the framework being built.
+
+## Concepts discussed
+
+- Convolutional autoencoders
+- Convolutions and kernels
+- Im2col technique
+- Padding and stride in CNNs
+- Receptive field
+- Building a CNN from scratch
+- Creating a Learner for faster experimentation
+- Python concepts: try-except blocks, decorators, getattr, and debugging
+- Cognitive load theory in learning
+
+## Video
+
+<iframe width="514" height="289" src="https://www.youtube-nocookie.com/embed/0Hi2r4CaHvk?modestbranding=1" title="fast.ai lesson 15" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+## Lesson resources
+
+- [Discuss this lesson](https://forums.fast.ai/t/lesson-15-official-topic/102322)
+- [Excel workbooks](https://github.com/fastai/course22/tree/master/xl)
+
+---
+
+# 16
+
+---
+title: "16: The Learner framework"
+---
+
+In Lesson 16, we dive into building a flexible training framework called the learner. We start with a basic callbacks Learner, which is an intermediate step towards the flexible learner. We introduce callbacks, which are functions or classes called at specific points during the training process, and demonstrate the creation of a simple callback. We also introduce the concept of CancelFitException, CancelEpochException, and CancelBatchException.
+
+Next, we explore metrics and create a MetricsCB callback to print out metrics during training. We introduce the torcheval library and create a DeviceCB callback to handle moving the model and data to the appropriate device. We refactor the code using a context manager to simplify the code and make it easier to maintain and add callbacks in the future.
+
+We then focus on looking inside the models to diagnose and fix problems during training. We introduce a set_seed function and train a model with a high learning rate of 0.6 to test the stability of the training. Finally, we discuss analyzing the training process by looking at the mean and standard deviation of each layer's activations, using PyTorch hooks and creating histograms of the activations.
+
+## Concepts discussed
+
+- Building a flexible training framework
+- Basic Callbacks Learner
+- Callbacks and exceptions (CancelFitException, CancelEpochException, CancelBatchException)
+- Metrics and MetricsCB callback
+- torcheval library
+- DeviceCB callback
+- Refactoring code with context managers
+- set_seed function
+- Analyzing the training process
+- PyTorch hooks
+- Histograms of activations
+
+## Video
+
+<iframe width="514" height="289" src="https://www.youtube-nocookie.com/embed/9YZaYjRKuEc?modestbranding=1" title="fast.ai lesson 16" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+## Lesson resources
+
+- [Discuss this lesson](https://forums.fast.ai/t/lesson-16-official-topic/102472)
+- [Cyclical Learning Rates for Training Neural Networks - Leslie Smith](https://arxiv.org/abs/1506.01186)
+- [A disciplined approach to neural network hyper-parameters: Part 1 -- learning rate, batch size, momentum, and weight decay - Leslie Smith](https://arxiv.org/abs/1803.09820)
+- [Methods for Automating Learning Rate Finders - Zach Mueller](https://www.novetta.com/2021/03/learning-rate/)
+
+---
+
+# 17
+
+---
+title: "16: The Learner framework"
+---
+
+In Lesson 16, we dive into building a flexible training framework called the learner. We start with a basic callbacks Learner, which is an intermediate step towards the flexible learner. We introduce callbacks, which are functions or classes called at specific points during the training process, and demonstrate the creation of a simple callback. We also introduce the concept of CancelFitException, CancelEpochException, and CancelBatchException.
+
+Next, we explore metrics and create a MetricsCB callback to print out metrics during training. We introduce the torcheval library and create a DeviceCB callback to handle moving the model and data to the appropriate device. We refactor the code using a context manager to simplify the code and make it easier to maintain and add callbacks in the future.
+
+We then focus on looking inside the models to diagnose and fix problems during training. We introduce a set_seed function and train a model with a high learning rate of 0.6 to test the stability of the training. Finally, we discuss analyzing the training process by looking at the mean and standard deviation of each layer's activations, using PyTorch hooks and creating histograms of the activations.
+
+## Concepts discussed
+
+- Building a flexible training framework
+- Basic Callbacks Learner
+- Callbacks and exceptions (CancelFitException, CancelEpochException, CancelBatchException)
+- Metrics and MetricsCB callback
+- torcheval library
+- DeviceCB callback
+- Refactoring code with context managers
+- set_seed function
+- Analyzing the training process
+- PyTorch hooks
+- Histograms of activations
+
+## Video
+
+<iframe width="514" height="289" src="https://www.youtube-nocookie.com/embed/9YZaYjRKuEc?modestbranding=1" title="fast.ai lesson 16" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+## Lesson resources
+
+- [Discuss this lesson](https://forums.fast.ai/t/lesson-16-official-topic/102472)
+- [Cyclical Learning Rates for Training Neural Networks - Leslie Smith](https://arxiv.org/abs/1506.01186)
+- [A disciplined approach to neural network hyper-parameters: Part 1 -- learning rate, batch size, momentum, and weight decay - Leslie Smith](https://arxiv.org/abs/1803.09820)
+- [Methods for Automating Learning Rate Finders - Zach Mueller](https://www.novetta.com/2021/03/learning-rate/)
+
+---
+
+# 18
+
+---
+title: "18: Accelerated SGD & ResNets"
+---
+
+In this lesson, we dive into various stochastic gradient descent (SGD) accelerated approaches, such as momentum, RMSProp, and Adam. We start by experimenting with these techniques in Microsoft Excel, creating a simple linear regression problem and applying the different approaches to solve it. We also introduce learning rate annealing and show how to implement it in Excel. Next, we explore learning rate schedulers in PyTorch, focusing on Cosine Annealing and how to work with PyTorch optimizers. We create a learner with a single batch callback and fit the model to obtain an optimizer. We then explore the attributes of the optimizer and explain the concept of parameter groups.
+
+We continue by implementing the OneCycleLR scheduler from PyTorch, which adjusts the learning rate and momentum during training. We also discuss how to improve the architecture of a neural network by making it deeper and wider, introducing ResNets and the concept of residual connections. Finally, we explore various ResNet architectures from the PyTorch Image Models (timm) library and experiment with data augmentation techniques, such as random erasing and test time augmentation.
+
+## Concepts discussed
+
+- Stochastic gradient descent (SGD) accelerated approaches
+  - Momentum
+  - RMSProp
+  - Adam
+- Learning rate annealing
+- PyTorch learning rate schedulers
+  - Cosine Annealing
+  - OneCycleLR
+- Working with PyTorch optimizers
+- Neural network architecture improvements
+  - Deeper and wider networks
+  - ResNets
+  - Residual connections
+- Data augmentation techniques
+  - Random erasing
+  - Test time augmentation
+- Creating custom schedulers and experimenting with model performance
+
+## Video
+
+<iframe width="514" height="289" src="https://www.youtube-nocookie.com/embed/nlVOG2Nzc3k?modestbranding=1" title="fast.ai lesson 18" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+## Lesson resources
+
+- [Discuss this lesson](https://forums.fast.ai/t/lesson-18-official-topic/102750)
+- The course's [fashion mnist challenge](https://forums.fast.ai/t/a-challenge-for-you-all/102656) topic
+- Excel [optimisers spreadsheet](https://github.com/fastai/course22p2/blob/master/xl/graddesc.xlsm)
+- Papers
+   - [Cyclical Learning Rates for Training Neural Networks](https://arxiv.org/abs/1506.01186)
+   - [Fixup Initialization: Residual Learning Without Normalization](https://arxiv.org/abs/1901.09321)
+   - [Deep Residual Learning for Image Recognition](https://arxiv.org/abs/1512.03385)
+- Fashion-MNIST Benchmark [Papers with Code](https://paperswithcode.com/sota/image-classification-on-fashion-mnist)
+
+---
+
+# 19
+
+---
+title: "19: DDPM and Dropout"
+---
+
+In this lesson, Jeremy introduces Dropout, a technique for improving model performance, and with special guests Tanishq and Johno he discusses Denoising Diffusion Probabilistic Models (DDPM), the underlying foundational approach for diffusion models. The lesson covers the forward and reverse processes involved in DDPM, as well as the implementation of a noise predicting model using a neural network. The team also demonstrate an alternative approach to the implementation and discuss ways to improve training speed.
+
+## Concepts discussed
+
+- Dropout technique for improving model performance
+- Test time dropout callback for measuring model confidence
+- Denoising Diffusion Probabilistic Models (DDPM) for generative modeling
+- Forward and reverse processes in DDPM
+- Implementing a noise predicting model using a neural network
+- Training loop and loss function calculation in DDPM
+- Visualizing noisy images at different timesteps
+- Alternative noise schedules for improved DDPM performance
+- Inheriting from Callback and UNet2DModel for an alternative implementation
+- Experimenting with initialization techniques and optimizers
+- Introduction to mixed precision for faster training
+
+## Video
+
+<iframe width="514" height="289" src="https://www.youtube-nocookie.com/embed/ItyO8s48zdc?modestbranding=1" title="fast.ai lesson 19" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+- [Discuss this lesson](https://forums.fast.ai/t/lesson-19-official-topic/103201)
+
+---
+
+# 20
+
+---
+title: "20: Mixed Precision"
+---
+
+In this lesson, we dive into mixed precision training and experiment with various techniques. We introduce the MixedPrecision callback for PyTorch and explore the Accelerate library from HuggingFace for speeding up training loops. We also learn a sneaky trick for faster data loading and augmenting.
+
+Johno then discusses style transfer using neural networks, extracting features from different layers of a pre-trained network, and introducing content loss and the Gram Matrix. He demonstrates how to combine content loss and style loss to perform style transfer, allowing for a wide range of experimentation and artistic effects.
+
+Lastly, Johno explores Neural Cellular Automata, inspired by Conway's Game of Life and self-organizing systems found in nature. He implements cellular automata using hard-coded filters and neural networks with dense linear layers and convolutional layers. He trains the model using a style loss and an overflow loss, and experiments with different model sizes and loss functions for more complex and creative results.
+
+## Concepts discussed
+
+- Mixed precision training
+- Accelerate library from HuggingFace
+- Collation function
+- Faster data loading
+- Pre-trained neural networks
+- Style transfer
+- Content loss
+- Gram Matrix
+- Neural Cellular Automata
+- Circular padding
+- Gradient normalization
+
+## Video
+
+<iframe width="514" height="289" src="https://www.youtube-nocookie.com/embed/PdNHkTLU2oQ?modestbranding=1" title="fast.ai lesson 20" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+- [Discuss this lesson](https://forums.fast.ai/t/lesson-20-official-topic/103322)
+
+---
+
+# 21
+
+---
+title: "21: DDIM"
+---
+
+In this lesson, Jeremy, Johno, and Tanishq discuss their experiments with the Fashion-MNIST dataset and the CIFAR-10 dataset, a popular dataset for image classification and generative modeling. They introduce Weights and Biases (W&B), an experiment tracking and logging tool that can help manage and visualize the progress of their experiments. The Fréchet Inception Distance (FID) metric is introduced to measure the quality of generated images, and Jeremy demonstrates how to calculate the FID using a custom Fashion-MNIST model. The lesson also covers the Fréchet Inception Distance (FID) and Kernel Inception Distance (KID) metrics for comparing image distributions.
+
+Jeremy explores ways to make the model faster without sacrificing quality. The Denoising Diffusion Implicit Model (DDIM) is introduced as a faster alternative to DDPM, and Jeremy demonstrates how to build a custom DDIM from scratch. The lesson concludes with a discussion on the differences between DDPM and DDIM, as well as the benefits of using DDIM for rapid sampling.
+
+## Concepts discussed
+
+- Weights and Biases (W&B) for experiment tracking
+- Fréchet Inception Distance (FID) metric
+- Kernel Inception Distance (KID) metric
+- Denoising Diffusion Implicit Model (DDIM)
+
+## Video
+
+<iframe width="514" height="289" src="https://www.youtube-nocookie.com/embed/PXiD7ZjOKhA?modestbranding=1" title="fast.ai lesson 21" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+- [Discuss this lesson](https://forums.fast.ai/t/lesson-21-official-topic/103528)
+
+---
+
+# 22
+
+---
+title: "21: DDIM"
+---
+
+In this lesson, Jeremy, Johno, and Tanishq discuss their experiments with the Fashion-MNIST dataset and the CIFAR-10 dataset, a popular dataset for image classification and generative modeling. They introduce Weights and Biases (W&B), an experiment tracking and logging tool that can help manage and visualize the progress of their experiments. The Fréchet Inception Distance (FID) metric is introduced to measure the quality of generated images, and Jeremy demonstrates how to calculate the FID using a custom Fashion-MNIST model. The lesson also covers the Fréchet Inception Distance (FID) and Kernel Inception Distance (KID) metrics for comparing image distributions.
+
+Jeremy explores ways to make the model faster without sacrificing quality. The Denoising Diffusion Implicit Model (DDIM) is introduced as a faster alternative to DDPM, and Jeremy demonstrates how to build a custom DDIM from scratch. The lesson concludes with a discussion on the differences between DDPM and DDIM, as well as the benefits of using DDIM for rapid sampling.
+
+## Concepts discussed
+
+- Weights and Biases (W&B) for experiment tracking
+- Fréchet Inception Distance (FID) metric
+- Kernel Inception Distance (KID) metric
+- Denoising Diffusion Implicit Model (DDIM)
+
+## Video
+
+<iframe width="514" height="289" src="https://www.youtube-nocookie.com/embed/PXiD7ZjOKhA?modestbranding=1" title="fast.ai lesson 21" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+- [Discuss this lesson](https://forums.fast.ai/t/lesson-21-official-topic/103528)
+
+---
+
+# 23
+
+---
+title: "23: Super-resolution"
+---
+
+In this lesson, we work with Tiny Imagenet to create a super-resolution U-Net model, discussing dataset creation, preprocessing, and data augmentation. The goal of super-resolution is to scale up a low-resolution image to a higher resolution. We train the model using AdamW optimizer and mixed precision, achieving an accuracy of nearly 60%. We also explore the potential for improvement by examining the results of other models on Tiny Imagenet from the Papers with Code website.
+
+We discuss the limitations of using a convolutional neural network for image super-resolution and introduce the concept of U-net, a more efficient architecture for this task. We implement perceptual loss, which involves comparing the features of the output image and the target image at an intermediate layer of a pre-trained classifier model. After training the U-net model with the new loss function, the output images are less blurry and more similar to the target images.
+
+Finally, we discuss the challenges of comparing different models and their outputs. We demonstrate how perceptual loss has improved the results significantly, but also note that there isn't a clear metric to use for comparison. We then move on to gradually unfreezing pre-trained networks, a favorite trick at fast.ai. We copy the weights from the pre-trained model into our model and train it for one epoch with frozen weights for the down path. This results in a significant improvement in loss.
+
+## Concepts discussed
+
+- Tiny Imagenet dataset
+- Creating a super-resolution U-Net model
+- Data preprocessing and augmentation
+- Perceptual loss
+- Gradually unfreezing pre-trained networks
+- Experimenting with cross connections in Unet
+
+## Video
+
+<iframe width="514" height="289" src="https://www.youtube-nocookie.com/embed/z1In7QaG0fg?modestbranding=1" title="fast.ai lesson 23" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+## Lesson resources
+
+- [Discuss this lesson](https://forums.fast.ai/t/lesson-23-official-topic/103965)
+- [TrivialAugment: Tuning-free Yet State-of-the-Art Data Augmentation](https://arxiv.org/pdf/2103.10158.pdf)
+- [Identity Mappings in Deep Residual Networks](https://arxiv.org/abs/1603.05027)
+
+---
+
+# 24
+
+---
+title: "24: Attention & transformers"
+---
+
+In this lesson, we wrap up our exploration of the unconditional stable diffusion model. We then implement the unconditional model, train it on fashion MNIST, and discuss the importance of time embedding. We also dive into sine and cosine embeddings, attention mechanisms, self-attention, and multi-headed attention in the context of stable diffusion. We discuss the `rearrange` function, transformers, and their potential use in vision tasks. Lastly, we create a conditional model by adding a label to the input of the UNet model, allowing it to generate images of a specific class.
+
+## Concepts discussed
+
+- Implementing an unconditional stable diffusion model
+- Time embedding and sine/cosine embeddings
+- Self-attention and multi-headed attention
+- Rearrange function
+- Transformers
+- Creating a conditional stable diffusion model
+
+## Video
+
+<iframe width="514" height="289" src="https://www.youtube-nocookie.com/embed/DH5bp6zTPB4?modestbranding=1" title="fast.ai lesson 24" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+- [Discuss this lesson](https://forums.fast.ai/t/lesson-24-official-topic/104358)
+
+---
+
+# 25
+
+---
+title: "25: Latent diffusion"
+---
+
+In this final lesson of the series, Johno begins by showing us how we can convert sounds into pictures, and then take advantage of what we've learned in this course to generate audio! He builds and demonstrates a very effective bird-song generator using this approach.
+
+Then Jeremy wraps up "Stable diffusion from scratch" by showing how to use the latents in a variational encoder as the "pixels" in a regular diffusion model. He also describes an intriguing new idea for students to follow up: what if you use latents for other purposes, such as a classification model? Perhaps this would open up a whole world of possibilities, such as latents-FID, latents-perceptual-loss, and new approaches to diffusion guidance!
+
+## Video
+
+<iframe width="514" height="289" src="https://www.youtube-nocookie.com/embed/8AgZ9jcQ9v8?modestbranding=1" title="fast.ai lesson 25" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+## Lesson resources
+
+- [Discuss this lesson](https://forums.fast.ai/t/lesson-25-official-topic/104573)
+- [02_diffusion for audio.pynb](https://github.com/huggingface/diffusion-models-class/blob/main/unit4/02_diffusion_for_audio.ipynb)
+- Riffusion: [demo](https://www.riffusion.com/) | [repo](https://github.com/riffusion/riffusion)
+- Notebooks discussed: [nb 29](https://github.com/fastai/course22p2/blob/master/nbs/29_vae.ipynb) | [nb 30](https://github.com/fastai/course22p2/blob/master/nbs/30_lsun_diffusion-latents.ipynb) | [nb 31](https://github.com/fastai/course22p2/blob/master/nbs/31_imgnet_latents-widish.ipynb) | [Johno's Simple Diffusion for audio](https://colab.research.google.com/drive/1b3CeZB2FfRGr5NPYDVvk34hyZFBtgub5?usp=sharing)
