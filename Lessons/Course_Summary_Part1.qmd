@@ -1,0 +1,1975 @@
+# 1
+
+---
+title: "1: Getting started"
+---
+
+::: {layout="[30,70]"}
+
+![](../images/bunny_net.png)
+
+In this lesson you're going to hit the ground running -- in the first five minutes you'll see a complete end to end example of training and using a model that's so advanced it was considered at the cutting edge of research capabilities in 2015.<br/><br/>So, let's get started!
+
+:::
+
+## Video
+
+Click the video below to play. Once it's playing, you'll see a little rectangle in the bottom-right---click it to make the video full-screen. Press <kbd>Esc</kbd> to remove full-screen view. Press <kbd>c</kbd> to turn subtitles on/off.
+
+<iframe width="514" height="289" src="https://www.youtube-nocookie.com/embed/8SF_h3xF3cE?modestbranding=1" title="fast.ai lesson 1" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+This lesson is based partly on [chapter 1](https://github.com/fastai/fastbook/blob/master/01_intro.ipynb) of the [book](https://www.amazon.com/Deep-Learning-Coders-fastai-PyTorch/dp/1492045527).
+
+## How to complete lesson 1
+
+Every lesson includes lots of hands-on exercises for you to try. Most of these are run in interactive notebooks, all of which are available on [Kaggle](../Resources/kaggle.html). If you don't work through the notebooks yourself, you're not going to get nearly as much out of this course---so that means you need to get set up on Kaggle. We have a page to help you get going with Kaggle: [click here](../Resources/kaggle.html) to go there now. Instead of using Kaggle, another great option is [Paperspace Gradient](https://gradient.run/notebooks) If you don't have a Paperspace account yet, sign up with [this link](https://console.paperspace.com/signup?R=lg6rnx) to get $10 credit (and we get a credit too).
+
+Once you've got your Kaggle account set up, you'll need to get familiar with [Jupyter Notebook](https://jupyter.org/), which is the platform we use for most of this course (and which most deep learning researchers and engineers use for their work). Jupyter is the most popular tool for doing data science in Python, for good reason. It is powerful, flexible, and easy to use. We think you will love it! Since the most important thing for learning deep learning is writing code and experimenting, it's important that you have a great platform for experimenting with code. If you haven't used it before, we've provided this to help you get started: [Jupyter Notebook 101](https://www.kaggle.com/code/jhoward/jupyter-notebook-101).
+
+OK, now that you have your Kaggle account and know how to use Jupyter, you're ready to open the notebook for this lesson: [here it is](https://www.kaggle.com/code/jhoward/is-it-a-bird-creating-a-model-from-your-own-data). For every lesson, you can find links to all notebooks used in the *Resources* section of the lesson web page. For instance, for lesson 1, you'll see that section immediately below this one.
+
+As well as watching the video and working through the notebooks, you should also read the relevent chapter(s) of the fast.ai book, [Practical Deep Learning for Coders](https://www.amazon.com/Deep-Learning-Coders-fastai-PyTorch-ebook-dp-B08C2KM7NR/dp/B08C2KM7NR). Each lesson will tell you what chapter you need to read, just below the video. For this lesson, it's chapter 1. There's a few ways to read the book -- you can buy it as a paper book or Kindle ebook, or you can read it for free as a Jupyter notebook. The whole book is written as Jupyter notebooks, so you can also execute all the code in the book yourself. To go to the interactive Jupyter version of any chapter, click [The book](../Resources/book.html) in the left sidebar, where you'll find a list of chapter links. You'll also find links to read-only versions of each chapter there.
+
+## Resources
+
+- [Kaggle](../Resources/kaggle.html) notebooks for this lesson:
+  - [Is it a bird? Creating a model from your own data](https://www.kaggle.com/code/jhoward/is-it-a-bird-creating-a-model-from-your-own-data)
+  - [Jupyter Notebook 101](https://www.kaggle.com/code/jhoward/jupyter-notebook-101)
+- The fastai book:
+  - [Published version](https://www.amazon.com/Deep-Learning-Coders-fastai-PyTorch-ebook-dp-B08C2KM7NR/dp/B08C2KM7NR)
+  - [Free notebook version](https://github.com/fastai/fastbook)
+  - Chapter 1 [notebook](https://github.com/fastai/fastbook/blob/master/01_intro.ipynb)
+- Repo containing [all lesson notebooks](https://github.com/fastai/course22)
+- [Solutions](https://forums.fast.ai/t/fastbook-chapter-1-questionnaire-solutions-wiki/65647) to chapter 1 questions from the book
+
+## Links
+
+You'll see that fast.ai's way of teaching is very different to what you might be used to, if you did a technical degree at university. Nearly all technical subjects at university are taught "bottom up": start with basic foundations, and gradually work up to complete useful solutions to real world problems. But we go "top down": start with complete useful solutions to real world problems, and gradually work down to the basic foundations. Education experts recommend this approach for more effective learning. For more information, have a look at this article that discusses the fast.ai teaching philosophy: [Providing a Good Education in Deep Learning](https://www.fast.ai/2016/10/08/teaching-philosophy/).
+
+- How to learn - highly recommended books for fast.ai students
+  - [Meta Learning](https://radekosmulski.gumroad.com/l/learn_deep_learning)
+  - [A Mathematician's Lament](https://www.maa.org/external_archive/devlin/LockhartsLament.pdf) by Paul Lockhart
+  - [Making Learning Whole](http://www.pz.harvard.edu/resources/making-learning-whole-how-seven-principles-of-teaching-can-transform-education) by David Perkins
+- Jupyter
+  - Presentations: [RISE](https://rise.readthedocs.io/en/stable/)
+  - Blogging: [fastpages](https://github.com/fastai/fastpages)
+  - The notebooks used to create the [fastai library](https://github.com/fastai/fastai/tree/master/nbs)
+  - [nbdev](https://nbdev.fast.ai/) - the system we built to create Python libraries using Jupyter
+- Fastai: A Layered API for Deep Learning paper: [Information Journal](https://www.mdpi.com/2078-2489/11/2/108) or [arxiv](https://arxiv.org/abs/2002.04688) or [fast.ai](https://www.fast.ai/2020/02/13/fastai-A-Layered-API-for-Deep-Learning/)
+- [Dall-e 2 illustrations of Twitter bios](https://twitter.com/nickcammarata/status/1511861061988892675)
+- [timm](https://timm.fast.ai): PyTorch Image Models
+
+## If you need help
+
+There's lot of helpful people, and helpful answers to past questions, on the [fast.ai forums](https://forums.fast.ai/c/p1v5/54). There are special help topics for beginner questions, to ensure that your questions aren’t missed:
+
+- [Help: Setup](https://forums.fast.ai/t/help-setup/95289)
+- [Help: Creating a dataset, and using Gradio / Spaces](https://forums.fast.ai/t/help-creating-a-dataset-and-using-gradio-spaces/96281)
+- [Help: Using Colab or Kaggle](https://forums.fast.ai/t/help-using-colab-or-kaggle/96280)
+- [Help: Python, git, bash, etc](https://forums.fast.ai/t/help-python-git-bash-etc/96282)
+- [Help: SGD and Neural Net foundations](https://forums.fast.ai/t/help-sgd-and-neural-net-foundations/96286)
+- [Help: Basics of fastai, PyTorch, numpy, etc](https://forums.fast.ai/t/help-basics-of-fastai-pytorch-numpy-etc/96285)
+- [Help: Beginner questions that don’t fit elsewhere](https://forums.fast.ai/t/help-beginner-questions-that-dont-fit-elsewhere/96284)
+
+---
+
+# 2
+
+---
+title: "2: Deployment"
+---
+
+::: {layout="[30,70]"}
+
+![](../images/excited_code3.png)
+
+Today you'll be designing your own machine learning project, creating your own dataset, training a model using your data, and finally deploying an application on the web. We'll be using a particular deployment target called [Hugging Face Space](https://huggingface.co/spaces) with [Gradio](https://gradio.app/), and will also see how to use JavaScript to implement an interface in the browser. Deploying to other services will look very similar to the approach you'll study in this lesson.
+
+:::
+
+## Video
+
+<iframe width="514" height="289" src="https://www.youtube-nocookie.com/embed/F4tvM4Vb3A0?modestbranding=1" title="fast.ai lesson 2" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+This lesson is based partly on [chapter 2](https://github.com/fastai/fastbook/blob/master/02_production.ipynb) of the [book](https://www.amazon.com/Deep-Learning-Coders-fastai-PyTorch/dp/1492045527).
+
+## Resources
+
+- Notebook---saving a basic fastai model:
+  - [Kaggle](https://www.kaggle.com/jhoward/saving-a-basic-fastai-model)
+  - [Colab](https://colab.research.google.com/drive/1M-mzhZdFQ2XWBSbLCuKzrmLsm0aLEYxQ?usp=sharing)
+- Chapter 2 [notebook](https://github.com/fastai/fastbook/blob/master/02_production.ipynb)
+- [Solutions](https://forums.fast.ai/t/fastbook-chapter-2-questionnaire-solutions-wiki/66392) to chapter 2 questions from the book
+
+## Links
+
+- [Gradio tutorial](https://tmabraham.github.io/blog/gradio_hf_spaces_tutorial) from @ilovescience 
+- [HF Spaces](https://huggingface.co/spaces)
+- Installing a python environment
+  - [fastsetup](https://github.com/fastai/fastsetup)
+  - Windows: [WSL](https://docs.microsoft.com/en-us/windows/wsl/install) and [Terminal](https://apps.microsoft.com/store/detail/windows-terminal/9N0DX20HK701)
+- tinypets [github](https://github.com/fastai/tinypets) / [site](https://fastai.github.io/tinypets/)
+- tinypets fork [github](https://github.com/jph00/tinypets) / [site](https://jph00.github.io/tinypets/)
+
+---
+
+# 3
+
+---
+title: "3: Neural net foundations"
+---
+
+::: {layout="[30,70]"}
+
+![](../images/bear_sunnies2.png)
+
+Today we'll be learning about the mathematical foundations of deep learning: *Stochastic gradient descent* (SGD), and the flexibility of linear functions layered with non-linear activation functions. We'll be focussing particularly on a popular combination called the *Rectified linear function* (ReLU).
+
+:::
+
+## Video
+
+<iframe width="514" height="289" src="https://www.youtube-nocookie.com/embed/hBBOjCiFcuo?modestbranding=1" title="fast.ai lesson 3" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+This lesson is based partly on [chapter 4](https://github.com/fastai/fastbook/blob/master/04_mnist_basics.ipynb) of the [book](https://www.amazon.com/Deep-Learning-Coders-fastai-PyTorch/dp/1492045527).
+
+## Resources
+
+- Notebooks for this lesson:
+  - [HuggingFace Spaces Pets repository](https://huggingface.co/spaces/jph00/pets/tree/main)
+  - [Which image models are best?](https://www.kaggle.com/code/jhoward/which-image-models-are-best/)
+  - [How does a neural net really work?](https://www.kaggle.com/code/jhoward/how-does-a-neural-net-really-work)
+- Other resources for the lesson
+  - Titanic spreadsheet: see the [course repository](https://github.com/fastai/course22)
+  - Titanic data (training CSV) can be downloaded from [Kaggle](https://www.kaggle.com/competitions/titanic/)
+- [Solutions ](https://forums.fast.ai/t/fastbook-chapter-4-questionnaire-solutions-wiki/67253) to chapter 4 questions from the book
+
+## Links from the lesson
+
+- [Know your pet](https://gettoknowyourpet.com/)
+- ["Lesson 0"](https://www.youtube.com/watch?v=gGxe2mN3kAg)
+
+---
+
+# 4
+
+---
+title: "4: Natural Language (NLP)"
+---
+
+::: {layout="[30,70]"}
+
+![](../images/cute_bunny.png)
+
+It's time for us to learn how to analyse natural language documents, using Natural Language Processing (NLP). We'll be focusing on the [Hugging Face](https://huggingface.co/) ecosystem, especially the [Transformers](https://huggingface.co/docs/transformers/index) library, and the vast collection of pretrained [NLP models](https://huggingface.co/models). Our project today will be to classify that similarity of phrases used to describe [US patents](https://www.kaggle.com/competitions/us-patent-phrase-to-phrase-matching). A similar approach can be applied to a wide variety of practical issues, in fields as wide-reaching as marketing, logistics, and medicine.
+
+:::
+
+## Video
+
+<iframe width="514" height="289" src="https://www.youtube-nocookie.com/embed/toUgBQv1BT8?modestbranding=1" title="fast.ai lesson 4" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+This lesson is based partly on [chapter 10](https://github.com/fastai/fastbook/blob/master/10_nlp.ipynb) of the [book](https://www.amazon.com/Deep-Learning-Coders-fastai-PyTorch/dp/1492045527).
+
+## Resources
+
+- Notebook: [Getting started with NLP for absolute beginners](https://www.kaggle.com/code/jhoward/getting-started-with-nlp-for-absolute-beginners)
+
+---
+
+# 5
+
+---
+title: "5: From-scratch model"
+---
+
+::: {layout="[30,70]"}
+
+![](../images/bear_sunnies.png)
+
+Today we look at how to create a neural network from scratch using Python and PyTorch, and how to implement a training loop for optimising the weights of a model. We build up from a single layer regression model up to a neural net with one hidden layer, and then to a deep learning model. Along the way we'll also look at how we can use a special function called *sigmoid* to make binary classification models easier to train, and we'll also learn about *metrics*.
+
+:::
+
+## Video
+
+<iframe width="514" height="289" src="https://www.youtube-nocookie.com/embed/_rXzeWq4C6w?modestbranding=1" title="fast.ai lesson 5" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+This lesson is based partly on [chapter 4](https://github.com/fastai/fastbook/blob/master/04_mnist_basics.ipynb) and [chapter 9](https://github.com/fastai/fastbook/blob/master/09_tabular.ipynb) of the [book](https://www.amazon.com/Deep-Learning-Coders-fastai-PyTorch/dp/1492045527).
+
+## Lesson notebooks
+
+- [Linear model and neural net from scratch](https://www.kaggle.com/code/jhoward/linear-model-and-neural-net-from-scratch)
+- [Why you should use a framework](https://www.kaggle.com/code/jhoward/why-you-should-use-a-framework)
+- [ How random forests really work](https://www.kaggle.com/code/jhoward/how-random-forests-really-work/)
+
+## Links from the lesson
+
+- [OneR paper](https://link.springer.com/article/10.1023/A:1022631118932)
+- Some great Titanic notebooks: [1](https://www.kaggle.com/code/mrisdal/exploring-survival-on-the-titanic); [2](https://www.kaggle.com/code/cdeotte/titanic-wcg-xgboost-0-84688/notebook); [3](https://www.kaggle.com/code/pliptor/divide-and-conquer-0-82296); [4](https://www.kaggle.com/code/cdeotte/titanic-using-name-only-0-81818/notebook)
+
+---
+
+# 6
+
+---
+title: "6: Random forests"
+---
+
+::: {layout="[30,70]"}
+
+![](../images/forest.png)
+
+Random forests started a revolution in machine learning 20 years ago. For the first time, there was a fast and reliable algorithm which made almost no assumptions about the form of the data, and required almost no preprocessing. In today's lesson, you'll learn how a random forest really works, and how to build one from scratch. And, just as importantly, you'll learn how to interpret random forests to better understand your data.
+
+:::
+
+## Video
+
+<iframe width="514" height="289" src="https://www.youtube-nocookie.com/embed/AdhG64NF76E?modestbranding=1" title="fast.ai lesson 6" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+This lesson is based partly on [chapter 9](https://github.com/fastai/fastbook/blob/master/09_tabular.ipynb) of the [book](https://www.amazon.com/Deep-Learning-Coders-fastai-PyTorch/dp/1492045527).
+
+## Lesson notebooks
+
+- [ How random forests really work](https://www.kaggle.com/code/jhoward/how-random-forests-really-work/)
+- [Road to the top, part 1](https://www.kaggle.com/code/jhoward/first-steps-road-to-the-top-part-1)
+
+## Links from the lesson
+
+- [How to explain Gradient Boosting](https://explained.ai/gradient-boosting/)
+- ["Statistical Modeling: The Two Cultures"](https://www.semanticscholar.org/paper/Statistical-modeling%3A-The-two-cultures-Breiman/e5df6bc6da5653ad98e754b08f63326c2e52b372)  by Leo Breiman
+
+---
+
+# 7
+
+---
+title: "7: Collaborative filtering"
+---
+
+::: {layout="[30,70]"}
+
+![](../images/teddy_net.png)
+
+You interact nearly every day with *recommendation systems*---algorithms which guess what products and services you might like, based on your past behavior. These systems largely rely on *collaborative-filtering*, an approach based on linear algebra that fills in the missing values in a matrix. Today we'll see two ways to do this: one based on a classic linear algebra formulation, and one based on deep learning.
+
+:::
+
+## Video
+
+<iframe width="514" height="289" src="https://www.youtube-nocookie.com/embed/p4ZZq0736Po?modestbranding=1" title="fast.ai lesson 7" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+This lesson is based partly on [chapter 8](https://github.com/fastai/fastbook/blob/master/08_collab.ipynb) of the [book](https://www.amazon.com/Deep-Learning-Coders-fastai-PyTorch/dp/1492045527).
+
+## Resources
+
+- Notebooks for this lesson:
+  - Road to the top: [part 3](https://www.kaggle.com/code/jhoward/scaling-up-road-to-the-top-part-3) and [part 4](https://www.kaggle.com/code/jhoward/multi-target-road-to-the-top-part-4)
+  - [Collaborative Filtering Deep Dive](https://www.kaggle.com/code/jhoward/collaborative-filtering-deep-dive/notebook)
+- [Spreadsheets](https://github.com/fastai/course22/tree/master/xl) for this lesson:
+  - [Softmax and cross-entropy](https://github.com/fastai/course22/blob/master/xl/entropy_example.xlsx)
+  - [Collaborative filterings and embeddings](https://github.com/fastai/course22/blob/master/xl/collab_filter.xlsx)
+- [Things that confused me about cross-entropy](https://chris-said.io/2020/12/26/two-things-that-confused-me-about-cross-entropy/) by Chris Said
+- [Label Smoothing Explained using Microsoft Excel](https://amaarora.github.io/posts/2020-07-18-label-smoothing.html) by Aman Arora
+
+---
+
+# 8
+
+---
+title: "8: Convolutions (CNNs)"
+---
+
+::: {layout="[30,70]"}
+
+![](../images/excited_code2.png)
+
+Today we finish off our study of collaborative filtering by looking closely at *embeddings*---a critical building block of many deep learning algorithms. Then we'll dive into *convolutional neural networks* (CNNs) and see how they really work. We've used plenty of CNNs through this course, but we haven't peeked inside them to see what's really going on in there. As well as learning about their most fundamental building block, the *convolution*, we'll also look at pooling, dropout, and more.
+
+:::
+
+## Video
+
+<iframe width="514" height="289" src="https://www.youtube-nocookie.com/embed/htiNBPxcXgo?modestbranding=1" title="fast.ai lesson 8" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+This lesson is based partly on [chapter 13](https://github.com/fastai/fastbook/blob/master/13_convolutions.ipynb) of the [book](https://www.amazon.com/Deep-Learning-Coders-fastai-PyTorch/dp/1492045527).
+
+## Resources
+
+- Notebooks for this lesson
+  - [Collaborative Filtering Deep Dive](https://www.kaggle.com/code/jhoward/collaborative-filtering-deep-dive/notebook)
+- [Spreadsheets](https://github.com/fastai/course22/tree/master/xl) for this lesson
+  - [Collaborative filterings and embeddings](https://github.com/fastai/course22/blob/master/xl/collab_filter.xlsx)
+  - [Convolutions](https://github.com/fastai/course22/blob/master/xl/conv-example.xlsx)
+- Other resources for the lesson
+  - Please add any questions you want Jeremy to answer to the [AMA thread](https://forums.fast.ai/t/jeremy-ama/97238) – and upvote any there you’re interested in
+  - Special extra: [Data ethics](https://www.youtube.com/krIVOb23EH8) lesson
+- [Solutions](https://forums.fast.ai/t/fastbook-chapter-8-questionnaire-solutions-wiki/69926) to chapter 8 questionnaire from the book
+
+---
+
+# 8a
+
+---
+title: "Bonus: Data ethics"
+---
+
+::: {layout="[30,70]"}
+
+![](../images/scales.png)
+
+Because deep learning is such a powerful tool and can be used for so many things, it becomes particularly important that we consider the consequences of our choices. The philosophical study of ethics is the study of right and wrong, including how we can define those terms, recognize right and wrong actions, and understand the connection between actions and consequences.
+
+:::
+
+The field of data ethics has been around for a long time, and there are many academics focused on this field. It is being used to help define policy in many jurisdictions; it is being used in companies big and small to consider how best to ensure good societal outcomes from product development; and it is being used by researchers who want to make sure that the work they are doing is used for good, and not for bad.
+
+## Video
+
+<iframe width="514" height="289" src="https://www.youtube-nocookie.com/embed/krIVOb23EH8?modestbranding=1" title="fast.ai lesson 9" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+This lesson, taught by Dr Rachel Thomas, the founding director of the Center for Applied Data Ethics at the University of San Francisco, was recorded in 2020 during the previous iteration of this course. It discusses some useful ways of thinking about data ethics, particularly through the lens of a number of case studies. It is based partly on [chapter 3](https://github.com/fastai/fastbook/blob/master/03_ethics.ipynb) of the [book](https://www.amazon.com/Deep-Learning-Coders-fastai-PyTorch/dp/1492045527).
+
+## Useful links
+
+* [Datasheets for datasets](https://arxiv.org/abs/1803.09010)
+* [Weapons of math destruction](https://weaponsofmathdestructionbook.com/)
+* [AI Generated Faces](https://www.thispersondoesnotexist.com/)
+* [Papers/repos/tools on how to check for bias](https://forums.fast.ai/t/lesson-4-official-topic/68039/136?u=frapochetti)
+* [Markkula Center - Ethical Toolkit](https://www.scu.edu/ethics-in-technology-practice/ethical-toolkit/)
+* [The Pollyannish Assumption](https://stratechery.com/2017/the-pollyannish-assumption/)
+* [Understanding the context and consequences of pre-trial detention](https://facctconference.org/2018/livestream_vh210.html)
+* [Fast.ai community ethics resources & discussion](https://forums.fast.ai/t/ai-ml-ethics-biases-responsibility/45592)
+* [Montreal AI Ethics Institute Weekly Newsletter](https://aiethics.substack.com/p/ai-ethics-6-radioactive-data-attacking)
+
+---
+
+# Summaries
+
+---
+title: "Lesson 1"
+---
+
+*Daniel 深度碎片* on [forums.fast.ai](https://forums.fast.ai) has been kind enough to create summaries, in the form of a list of questions, of every lesson. You can use these summaries to remind yourself what you learned in each lesson, or to preview a lesson before you watch it. Here's the lesson 1 summary:
+
+- Welcome to Part 1 2022 course
+- Were computers smart enough to determine photos of birds before 2015?
+- How to download and display a photo of a bird from DuckDuckGo using simple codes?
+- What photos/images are actually made of, at least for computers?
+- How to create two folders named ‘bird’ and ‘forest’ respectively under a larger folder ‘dest’? How to download 200 images for each category? How to resize and save those images in respective folders?
+- How to find broken images and then remove or unlink them from their folders?
+- How to create a DataBlock which prepares all the data for building models? How to display the images in a batch?
+- How to build a model and train/finetune it on your local computer?
+- How to predict or classify a photo of bird with a model?
+- How to get started running and playing around the codes and models immediately and effortlessly?
+- Why should you read lecture questionnaires before studying the lecture?
+- How do you search and locate a particular moment inside a lecture video?
+- Can you create an original masterpiece painting by simply utterring some artistic words?
+- Can you believe that models today can explain your math problems not just give you a correct answer? Can you believe that models today can help you get a joke?
+- Jeremy and fastai community make serious effort in help beginners continuously.
+- Do you want to know how to make the most out of fastai?
+- Do you know people learn naturally (better) with context rather than by theoretical curriculum? Do you want this course to make you a competent deep learning practitioner by context and practical knowledge? If you want theory from ground up, go to part 2 fastai 2019
+- Do you know that learning the same thing in different ways betters understanding?
+- Why you must take this course very seriously? (Personally, I think it’s truly a privilege to be taught by Jeremy and to be part of the fastai family. I didn’t appreciate it enough as I should 4 years ago.)
+- Why did we need so many scientists from different disciplines to collaborate for many years in order to design a successful model before deep learning?
+- Why can deep learning create a model to tell bird from forest photos in 2 minute which was the impossible before 2015? Would you like to see how much better/advanced/complex are the features discovered by deep learning than groups of interdisciplinary scientists?
+- Are all things are data, sound, time (series), movement? Are images are just one way of expressing data? Why not store or express data (of sound, time, movement) in the form of images? Can imaged based algos learn on those images no matter how weird they appear to humans?
+- Can I do DL with no math (I mean with high school math)? Can I train DL models with hand-made data (<50 samples)? Can I train state of art models for free (literally)?
+- Which should I invest my life in DL software field, Pytorch or Tensorflow?
+- Why should you use fastai over pure pytorch? Don’t you want to write less code, make less error, achieve better result? Don’t you want a robust and simple tool used by your future colleagues and bosses?
+- Why is jupyter notebook the most loved and tested coding tool for DL? Do you want Jeremy to show you how to use Jupyter notebook hand by hand?
+- How to make sure your notebook is connected in the cloud? How to make sure you are using the latest updated fastai? #best-practice
+- Doesn’t fastai feel like python with best practices too? How to import libraries to download images? How to create and display a thumbnail image? Always view your data at every step of building a model #best-practice How to download and resize images? Why do we resize images? #best-practice
+- Why a real world DL practitioner spend most of the valuable/productive time preparing data rather than tweaking models? Can super tiny amount of models solve super majority of practical problems in the world? Have fastai selected and prepared the best models for us already?
+- Does Jeremy add best practices of other programming languages into fastai? Jeremy loves functional programming
+- How fastai design team decide what tasks should DataBlock do? task 1: Which blocks of data do DataBlock need to prepare for training? task 2: How should DataBlock get those data, or by what function/tool? task 3: Should we always ask DataBlock to keep a section of data for validation? task 4: Which function or method should DataBlock use to get label for y? task 5: Which transformation should DataBlock apply to each data sample? task 6: Does dataloader do the above tasks efficiently by doing them in thousands of batches at the same time with the help of GPUs?
+- What is the most efficient way of finding out how to use e.g., DataBlock properly? How to learn DataBlock thoroughly?
+- What do you give to a learner, e.g., vision_learner?
+- Is fastai the first and only framework implement TIMM? Can you use any model from TIMM in your project? Where can you learn more of TIMM?
+- What is a pretrained model, Resnet18? What did this model learn from? What come out of this model’s learning? or what is Kaggle downloading exactly?
+- What exactly does fine tuning do to the pretrained model? What does fine-tuning want the model learn from your dataset compared with the pretrained dataset?
+- How to use the fine tuned model to make predictions?
+- Can we fine tune pretrained CV models to tell us the object each and every pixel on a photo belong to?
+- Why do we need specialized DataLoaders like SegmentationDataLoaders given DataBlock?
+- What can tabular analysis do? Can we use a bunch of columns to predict another column of a table? How do you download all kinds of dataset for training easily with fastai? untar_data What are the parameters for TabularDataLoaders? What is the best practice show_batch of fastai learned from Julia (another popular language)? Why to use fit_one_cycle instead of fine_tune for tabular dataset?
+- Can we use collaborative filtering to make movie recommendations for users? How does recommendation system work? Can collaborative filtering models learn from data of similar music users and recommend/predict music for new users based on how similar they are to existing users?
+- How to download dataset for collaborative filtering models? How to use CollabDataLoaders? How to build a collaborative filtering model with collab_learner? What is the best practice for setting y_range for collab_learner? #best-practice If in theory no reason to use pretrained collab models, and fine_tune works as good as fit or fit_one_cycle, any good explanations for it? #question How to show results of this recommendation model using show_results?
+- What can Deep Learning do at the present? What are the tasks that deep learning may not be good at?
+- Has the basic idea of deep learning changed much since 1959?
+- What did we write into programs/models before deep learning? How to draw chart in jupyter notebook?
+- What is a model? What are weights? How do data, weights and model work together to produce result? Why are the initial results are no good at all? Can we design a function to tell the model how good it is doing? loss function Then can we find a way to update/improve weights by knowing how bad/good the model is learning each time from the data? If we can iterate the cycle multiple times, can we build a powerful model?
+- Homework: Run notebooks, especially the bird notebook. Create something interesting to you based on the bird notebook. Read the first chapter of the book. Be inspired by all the amazing student projects.
+
+---
+title: "Lesson 2"
+---
+
+*Daniel 深度碎片* on [forums.fast.ai](https://forums.fast.ai) has been kind enough to create summaries, in the form of a list of questions, of every lesson. You can use these summaries to remind yourself what you learned in each lesson, or to preview a lesson before you watch it. Here's the lesson 2 summary:
+
+- New exciting content to come
+  - Can there be substantial new content given we have already 4 versions and a book?
+- Ways of reading the book
+  - How many channels available for us to read the book? (physical, github, colab and others)
+- Extra sweets from the book
+  - Are there interesting materials/stories covered by the book not the lecture?
+  - Where can you find questionnaires and quizzes of the lectures?
+- aiquizzes.com
+  - Where can you get more quizzes of fastai and memorize them forever?
+- Introducing the forum
+  - How to make the most out of fastai forum?
+- Students' works after week 1
+- A Wow moment
+  - Will we learn to put model in production today?
+- Find a problem and some data
+  - What is the first step before building a model?
+- Access to the magics of Jupyter notebook
+  - Do you want to navigate the notebook with a TOC?
+  - How about collapsable sections?
+  - How about moving between start and end of sections fast?
+  - How to install jupyter extensions
+- Download and clean your data
+  - Why use ggd rather than bing for searching and downloading images?
+  - How to clean/remove broken images?
+- Get to docs quickly
+  - How to get basic info, source code, full docs on fastai codes quickly?
+- Resize your data before training
+  - How can you specify the resize options to your data?
+  - Why should we always use RandomResizedCrop and `aug_transforms` together?
+  - How RandomResizedCrop and `aug_transforms` differ?
+- Data images instantly transformed not copied
+  - When resized, are we making many copies of the image?
+- More epochs for fancy resize
+  - How many epochs do we usually go when using RandomResizedCrop and `aug_transforms`?
+- Confusion matrix: where do models get wrong the most?
+  - How to create confusion matrix on your model performance?
+  - When to use confusion matrix? (category)-practice
+  - How to interpret confusion matrix?
+  - What is the most obvious thing does it tell us?
+  - How hard is it to tell grizzly and black bears apart?
+- Check out images with worse predictions
+  - Do `plot_top_losses` give us the images with highest losses?
+  - Are those images merely ones the model made confidently wrong prediction?-practice
+  - Do those images include ones that the model made right prediction unconfidently?
+  - What does looking at those high loss images help? (get expert examination or simple data cleaning)
+- What if you want to clean the data a little
+  - How to display and make cleaning choices on each of those top loss images in each data folder?-practice
+  - Without expert knowledge on telling apart grizzly and black bears, at least we can clean images which mess up teddy bears.
+- Myth breaker: train model and then clean data
+  - How can training the model help us see the problem of dataset?-practice
+  - Won't we have more ideas to improve the dataset once we spot the problems of the dataset?
+- Turn off GPU when not using
+  - How to use GPU RAM locally without much trouble?
+- Watch first, then watch and code along
+  - What is the preferred way of lecture watching and coding by majority of students?
+- A Gradio + hugging face tutorial
+- Git and Github desk
+  - Is Github desk a less cool but easier and more robust way to version control than git?
+- Terminal for windows
+  - How to set up terminal for windows?
+  - Why Jeremy prefer windows than mac?
+- Get started with Hugging Face Spaces
+  - go to huggingface.co/spaces and create a new space
+- Get the default App up and running
+  - How to use git to download your space folder?
+  - How to open vscode to add app.py file?
+  - How to use vscode to push your space folder up to hugging face spaces online?
+  - then go back to your space on Hugging Face to see the app running
+- Train and download your model
+  - Where is the model we are going to train and download from Kaggle notebook?
+  - How to export your model after trained it on Kaggle?
+  - Where do you download the model?
+  - How to open a folder in terminal? `open .`
+  - Make sure the model is downloaded into its own Hugging Face Space folder
+- Predict with loaded model
+  - How to load downloaded model to make prediction?
+  - How to make prediction with the loaded model?
+  - How to export selected cells of a jupyter notebook into a python file?
+  - How to see how long a code runs in a jupyter cell?
+- Turn your model into Gradio App locally
+  - How to prepare your prediction result into a form gradio prefers? #code
+  - How to build a gradio interface for your model?
+  - How to launch your app with the model locally?
+  - Not in video: run the code on Kaggle in cloud
+- Push this app onto Hugging Face Spaces
+  - Make sure to create a new space first, e.g., testing
+  - How to turn the notebook into a python script?
+  - How to push the folder up to github and run app in cloud?
+  - Not in Video: if stuck, check out Tanishq tutorial-shooting
+- How many epochs are ideal for fine tuning?
+- How to save model from colab?
+- How to install fastai properly
+  - How to download github/fastai/fastsetup using git? `git clone https://github.com/fastai/fastsetup.git`
+  - How to download and install mamba? `./setup_conda.sh`
+  - Not in Video: problem of running `./setup_conda.sh`
+  - How to download and install fastai? `mamba install -c fastchan fastai`
+  - How to install nbdev? `mamba install -c fastchan nbdev`
+  - How to start to use jupyter notebook? `jupyter notebook --no-browser`
+  - Not in Video: other problem related to xcode
+- The workflow summary
+- HuggingFace API + gradio + Javascript = real APP
+- How easy does HuggingFace API work
+- How easy to to get started with JS + HF API + gradio
+- App example of having multiple inputs and outputs
+- App example of combining two models
+- How to turn your model into your own web App with fastpages
+- How to fork a public fastpages for your own use
+
+---
+title: "Lesson 3"
+---
+
+- Introduction and survey
+- "Lesson 0" How to fast.ai
+  - Where is Lesson 0 video?
+  - What does it to do with the book 'meta learning' and fastai course?
+- How to do a fastai lesson?
+  - Watch with note
+  - Run the notebook and experiment
+  - Reproduce the notes from the codes
+  - Repeat with a different dataset
+- How to not self-study?
+  - physical and virtual study group
+  - study with people on forum
+  - Learn with social interactions is better than self-study
+- Highest voted student work
+  - Many interesting projects to check out
+- Jeremy's Pets breeds detector
+  - Jeremy's Pets repository
+  - What you should do with this App example?
+- Paperspace: your DL workstation in cloud!
+  - Does Jeremy speak highly of it? and Why?
+- JupyterLab: real beginner friendly
+  - Why JupyterLab is so good for beginners to take advantage of?
+- Make a better pet detector
+  - After training, we should think about how to improve it
+- Comparison of all (image) models
+  - Did anyone compared most of the image models and shared the finding?
+  - Where to find the notebook for comparison?
+  - Which 3 criteria are used for comparison?
+- Try out new models
+  - How to select and try out models with high scores
+  - Where is the train.ipynb file?
+  - How to try models on TIMM?
+  - How to compare them by loss?
+  - Why this model is actually impressive?
+  - What can the name of a model tell us?
+  - Why Jeremy only train 3 epochs? 18:58
+- Get the categories of a model
+  - How to get labels or categories info from the model?
+  - The rest is we learnt from last lecture.
+- What's in the model
+  - What two things are stored in the model?
+- What does model architecture look like?
+- Parameters of a model
+  - How to zoom in on a layer of a model?
+  - How to check out the parameters of a layer?
+  - What does a layer's parameters look like?
+- The investigating questions
+  - What are the weights/numbers?
+  - How can they figure out something important?
+  - Where is the notebook on how neuralnet work
+- Create a general quadratic function
+  - How to create a general function to output any specific quadratic function by changing 3 parameters?
+  - How to generate result from a specific quadratic function by changing 1 parameter?
+  - Why do we create such a general (quadratic) function with multiple unknown parameters rather than directly writing a particular quadratic function with specific coefficients?
+- Fit a function by good hands and eyes
+  - What does fit a function mean? (search better parameters based on dataset)
+  - How to create a random dataset?
+  - How to fit a general quadratic function to the dataset by changing 3 parameters with jupyter widgets by hand?
+  - What is the limitation of this manual/visual approach?
+  - where is this notebook
+- Loss: fit a function better without good eyes
+  - Why do we need loss or loss function?
+  - What is mean squared error?
+  - How does loss help the hand/visual approach to be more accurate and robust?
+- Automate the search of parameters for better loss
+  - How do we know which way and by how much to update parameters in order to improve on loss?
+  - Can you find enough derivative material on Khanacademy?
+  - What exactly do you need to know about derivative for now according to Jeremy? 34:26
+  - What is the slope or gradient?
+  - Does pytorch do derivative or calc slope/gradient for us?
+  - How to create a function to output sme loss on a general quadratic function? 35:02
+  - What do you need to know about tensor related to derivatives for now according to Jeremy? 36:02
+  - How to create a rank 1 tensor (a list to store numbers) to store parameters of the quadratic function? 36:49
+  - How to ask pytorch to prepare the calculation of gradients for these parameters? 37:10
+  - How to actually calculate gradients for each parameter based on the loss achieved by this specific function (3 specific parameters) against the whole dataset? 37:38
+  - In other words, this time when we calculate loss we can easily get the gradient for each parameter as well.
+  - What does the gradient value mean for each parameter? 38:34
+  - How to update parameters into new values with the gradients produced by the loss? 39:18
+  - How to automate the process above to find better parameters to achieve better loss? 41:05
+  - Why this automation is called gradient descent?
+  - notebook
+- The mathematical functions
+  - Besides dataset, loss function, derivative, what is also very crucial in finding/calculating those parameters?
+  - Why we can't simply use quadratic functions for it?
+- ReLu: Rectified linear function
+  - Real world powerful models demands complex parameters and also complex functions, how complex a function can we come up?
+  - Is it possible to come up an infinitely complex function by simply doing addition of extremely simple functions?
+  - What could such extremely simple function look like?
+  - What is rectified linear function? How simple it is? What is linear and which part is rectified?
+  - What does rectified linear function look like in plot?
+  - How to adjust the 2 parameters of the function by hand with widget?
+  - What the function could look like under different parameters? 44:46
+- Infinitely complex function
+  - How powerful can the addition of extremely simple functions be?
+  - How to create a double rectified linear function (double relu) and adjust 4 parameters by hand with widget?
+  - How much more flexible does this double relu function look compared to a single rectified linear function?
+  - Can you imagine how complex can a function be when millions of rectified linear functions are added?
+- 2 circles to an owl
+  - a very concise summarization of sewing fundamental ideas together for deep learning
+- A chart of all image models compared
+  - Can it be done with brute force computation with simple code?
+  - Does Jeremy look for the model comparison chart for best models?
+  - What is the wrong way of using the comparison chart by students? 50:45
+  - How does Jeremy use the chart?
+  - how does Jeremy decides which models to try out step by step?
+- Do I have enough data?
+  - Did you already build a model and train on your own dataset?
+  - Is the result good enough for you?
+  - What is the mistake the DL industry often make on this issue? 52:55
+  - What is Jeremy's suggestion?
+  - How and what could semi-supervised learning and data augmentation be helpful?
+  - What about labeled and unlabeled data?
+- Interpret gradients in unit?
+  - How much does the loss go down when parameter a increase by unit of 1? 55:24
+- Learning rate
+  - Why we don't update parameter values in large steps?
+  - Why does Jeremy draw a quadratic function to refer to the model when zooming in very close into the complex function?
+  - What would happen when update parameters with large values? 57:19
+  - Does large drop on loss necessarily demand large value increase of parameter according to the quadratic nature?
+  - What is learning rate? Why we need it to be small? How to pick a good value of it? 58:07
+  - What would happen if your learning rate is too big?
+  - What would happen when too small?
+- break
+- Matrix multiplication
+  - When the model requires millions of rectified linear functions, how to calculate fast enough?
+  - What is actually needed from linear algebra to do DL 1:01:33
+  - How easy it is to do matrix multiplication? 1:01:51
+  - What are the dataset and parameters in the matrix multiplication?
+  - Does matrix multiplication do the rectified part for you?
+  - What GPU is good at? 1:03:49
+- Build a regression model in spreadsheet
+  - Intro to Titanic Competition on Kaggle 1:05:01
+  - What is the dataset 1:05:18
+  - What to do with the train.csv file?
+  - How to clean the dataset a little bit?
+  - How to transform the dataset for matrix multiplication? 1:07:17
+  - How to prepare parameters for matrix multiplication? 1:08:50
+  - What's wrong with the much larger value of the column 'Fare' compared to other columns? 1:09:35
+  - What to do with the values of 'Fare' and similarly the values of 'Age'?
+  - What is normalizing the data?
+  - Does fastai do all these normalizations for us? Will we learn how fastai does it in the future?
+  - Why to apply log to values of 'Fare'? 1:10:59
+  - Why do we need values to be evenly distributed?
+  - How to do mmult on dataset and parameters in spreadsheet? 1:11:56
+  - How to use mmult instead of addition to add a constant?
+  - What does the result of our model look like? 1:13:41
+  - Does Jeremy simply use a linear regression for the model, not even a relu?
+  - Can we solve regression with gradient descent? How do we do it?
+- Build a neuralnet by adding two regression models
+  - What does it take to turn a regression model into a neuralnet?
+  - Why we don't add up the results of two linear functions?
+  - Why we only add the results together after they are rectified?
+  - What does the model prediction look like?
+  - Now we need to update the parameters for two linear functions, not just one.
+- Matrix multiplication makes training faster
+  - How to make the training to do mmult rather than addition of linear multiplications in spreadsheet?
+- Watch out! it's chapter 4
+  - Please do try out Titanic competition
+  - Why chapter 4 drove away most of people?
+  - Ways to work out the spreadsheet yourself
+- Create dummy variables of 3 classes
+  - Do we only need 2 columns/classes for a dummy variable with 3 classes?
+- Taste NLP
+  - What do Natural Language Processing models do?
+  - What project opportunities do non-En-speaker students have?
+  - What tasks can NLP do? 1:25:57
+- fastai NLP library vs Hugging Face library
+  - How do these two libraries differ?
+  - Why we use transformer library in this lecture?
+- Homework to prepare you for the next lesson
+
+---
+title: "Lesson 4"
+---
+
+- New and Exciting Content
+- Why Hugging Face transformer
+  - Will we in this lecture fine-tune a pretrained NLP model with HF rather than fastai library?
+  - Why use transformer rather than fastai library?
+  - Is Jeremy in the process of integrating transformer into fastai library?
+  - Does transformer has the same layered architecture of fastai? Is it high level enough?
+  - Why it is a good thing to use a reasonably high level library (not as high as fastai)?
+- Understand Fine-tuning
+  - Do we have the foundations to understand the details of fine-tuning now?
+  - How to understand pretrained model in terms of parameters confidence? 03:51
+  - Is fine-tuning trying to increase on the parameters which are not confident?
+- ULMFiT: the first fine-tuned NLP model
+  - Where this model was first developed and taught?
+  - Who wrote the paper?
+  - What's its impact?
+- ULMFiT step 1: a language model from scratch
+  - What is the first language model in step one?
+  - What's the model trying to predict? What's the dataset?
+  - Why is this task so difficult? 06:10
+  - How much knowledge does the model have to understand in order to predict?
+  - How well can this first model predict in step one?
+- Step 2: fine-tuned the first model on IMDB
+  - How did Jeremy build the second language model?
+  - Where did the second model start with? What was the dataset for the second model?
+  - What was the second model good at predicting?
+- Step 3: turn a language model to classify
+- Labels of language models
+  - What are the labels for the datasets of the first two models?
+- Transformer models vs ULMFiT
+  - When did the transformers first appear?
+  - What's transformers models are built to take advantage of?
+  - What is not transformers trying to predict? (reason in part 2)
+  - How transformers modified its dataset and what does it predict? 09:41
+  - Does ULMFiT and Transformers really differ much on what to predict?
+  - How much different are the 3 steps between ULMFiT and Transformers?
+- What a model knows
+  - What can lower and higher layers of parameters/weights learn? 11:08
+  - What we do to those layers of weights for transfer learning? 13:20
+  - Zeiler and Fergus paper
+- NLP beginner on Kaggle competition
+  - Using a Kaggle competition to introduce NLP for beginners, isn't it amazing!
+  - Why we should take Kaggle competition more seriously? 15:06
+  - What real world tasks can NLP classification do? 15:57
+- Examine the competition dataset
+  - What is inside the competition dataset?
+  - How classificationish does the dataset look like?
+  - What do we predict about 'anchor' and 'target'?
+  - What value to predict?
+  - Why it is not really a straightforward classification?
+  - What is the use of 'context'?
+- Model Strategy
+  - How to modify the dataset in order to turn a similarity problem into a classification problem?
+  - Should we always try to solve a problem by turning it into a problem we are familiar with?
+- Get notebook ready
+  - When and how to use a GPU on Kaggle?
+  - Why Jeremy recommend Paperspace over Kaggle as your workstation?
+  - How easy has Jeremy made it to download Kaggle dataset and work on Paperspace or locally?
+  - How to do both python and bash in the same jupyter cell?
+- Get raw dataset into documents
+  - How to check what inside the dataset folder?
+  - Why it is important to read Competition data introduction which is often overlooked?
+  - How to read a csv file with pandas? 24:30
+  - What are the key four libraries for data science in python? 24:46
+  - What is the other book besides fastbook recommended by Jeremy? 25:36
+  - Why you must read it too?
+  - How to access and show the dataset in dataframe? 26:39
+  - How to `describe` the dataset? What does it tell us in general? 27:10
+  - What did the number of unique data samples mean to Jeremy at first? 27:57
+  - How to create a single string based on the model strategy? 28:26
+  - How to refer to a column of a dataframe in reading and writing a column data?
+- Tokenization: Intro
+  - How to turn strings/documents into numbers for neuralnet?
+  - Do we split the string into words first?
+  - What's the problem with the Chinese language on words?
+  - What are vocabularies compared with splitted words?
+  - What to do with the vocabulary?
+  - Why we want the vocabulary to be concise not too big?
+  - What nowadays people prefer rather than words to be included in vocab?
+- Subwords tokenization by Transformer
+  - How to turn our dataframe into Hugging Face `Dataset`?
+  - What does HF Dataset look like?
+  - What is tokenization? What does it do?
+  - Why should we choose a pretrained model before tokenization?
+  - Why must we use the model's vocab instead of making our own?
+  - How similar is HF model hub to TIMM? 33:10
+  - What Jeremy's advice on how to use HF model hub?
+  - Are there some models generally good for most of practical problems? 34:17
+  - When did NLP models start to be actually very useful? 34:35
+  - Why we don't know much about those models which potentially are good for most of things?
+  - Why should we choose a small model to start with?
+  - How to get the tokens, vocabs and related info of the pretrained model? 36:04
+  - How to tokenize a sentence by the model's style?
+  - After a document is splitted into a list of vocab, do we turn the list of vocab into a list of numbers? Numericalization 38:30
+  - Can you get a sense of what subword vs word is from the examples of tokenization
+  - How to tokenize all the documents with parallel computing? 38:50
+  - Given the input column is the document, what's inside the input_id column?
+- Special treatment to build input?
+  - Do we need to follow some special treatment when building a document or an input from dataset?
+  - What about when the document is very long?
+- Start ULMFiT on large documents
+  - What ULMFiT is best at doing?
+  - Why ULMFiT can work on large documents fast and without that much GPU?
+  - How large is large for a document?
+- Some obscure documentations of Transformer library
+- The most important idea in ML
+  - Is it the idea of having separate training, testing, validation datasets?
+- Underfitting vs Overfitting
+  - How to create a function to plot a polynomial function with a degree variable?
+  - What are 1st/2nd/3rd degree polynomial?
+  - What does Jeremy think of sklearn? When to use it? 47:37
+  - What is underfitting? Why a too-simple model is a problem or is systematically biased? 48:12
+  - What is overfitting? What does an overfit look like? 48:58
+  - What is the cause of overfitting?
+  - It is easy to spot underfitting, but how to filter an overfitting from the function we want?
+- Validation: avoid overfitting on training set
+  - How to get a validation dataset and use it?
+  - Why you need to be careful when use other libraries other than fastai?
+- How and Why to create a good validation set
+  - Did you know simply random 20% of dataset as a validation set is not good enough?
+  - For example, shouldn't you select validation dataset so that your model can predict the future rather than the past?
+  - Why is Kaggle competition a great and real-world way to appreciate using validation set to avoid overfitting?
+  - How validation set can help avoid overfitting in 2 Kaggle competition on real world problems? 54:44
+  - Watch out when touching cross-validation 56:03
+  - Why should you be careful when simply using library-ready tools of selecting validation set randomly?
+  - Validation post by Rachel
+- Test set: avoid overfitting on validation set
+  - What is a test set for?
+  - Why need it when we have a validation set?
+  - When or how can you overfit on a validation set? or
+  - Why is validation set not enough to overcome model overfitting?
+  - Why Kaggle prepares two test sets? or
+  - Why Kaggle thinks that two test sets are enough to filter overfitting models
+- Metrics functions vs Loss functions
+  - How we use validation set to check on the performance of model?
+  - Will Kaggle competition choose the metrics for you?
+  - Should the metrics be our loss function?
+  - What kind of functions you should use as loss function? (bumpy vs smooth)
+  - So, always be aware: the loss your model tries to beat may not be the same function to rate your model
+  - Why one metric is always not enough and can cause much problem?
+- Metrics: you can't feel it from math
+  - What is Pearson correlation (r) and how to interpret it?
+  - Which can teach you how r behave, its math function or its performance on datasets?
+  - Should we a plot with a 1000 random data point or a plot with the entire a million data points?
+  - How to get correlation coefficient for every variable to every other variable? 1:06:27
+  - How to read the correlation coefficient matrix?
+  - How to get a single correlation coefficient between two things?
+  - How to tell how good is a correlation coefficient number? 1:07:45
+  - What are the things to spot? (tendency line, variation around the line, outliers)
+  - How to create transparency on the plot?
+  - How can we tell from another example that r is very sensitive to outliers? 1:09:47
+  - How much can removing or mess up a few outliers really affect your scores on r? or
+  - Why do you have to be careful with every row of data when dealing with r?
+  - Can we know how good is r = 0.34 or r = -0.2 without a plot?
+  - Don't forget to get the data format right for HF
+- HF train-validation split
+  - How to do the random split with HF?
+  - Will Jeremy talk about proper split in another notebook?
+- Training a model
+  - What to use for training a model in HF?
+  - What is batch and batch size?
+  - How large should a batch size be?
+  - How to find a good learning rate? (details in a future lecture)
+  - Where to prepare all the training arguments in HF library?
+  - Which type of tasks do we use for picking the model?
+  - How to create the learner or trainer after model?
+  - How to train?
+  - Why is the result on metrics so good right from the first epoch?
+- Dealing with outliers
+  - Should we get a second analysis for the outliers rather than simply removing them?
+  - What outliers really are in the real world?
+  - Doesn't outliers usually tell us a lot of surprisingly useful info than in the limiting statistical sense?
+  - What is Jeremy's advice on outliers?
+- Predict and submit
+  - How to do prediction with HF?
+  - Should we always check the prediction output as well as the test set input?
+  - What is the common problem with the output? (proper solution may be in the next lecture)
+  - What is the easy solution?
+  - How to submit your answer to Kaggle?
+- Huge opportunities in research and business
+- Misuses of NLP
+  - Can NLP chatbots can create 99% of online chat which almost non-distinguishable from real humans?
+  - Can GTP-3 create even longer and more sophisticated prose which is even more human-like?
+  - How machined generated public opinions can influence public policies or laws?
+- Issues on `num_labels` in HF library
+
+---
+title: "Lesson 5"
+---
+
+## Linear model and neuralnet from scratch
+
+- Tabular model from scratch
+- Review Titanic dataset and the two models in excel
+- From excel to python
+- Clean version of notebook
+  - What does a clean version of the notebook look like?
+- Get comfortable in Paperspace Gradient
+  - How to work with jupyterlab mode instead of default mode?
+  - How to swift between jupyterlab mode and jupyter notebook mode?
+  - Learn some useful keyboard shortcuts
+- Things to do with clean notebook
+  - What are the steps or things we should do with the clean version of a course notebook?
+  - Where is the non-clean version?
+- Same notebook runs on Kaggle and everywhere
+  - How to check whether the notebook is running on Kaggle or elsewhere?
+  - How to get the data and its path right accordingly?
+- Libraries and format setup
+  - How much should we know about these libraries before starting?
+  - How to make the printed result look nicer in cells?
+- Read train.csv as Dataframe
+  - How to read and display a csv file in pandas dataframe format?
+- Find and count missing data with pandas
+  - How to check missing data in each cell/row?
+  - How to sum up missing data in each column?
+- Choose mode value for the missing data
+  - What is the most common choice for replacing the missing data regardless categorical or continuous? mode
+  - How to select the first mode value if there are two modes available for a column?
+- Be proactively curious
+  - Why it is impractical for Jeremy to explain every common function of every library used?
+  - What should you do about it?
+- Replace missing data with mode values
+  - How to fill in the missing data with mode values of those columns with or without creating a new dataframe?
+- Keep things simple where we can
+  - Why use the world's simplest way of filling missing data?
+  - Does this simplest way work most of the time?
+  - Do we always know the complicated way would help?
+- Don't throw out rows nor columns
+  - Do those filled columns sometimes turn out to matter much for the model?
+  - How does fastai library help to find out about it?
+- Describe your data or columns
+  - How to get a quick overview/description of your data?
+  - What do we look for in the descriptions?
+- See your columns in histogram
+  - What to do with interesting columns?
+  - What can you find out with histogram?
+  - What is long-tailed distribution of the column? What does it look like?
+- Log transformation on long-tailed columns
+  - Which models don't like long-tailed distributions in the data? #data-describing
+  - What is the easiest way to turn long-tailed to centered distribution?
+  - Where to find more about the log and log curve?
+  - What does log do in one sentence? 17:11
+  - How to avoid the problem of log(0)? adding 1
+  - What does the column data (histogram) look like after transformed by log?
+- Most likely long-tailed data
+  - What kind of data are most likely to be long-tailed which need log transformation?
+- Describe non-numerical columns
+  - How to describe seemingly numerical but actual categorical columns?
+  - How to describe all non-numeric columns altogether?
+  - What does this description look like? (how it differ from those of numeric data)
+- Apply coefficients on categorical columns
+  - How to apply coefficients to categorical columns?
+  - What does it mean by applying dummy variables to categorical columns?
+  - What are the two ways of getting dummy variables and what's Jeremy view on them?
+  - What does the dummy variable transformation of categorical variables look like ?
+- The secret power of name column
+  - Can a model built only on name column score No.1 in Titanic competition?
+  - Where to find more about it?
+  - This technique is not covered in this lecture
+- Tensor
+  - Why focus on pytorch rather than numpy?
+  - What data format does pytorch require? How to do this data format conversion?
+  - What is a tensor? Where did it come from?
+  - How to turn all independent columns into a single large tensor?
+  - What is the number type does tensor need? float
+  - How to check the shape of a tensor? (num of rows and columns)
+  - How to check the rank/dimensions/axis of a tensor? What is rank?
+  - What is the rank of a vector, a table/matrix, or a zero?
+- Create random coefficients
+  - Why we don't need a constant here as in excel?
+  - How many coefficients we need? How we figure it out?
+  - How to create a vector of randomized numbers for the coefficients?
+  - How to make the coefficients value centered? Why this is important? (answered later)
+- Reproducibility of coefficients
+  - How to create the same set of random numbers for your coefficients each time running the cell?
+  - When to and not to use random seed to make your result reproducible?
+  - How not using random seed can help understand your model intuitively?
+- Broadcasting: data * coefficients operation on GPU
+  - What is broadcasting? Isn't it just matrix and vector multiplication?
+  - Where did it come from?
+  - What are the benefits of using broadcasting?
+  - simple code vs lots of boilerplate
+  - coded and optimized in C language for GPU computation
+  - What's the rule of broadcasting and where to find more about it?
+  - a great blog post help understand broadcasting
+- Normalization: make the same range of values for each column
+  - What would happen when the values of a column is much larger than the values of other columns?
+  - Why to make every data column to have the same range of values?
+  - How to achieve the same range for all column values?
+  - What are the two major ways of doing normalization?
+  - Does Jeremy favor one over the other?
+- Sum up to get predictions
+  - How to sum up the multiplication of each row with the coefficients, and do it for all rows?
+  - Is the summed-up number the prediction for each person/row of data?
+- A default choice for loss function
+  - How to make the model better? Gradient descent
+  - What is needed to do gradient descent? loss function
+  - What does a loss function do? measure the performance of coefficients
+  - What is Jeremy's default/favorite choice for loss function?
+  - Why does Jeremy always write the loss function out manually when experimenting?
+- Make notebook readable/understandable in the future
+  - When to encapsulate all exploratory steps into a few functions?
+  - Why keep all these exploratory steps available (Don't delete them)?
+- Update coefficients with gradient descent in Pytorch
+  - How to ask PyTorch to do gradients on coefficients?
+  - How to ask Pytorch to update values on the same coefficients tensor (not create new one)?
+  - What does loss function do besides giving us a loss value? What does it store?
+  - What function to run with loss to calculate gradients for coefficients?
+  - How to access the gradients of coefficients? and how to interpret the gradients?
+  - How to decide whether it is to subtract or add gradients to coefficient?
+  - How to choose on the learning rate?
+  - How to calc updated loss with renewed coefficients?
+- Split the dataset
+  - Why did Jeremy randomly split training and validation set for Titanic dataset?
+  - Why to use fastai's random splitter function?
+  - How to create the training and validation set with the splitter function?
+- Encapsulate functions for model training
+  - How does Jeremy create functions like init_coeffs, update_coeffs, one_epoch, train_model from the exploratory steps above?
+  - How to use the train_model function to see how well the model works?
+- Titanic dataset is a good playground
+  - Why so?
+- Display coefficients
+  - How to display the final coefficients?
+  - How to interpret it?
+  - Can we make some sense of the values inside?
+- Accuracy as metrics
+  - Why not use accuracy as loss function?
+  - What can we use accuracy function for?
+  - What threshold did Jeremy use for survival?
+  - How to calculate accuracy and put it into a function?
+- Sigmoid function: ease coefficients optimization
+  - What you see from the predictions make you think of using sigmoid function?
+  - Why sigmoid function can really make optimization easier for the model?
+  - Why the two-ends plateau of the function is good for optimization? (to tolerate very large and small values of predictions rather than forcing every prediction to get closer to 1 or 0)
+  - Why the straight-line middle part of the function plot is also what we want? 48:58
+  - How to plot any function with just one line of code? What library is this? sympy
+  - How to update calc_preds function with sigmoid function easily in Jupyter? 50:52
+  - Why to make predictions to center on 0 before sigmoid function? (a reply by Jeremy)
+  - Do you remember what did Jeremy do to make prediction center on 0? (see how initial coefficients is defined, a cell link on Kaggle)
+  - Why allow predictions to be large or small can make weights optimization easier? (Jeremy's reply)
+  - How python with Jupyter make exploratory work so easy?
+  - How come the learning rate jump from 0.1 before sigmoid to 2 after using sigmoid? 51:57
+  - When or How often (as a rule) should you use sigmoid function to your prediction? 52:23
+  - Does HF library specify whether they use sigmoid or not? (probably the others neither)
+  - What You need to watch out for optimization is the input and output not the middle for now. Why is that? 53:13
+- What if test dataset has extra columns?
+  - What would the normal consequences be?
+  - How does fastai deal with it for good?
+- Submit to Kaggle
+  - How and why Jeremy replaced a missing value of Fare with 0?
+  - How to apply the above data cleaning steps to the test set?
+  - How to prepare the output column expected by Kaggle?
+  - How to create the submit file expected by Kaggle?
+
+## Key steps from linear model to neuralnet
+
+- val_indep * coeffs vs val_indep @ coeffs
+  - What do we know about val_indep * coeffs mean? Is it element-wise? Is it matrix and vector multiplication?
+  - What do we know about val_indep @ coeffs? Is it matrix-matrix multiplication?
+  - Is (val_indep * coeffs).sum(axis=1) equal to val_indep @ coeffs?
+  - What should we know about them to distinguish them properly?
+  - In val_indep @ coeffs, when coeffs is a matrix, do we need to specify its shape? 59:50
+  - How to initiate coefficients as a one column matrix rather than a vector?
+- Transform existing vectors into matrix
+  - How to turn both trns_dep and vald_dep from existing vectors to matrices which responding to coeffs matrix?
+
+## Building a neural net
+
+- Keep linear model and neuralnet comparable in output
+  - How to create a layer within multi-hidden layers inside (or a matrix of coefficients rather than a vector of coefficients)?
+  - why to divide the coefficients of the multi-hidden layers by the number of layers (or the matrix of coefficients by the number of columns)?
+  - Is it to make sure the outputs of neuralnet and previous linear model are comparable?
+- Build the output layer
+  - How to build the coeffs of the output layer with correct shape which connects with the previous layer?
+  - How to decide the number of output of this output layer?
+- TRY to getting the training started
+  - Why Jeremy make the coefficients of the output layer to minus 0.3?
+  - What does it mean by this minus 0.3 can get the training start?
+  - (I guess Jeremy may tried -0.5 first, experiment to find it out)
+- Adding Constant or not
+  - Why we don't need a constant for layer 1 (think of the constant of the linear model)?
+  - Why we must have a constant for layer 2?
+  - Do coefficients of layer1, layer 2 and constants all need their own gradients initiated?
+- Building the model
+  - What is a tuple and how it is used for grouping and separating the three coefficients?
+  - How to construct the prediction function by sending data through layer 1 and layer 2 finally add constants?
+- A neuralnet done but super fiddly
+  - How to update all three coefficients in a loop?
+  - Did you notice that the learning rate changed again? (1.4, last time was 2, earlier was 0.1)
+  - What did Jeremy say getting this model work was super fiddly?
+
+## From neuralnet (1 hidden layer) to deep learning with 2 hidden layers
+
+- Initialize coefficients of all hidden layers and constants
+  - How to initialize coefficients of 2 hidden layers and 1 output layer and constants, and get gradients ready for all of them, in one compact function?
+  - What are the shape of each coefficient matrix?
+- Building the 2 hidden layer model
+  - What are activation functions?
+  - What are the activation functions for 2 hidden layers?
+  - What is the activation function for the output layer?
+  - What is the most common mistake on applying activation function to the final layer?
+- Train the model
+  - Don't forget to update gradients
+  - Which are those numbers Jeremy still have to fiddle to get right?
+  - Did this deep learning model improve on the loss and accuracy?
+- Dissect and Experiment large functions
+  - How to experiment on a large function like the init_coeffs by breaking it into small pieces and running them?
+- Tabular datasets: where deep learning not shining
+  - How should we think about that both neuralnet and deep learning models aren't better?
+  - What does it mean that a carefully designed algo beat all deep learning models in Titanic competition?
+  - What datasets do deep learning generally perform better?
+
+## Framework: DL without super fiddling notebook
+
+- Why use framework rather than from scratch
+  - Why you should use a library framework in real life rather than building yourself like the above?
+  - When to do it from scratch?
+  - What can a framework do for us?
+  - Can it automate the obvious things like initialization, learning rate, dummy variable, normalization, etc?
+  - Can I still make choice on the not-so obvious things?
+- Feature engineering with pandas
+  - What is the feature engineering with pandas look like?
+  - How and where does Jeremy suggest on digging in pandas?
+- Automate the obvious when preparing dataset
+  - How framework make cateorifying data, filling missing data, normalization automatic?
+  - How to specify the dependent column to be a category?
+- Build multi-hidden layers with one line of code
+  - How to specify the shapes of two hidden layers with just two numbers?
+  - Do you only need to specify accuray without worrying about loss and activations?
+- Automate the search of best learning rate
+  - How does fastai help you find the range where best learning rate locates?
+  - How should you pick the learning rate from the range?
+
+## Predict and Submit with ease
+
+- Automate transformation of test set in one line of code
+  - How to automatically apply all transformations done to training and validation sets to test set?
+
+## Experiment with Ensembling
+
+- Ensemble is easy with fastai
+  - Does framework save so much of fiddling so that experimenting with some advanced ideas become easier?
+  - What is ensembling?
+  - Is it to combine multiple models and combine their predictions?
+- The simplest ensemble
+  - What does a simple ensemble look like?
+  - How to build, run and predict with 5 models with ease?
+  - How different are those 5 models? (only initial coefficients are different)
+  - How to combine their predictions?
+  - How much improvement does this simple ensemble get us to?
+- Ways to combine the predictions
+  - Why not use mode but mean?
+  - What are 3 ways of combining the predictions?
+  - Does one is better than the others?
+  - What's Jeremy's suggestion?
+
+## How Random Forest really work
+
+  - Is this a good place to also learn pandas and numpy?
+- Why Random Forest
+  - What is the history of Random Forest and Jeremy?
+  - What does Jeremy think of random forest?
+  - Why random forest is so much easy and better?
+  - Why the seemingly simple logistic regression is so easy to get wrong?
+- Pandas categorical function
+  - How to import all the libraries you need at once?
+  - How to do fillna with pandas and log with numpy?
+  - What does panda categorical function do for us?
+  - What's friendly display after the function applied?
+  - What's the actual data transformation under the hood?
+  - Key points to make: No dummy variables, Pclass no long needed to be viewed as categories
+- Binary splits: bases of random forest
+- A binary splits on gender
+- Build a binary splits model on gender with sklearn
+- Build a binary splits model on Ticket prices with sklearn
+- Build a score machine on binary splits regardless categorical or continuous
+  - What is a good split?
+  - Is it good that within each group their dependent values are similar?
+  - How to measure the similarity of values within a group? std
+  - How to compare standard deviations between two groups appropriately? (multiply by size)
+  - How to calc the score for evaluating the splits based on the value of combined std of two groups?
+- Automate the score machine on all columns
+  - How to find the best binary splits by trying out all possible split points of a column?
+- 1R model as the baseline
+  - What is a random forest? and what is a random forest?
+  - What is 1r model?
+  - how good was it in the 90s of ML world?
+  - Should we always go for complicated models?
+  - Should we always start with a 1r model as a baseline model for our problem?
+
+---
+title: "Lesson 6"
+---
+
+- Review: lecture 5 and OneR from scratch
+- How to build a TwoR model manually (towards a decision tree)?
+- How to create a decision tree with 4 leaves and draw the graph? How to interpret the graph? Why decision tree is loved when doing explorative analysis?
+- What is `gini` in terms of how good a split is? What is its source code? How to think of `gini` in terms of the probability of grab the same item in multiple times?
+- Why the `mean_absolute_error` of the decision tree is actually worse than the OneR version?
+- How to build a decision tree with 50 leaves? How well does it work? 
+- How to make prediction and prepare a csv to upload to the kaggle leaderboard? We should start with a base model like this and improve the model everyday
+- How decision tree frees you from dummy variables, taking log of the fare, thinking of the outliers and long tail of distributions? Jeremy always use decision trees to create a base line model, which is hard to mess up. How decision trees turn categories like `embarked` into strings and then numbers to sort? How many levels does Jeremy usually use decision tree with?
+- How to build many unbiased and uncorrelated models (or decision trees) for bagging? This approach to build all these models is called random forest
+- How to create a random forest with 100 decision trees? How to make them random trees? How to average the predictions of all the trees and submit to kaggle? 
+- What does feature-important (a favorite of Jeremy) do? Does it care about distribution or numeric vs categorical? How does Jeremy use it? and there is an amazing story of Jeremy and feature-important for credit default problem
+- Does increasing num of trees always increase accuracy? Yes with tiny bumps. Does the increase of return decrease? The more trees you have, the longer the inference time, but you can speed it up by good code. Does Jeremy often use more than 100 trees? chp 8 of fastbook 
+- What is OOB (out of bag error)? How does bagging get away from not having a validation set given each tree only use 75%of dataset for training? Does sklearn make using OOB easy? 
+- What is bagging compared with random forest? Is random forest just bagging (meta model) applied to tabular data with lots of decision trees? Can we bag not just a lot of decision trees (into random forest) but also bag a lot of neuralnets? Will we (fastai people) do it, given most people don't do it?
+- What are the insights or model interpretations can be given to us by Random Forest? 
+- How does the bagging help us find out how confident we are about the prediction of a row of tabular data?
+- After you find out those important features, what to do about those less important columns or features of the tabular dataset?
+- Check out the book section on removing the redundant features
+- What does Partial dependence do? How each column/feature is related to dependent variable? Is this one particular to Random Forest? Why calculating partial dependence is not as easy as it sounds? How does partial dependence work behind the scene? Can we do more than one feature partial dependence at one time?
+- Can you explain why a particular prediction is made? Can tree interpreter give us feature importance (or the path from root to leaf) of the model prediction of a row of data?
+- Would you delete a tree which does not perform well? No, doing so would bias your bagging. 
+- Will bagging of bags do better than one bag? No, average of averages is still average
+- What does Jeremy think of Random forest's feature importance vs other model explanability techniques? When to use feature importance and other explanability techniques?
+- tabular section is on chp 9. Can you overfit a random forest? No, more trees make it more accurate, but not enough trees with deep levels can make your random forest overfit. 
+- Can you confuse random forest by adding lots of noise columns/features? 
+- What you don't need to worry about with random forest? interaction in logistic regression, normalization
+- What is gradient boosting? How does boosting work? Are bagging and boosting both meta models which can be applied to decision trees? Random forest vs Gradient boosting trees. Can Gradient boosting overfit given it is more accurate? What's Jeremy's take on random forest vs gradient boost?
+- Introducing walkthrus on paddy competition and what is so thrilling about it
+- What is the basic process extracted from the walkthrus?
+- What does `fastkaggle` do for us? How to install and update it? Can it download kaggle data for us regardless whether you are on kaggle or not? 
+- There are so much benefits we can get by keep working on kaggle competitions, such as forcing you to face the truth and stopping lying to yourself about how good your model is, etc.
+- What are the two things we should focus on? a good validation set and how to iterate in a minute. Why it is so important to iterate (telling it with a story)?
+- When does Jeremy use `seed=42` and when not?
+- Do recognise how pytorch and PILImage describe the shape of a tensor/image? Pytorch (640 rows x 480 columns ) vs PILImage( 480 columns x 640 rows)
+- Does it take a lot of compute to figure out the shape or size of an image? How does Jeremy's `fastcore.parallel` help to figure out the sizes of all images much faster?
+- What's the easist thing to do with the images? What does `item_tfms=Resize(480, method='squish'` do? What does `batch_tfms=aug_transforms(size=128, scale=0.75` do? can we use `dls.show_batch(max_n=6)` for any kind of data?
+- Why Jeremy usually build a model very early on and choose the ones which can iterate fast? 
+- What is the project Jeremy and Thomas created to find out the best models for fine-tuning? How many different architectures have been examined? How different the two datasets they used? 
+- What are the criteria for evaluating the models? How they are compared? Which model architecture did Jeremy choose for his first model and why? What does Jeremy think of studying the structure of model architectures like resnet26?
+- How did Jeremy create his first model? How does Jeremy use `lr_find` to pick a more appropriate learning rate? How fast is Jeremy's first model? Why Jeremy wants it this way? 
+- Should we submit as soon as we can? How do we check out the submit format first? How should we build a dataloader for test set? How do we predict all the test set and return a list of indices pointing to the most probable disease type? How do we create a dictionary with `dls.vocab` and use pandas map function to map indices to disease type strings? How to put our final processed result into a dataframe and save them into a csv file and check the results from the csv file in terminal?
+- How do we even make submitting to kaggle a fast automation?
+- a base line model which iterates fast and trained within a minute gets us to top 80% or bottom 20% is not bad, and is a good starting point. 
+- How to even automate the process of sharing kaggle notebooks? and Why would you publish your notebooks on kaggle (or why this is very beneficial)?
+- How does Jeremy iterate models with notebooks (bon local and kaggle) in a real simple but practically effective style?
+- What does Jeremy think of AutoML? How does Jeremy approach hyperparameter optimization? How Jeremy found out `squish` is always better than `cropping` in most cases without grid search? How Jeremy find a good learning rate fast without grid search? 
+- What is Jeremy's rule of thumb? computer vision problem uses deep learning models, random forest (not bothered by GBM) for tabular dataset
+- Why the first model run so slow on Kaggle GPUs? How to make our model/notebook run faster on Kaggle gpus and cpus? How to first resize (down-size) all training data and put them into a different folder? How much faster did Jeremy get after this?
+- How badly the first model utilizes Kaggle GPU? Did Kaggle 2 CPUs get exhausted?
+- How did Jeremy pick the second model architecture for the second iteration?
+- How much better can a new novel architecture improve the accuracy versus the first model (resnet26)?
+- Why should we move from the era of resnet onto the new era of convnext? How to pick the appropriate models from the convnext family for  our iterations?
+- How to iterate the model with different settings fast by putting everything into a single function `train`? How to quickly try resizing with random cropping without `squish`? What did Jeremy find out about this model iteration?
+- How to iterate the model with padding? What's special about padding versus cropping versus squish? What's its downsides? and how well did this iteration do?
+- What does our data augmentation do to images? How to understand Test-time augmentation (tta) in terms of mini-bagging? How easy fastai makes tta work? tta should work better but in this particular kaggle run, it didn't. Jeremy said will come back to this next time.
+- How to iterate the model with larger images and longer epochs? How much better did this iteration get us? Up to this point, the mechanism behind all the iterations above is universal to all different problems
+- How does the pandas indexing make mapping from indices to vocab string super fast? and submit to kaggle the usual way? 
+- Do we always do data augmentation for images? What data-augmentation does tta use?
+- Why does Jeremy use different aspect ratios during different iterations? What are the better things Jeremy has been experimenting?
+- Why Jeremy didn't create images more image-like，but instead using simple padding (i.e., black stripes)?
+
+---
+title: "Lesson 7"
+---
+
+## Gradient accumulation and GPU memory
+
+- We have explored the simplest neural net with fully connected linear layers in earlier lectures. In this lecture we will focus on tweaking first and last layers, in the next few weeks on tweaking middle part of the neuralnet.
+- Review of the notebook <em>Road to Top part 2</em> and congrats to fastai students beat Jeremy on 1st and 2nd
+- What are the benefits of using larger models? What are the problems of larger models? (use up GPU memory as GPU is not as clever as CPU to find ways to free itself; so large model needs very expensive GPU) What can we do about it when GPU out of memory? first, to restart the notebook; then Jeremy is about to show us a trick to enable us to train extra large models on Kaggle, Wow!
+- How big is Kaggle GPU? Do you have to run notebooks on kaggle sometimes for example code competitions? Why it is good and fair to use Kaggle notebook to win leaderboard?
+- How did Jeremy use a 24G GPU to find out what can a 16G GPU do? How did Jeremy find out how much GPU memory will a model use? How did Jeremy choose the smallest subgroup of images as the training set? Will training the model longer take up more memory? (No) So, smallest training set + 1 epoch training can quickly tell us how much memory is needed for the model.
+- Jeremy then trained different models to see how much memories they used up. How much memory does convnext-small model take? Which line of code does Jeremy use to find out the GPU memory used up by the model? Which two lines of code does Jeremy use to free unnecssarily occupied memories GPU so that you don’t need to restart the kernel to run the next model?
+
+<img src="https://forums.fast.ai/uploads/default/optimized/3X/1/8/1873321e4fc2c4572c625303180eec7843967dbb_2_690x210.png" alt="gc" width="690" height="210" srcset="https://forums.fast.ai/uploads/default/optimized/3X/1/8/1873321e4fc2c4572c625303180eec7843967dbb_2_690x210.png, https://forums.fast.ai/uploads/default/optimized/3X/1/8/1873321e4fc2c4572c625303180eec7843967dbb_2_1035x315.png 1.5x, https://forums.fast.ai/uploads/default/original/3X/1/8/1873321e4fc2c4572c625303180eec7843967dbb.png 2x">
+
+- What if a model causes a crash problem of cuda out of memory? What is GradientAccumulation? What is integer divide? (`//`).
+
+<img src="https://forums.fast.ai/uploads/default/optimized/3X/2/6/26d7b272d6e0d5a3a2802981037cba31124bdd43_2_690x230.jpeg" alt="gradientaccumulation" width="690" height="230" srcset="https://forums.fast.ai/uploads/default/optimized/3X/2/6/26d7b272d6e0d5a3a2802981037cba31124bdd43_2_690x230.jpeg, https://forums.fast.ai/uploads/default/optimized/3X/2/6/26d7b272d6e0d5a3a2802981037cba31124bdd43_2_1035x345.jpeg 1.5x, https://forums.fast.ai/uploads/default/optimized/3X/2/6/26d7b272d6e0d5a3a2802981037cba31124bdd43_2_1380x460.jpeg 2x">
+
+- What is the problem of using smaller batch size? (smaller batch size, larger volatility of learning rate and weights) How can we make the model train in smaller batch size as if it is in large batch size? How to explain GradientAccumulation in code?
+
+<img src="https://forums.fast.ai/uploads/default/optimized/3X/5/f/5f5de3dc9a36ce6ef7bb0413df0816afad42742f_2_690x158.png" alt="training-loop-without-gradientaccumulation" width="690" height="158" srcset="https://forums.fast.ai/uploads/default/optimized/3X/5/f/5f5de3dc9a36ce6ef7bb0413df0816afad42742f_2_690x158.png, https://forums.fast.ai/uploads/default/optimized/3X/5/f/5f5de3dc9a36ce6ef7bb0413df0816afad42742f_2_1035x237.png 1.5x, https://forums.fast.ai/uploads/default/optimized/3X/5/f/5f5de3dc9a36ce6ef7bb0413df0816afad42742f_2_1380x316.png 2x">
+
+<img src="https://forums.fast.ai/uploads/default/optimized/3X/f/9/f9daf4e38da769cb3de7a0c8cdf20c74fd8d18b7_2_690x210.jpeg" alt="gradientaccumulation-explained" width="690" height="210" srcset="https://forums.fast.ai/uploads/default/optimized/3X/f/9/f9daf4e38da769cb3de7a0c8cdf20c74fd8d18b7_2_690x210.jpeg, https://forums.fast.ai/uploads/default/optimized/3X/f/9/f9daf4e38da769cb3de7a0c8cdf20c74fd8d18b7_2_1035x315.jpeg 1.5x, https://forums.fast.ai/uploads/default/optimized/3X/f/9/f9daf4e38da769cb3de7a0c8cdf20c74fd8d18b7_2_1380x420.jpeg 2x">
+
+- What is the implication of using GradientAccumulation? How much difference is the numeric result between using GradientAccumulation and not? What is the main cause for the difference?
+- More questions: it should be `count &gt;= 64` in the code above when doing GradientAccumulation; `lr_find` uses batch size from the DataLoader;
+- Why not just use a smaller batch size instead of GradientAccumulation? What is the rule of thumb for picking batch sizes? How about adjusting learning rate according to the batch size?
+- How did Jeremy use GradientAccumulation to find out how many `accum` is needed to run those large models on Kaggle’s 16G GPUs? (`accum=1` always out of memory, but `accum=2` works for all large models).
+
+<img src="https://forums.fast.ai/uploads/default/optimized/3X/c/c/cc4d36bc34d4f4d1c313b96cdf252b9e6c9ac33d_2_690x81.png" alt="gradientaccumulation-large-models" width="690" height="81" srcset="https://forums.fast.ai/uploads/default/optimized/3X/c/c/cc4d36bc34d4f4d1c313b96cdf252b9e6c9ac33d_2_690x81.png, https://forums.fast.ai/uploads/default/optimized/3X/c/c/cc4d36bc34d4f4d1c313b96cdf252b9e6c9ac33d_2_1035x121.png 1.5x, https://forums.fast.ai/uploads/default/optimized/3X/c/c/cc4d36bc34d4f4d1c313b96cdf252b9e6c9ac33d_2_1380x162.png 2x">
+
+## Creating an ensemble
+
+- How did Jeremy put all the models and their settings together for experimenting later? Do we have to use the size of the model’s specification for now and how about in the future?
+
+<img src="https://forums.fast.ai/uploads/default/optimized/3X/2/b/2bac3e816fa5bb631ba278430031a9561b3fffbc_2_665x500.jpeg" alt="models-testing" width="665" height="500" srcset="https://forums.fast.ai/uploads/default/optimized/3X/2/b/2bac3e816fa5bb631ba278430031a9561b3fffbc_2_665x500.jpeg, https://forums.fast.ai/uploads/default/optimized/3X/2/b/2bac3e816fa5bb631ba278430031a9561b3fffbc_2_997x750.jpeg 1.5x, https://forums.fast.ai/uploads/default/original/3X/2/b/2bac3e816fa5bb631ba278430031a9561b3fffbc.jpeg 2x">
+
+
+<img src="https://forums.fast.ai/uploads/default/optimized/3X/2/a/2a249910c04e58ec006290f08688e7b0f8aeea81_2_690x56.png" alt="training-set-images" width="690" height="56" srcset="https://forums.fast.ai/uploads/default/optimized/3X/2/a/2a249910c04e58ec006290f08688e7b0f8aeea81_2_690x56.png, https://forums.fast.ai/uploads/default/optimized/3X/2/a/2a249910c04e58ec006290f08688e7b0f8aeea81_2_1035x84.png 1.5x, https://forums.fast.ai/uploads/default/optimized/3X/2/a/2a249910c04e58ec006290f08688e7b0f8aeea81_2_1380x112.png 2x">
+
+- How to run all the models with specifications without running out of memory
+
+<img src="https://forums.fast.ai/uploads/default/optimized/3X/a/e/ae921c0da2bf64fe0e3d890f7cf3effe0e8369d5_2_690x304.jpeg" alt="run-all-models-without-out-memory" width="690" height="304" srcset="https://forums.fast.ai/uploads/default/optimized/3X/a/e/ae921c0da2bf64fe0e3d890f7cf3effe0e8369d5_2_690x304.jpeg, https://forums.fast.ai/uploads/default/optimized/3X/a/e/ae921c0da2bf64fe0e3d890f7cf3effe0e8369d5_2_1035x456.jpeg 1.5x, https://forums.fast.ai/uploads/default/optimized/3X/a/e/ae921c0da2bf64fe0e3d890f7cf3effe0e8369d5_2_1380x608.jpeg 2x">
+
+- Why does Jeremy don’t use `seed=42` here in training? What is the effect?
+- What is ensemble or bagging of different good deep learning architectures? Why it is useful?
+- How to do the ensemble of different deep learning models?
+
+<img src="https://forums.fast.ai/uploads/default/optimized/3X/e/2/e2960f76f91dcb5e888127e89ce267d08a6eb1bb_2_690x349.jpeg" alt="ensemble1" width="690" height="349" srcset="https://forums.fast.ai/uploads/default/optimized/3X/e/2/e2960f76f91dcb5e888127e89ce267d08a6eb1bb_2_690x349.jpeg, https://forums.fast.ai/uploads/default/optimized/3X/e/2/e2960f76f91dcb5e888127e89ce267d08a6eb1bb_2_1035x523.jpeg 1.5x, https://forums.fast.ai/uploads/default/optimized/3X/e/2/e2960f76f91dcb5e888127e89ce267d08a6eb1bb_2_1380x698.jpeg 2x">
+
+
+<img src="https://forums.fast.ai/uploads/default/optimized/3X/4/3/43a6e2e47b5d49d201353fff1b15279f149b8d08_2_690x295.jpeg" alt="ensemble2" width="690" height="295" srcset="https://forums.fast.ai/uploads/default/optimized/3X/4/3/43a6e2e47b5d49d201353fff1b15279f149b8d08_2_690x295.jpeg, https://forums.fast.ai/uploads/default/optimized/3X/4/3/43a6e2e47b5d49d201353fff1b15279f149b8d08_2_1035x442.jpeg 1.5x, https://forums.fast.ai/uploads/default/optimized/3X/4/3/43a6e2e47b5d49d201353fff1b15279f149b8d08_2_1380x590.jpeg 2x">
+
+
+<img src="https://forums.fast.ai/uploads/default/optimized/3X/4/5/45548cc497f861df5b5c4a1234bc17aee41d7cee_2_690x317.jpeg" alt="ensemble3" width="690" height="317" srcset="https://forums.fast.ai/uploads/default/optimized/3X/4/5/45548cc497f861df5b5c4a1234bc17aee41d7cee_2_690x317.jpeg, https://forums.fast.ai/uploads/default/optimized/3X/4/5/45548cc497f861df5b5c4a1234bc17aee41d7cee_2_1035x475.jpeg 1.5x, https://forums.fast.ai/uploads/default/optimized/3X/4/5/45548cc497f861df5b5c4a1234bc17aee41d7cee_2_1380x634.jpeg 2x">
+
+
+<img src="https://forums.fast.ai/uploads/default/optimized/3X/5/1/51f580a36eab28daedbb68779840e1963c85f03b_2_690x183.png" alt="ensemble4" width="690" height="183" srcset="https://forums.fast.ai/uploads/default/optimized/3X/5/1/51f580a36eab28daedbb68779840e1963c85f03b_2_690x183.png, https://forums.fast.ai/uploads/default/optimized/3X/5/1/51f580a36eab28daedbb68779840e1963c85f03b_2_1035x274.png 1.5x, https://forums.fast.ai/uploads/default/optimized/3X/5/1/51f580a36eab28daedbb68779840e1963c85f03b_2_1380x366.png 2x">
+
+- Why should we improve and submit to Kaggle everyday? How the submission history can help trace your models developments and improvement?
+- More questions: What is k-fold cross-validation and how can it be applied in this case? Why does Jeremy don’t use it?
+- Are there any drawbacks of GradientAccumulation? Any GPU recommendations?
+- In part 2 Jeremy may cover how to train a smaller model to do well as in large models for faster inference
+
+## Multi-target model
+
+- How to set the data split and item and batch transformations?
+
+<img src="https://forums.fast.ai/uploads/default/optimized/3X/6/7/6708adef38cb0f664442d2e9e3f846fda75a045d_2_690x235.png" alt="datablock-2-labels" width="690" height="235" srcset="https://forums.fast.ai/uploads/default/optimized/3X/6/7/6708adef38cb0f664442d2e9e3f846fda75a045d_2_690x235.png, https://forums.fast.ai/uploads/default/optimized/3X/6/7/6708adef38cb0f664442d2e9e3f846fda75a045d_2_1035x352.png 1.5x, https://forums.fast.ai/uploads/default/optimized/3X/6/7/6708adef38cb0f664442d2e9e3f846fda75a045d_2_1380x470.png 2x">
+
+- How to create a model to predict both disease and variety types? Can we see predicting both disease and variety in terms of predicting 20 things, 10 for disease, 10 for variety?
+- What does the new model (and new dataloaders) need now to make predictions on disease?
+
+<img src="https://forums.fast.ai/uploads/default/optimized/3X/4/8/48c068723f1b2f8c4205d02c96d9f5d6e2d65189_2_690x254.jpeg" alt="new-disease-error-rate-loss" width="690" height="254" srcset="https://forums.fast.ai/uploads/default/optimized/3X/4/8/48c068723f1b2f8c4205d02c96d9f5d6e2d65189_2_690x254.jpeg, https://forums.fast.ai/uploads/default/optimized/3X/4/8/48c068723f1b2f8c4205d02c96d9f5d6e2d65189_2_1035x381.jpeg 1.5x, https://forums.fast.ai/uploads/default/optimized/3X/4/8/48c068723f1b2f8c4205d02c96d9f5d6e2d65189_2_1380x508.jpeg 2x">
+
+<img src="https://forums.fast.ai/uploads/default/optimized/3X/4/e/4ee51a1545b8b3f3d8ea0a0b485d45dddc1a2a90_2_690x159.png" alt="new-model" width="690" height="159" srcset="https://forums.fast.ai/uploads/default/optimized/3X/4/e/4ee51a1545b8b3f3d8ea0a0b485d45dddc1a2a90_2_690x159.png, https://forums.fast.ai/uploads/default/optimized/3X/4/e/4ee51a1545b8b3f3d8ea0a0b485d45dddc1a2a90_2_1035x238.png 1.5x, https://forums.fast.ai/uploads/default/optimized/3X/4/e/4ee51a1545b8b3f3d8ea0a0b485d45dddc1a2a90_2_1380x318.png 2x">
+
+- When and how to provide our own loss function? fastai can detect appropriate loss for your datalaoders and use it by default in simple cases. In this special case, How do we create and use our custom loss for the new model?
+
+## Cross-entropy and softmax
+
+- What does `F.cross_entropy` do exactly? This function belong to the first and last layer, therefore we must understand them. What is the raw output of the model of predicting 5 things?
+
+<img src="https://forums.fast.ai/uploads/default/optimized/3X/5/6/563e70daa1930078e47617c7c2db3897446f3848_2_544x500.jpeg" alt="softmax1" width="544" height="500" srcset="https://forums.fast.ai/uploads/default/optimized/3X/5/6/563e70daa1930078e47617c7c2db3897446f3848_2_544x500.jpeg, https://forums.fast.ai/uploads/default/optimized/3X/5/6/563e70daa1930078e47617c7c2db3897446f3848_2_816x750.jpeg 1.5x, https://forums.fast.ai/uploads/default/optimized/3X/5/6/563e70daa1930078e47617c7c2db3897446f3848_2_1088x1000.jpeg 2x">
+
+- What is the formula of softmax and How to calculate it in the spreadsheet?
+
+<img src="https://forums.fast.ai/uploads/default/optimized/3X/0/b/0bee952ff080de7e7b050fa9e81dd483414da494_2_645x500.jpeg" alt="softmax-calculated" width="645" height="500" srcset="https://forums.fast.ai/uploads/default/optimized/3X/0/b/0bee952ff080de7e7b050fa9e81dd483414da494_2_645x500.jpeg, https://forums.fast.ai/uploads/default/optimized/3X/0/b/0bee952ff080de7e7b050fa9e81dd483414da494_2_967x750.jpeg 1.5x, https://forums.fast.ai/uploads/default/optimized/3X/0/b/0bee952ff080de7e7b050fa9e81dd483414da494_2_1290x1000.jpeg 2x">
+
+- What is the problem of softmax? How does it make the obvious wrong prediction when given a cat image to the bear classifier?
+- What can we do about the problem of the softmax above? (all prediction probabilities not adding up to 1). When do you use softmax and when not to?
+- What is the first part of the cross_entropy loss formula?
+
+<img src="https://forums.fast.ai/uploads/default/optimized/3X/6/1/613442943a389b25d30f73afe94a2172da533018_2_690x495.jpeg" alt="part1-crossentropy" width="690" height="495" srcset="https://forums.fast.ai/uploads/default/optimized/3X/6/1/613442943a389b25d30f73afe94a2172da533018_2_690x495.jpeg, https://forums.fast.ai/uploads/default/optimized/3X/6/1/613442943a389b25d30f73afe94a2172da533018_2_1035x742.jpeg 1.5x, https://forums.fast.ai/uploads/default/optimized/3X/6/1/613442943a389b25d30f73afe94a2172da533018_2_1380x990.jpeg 2x">
+
+- How to calculate cross-entropy from softmax?
+
+<img src="https://forums.fast.ai/uploads/default/optimized/3X/8/5/8546446e26005bcfb41f2dbea8f094ea6044c9cf_2_620x500.jpeg" alt="calc-cross-entropy" width="620" height="500" srcset="https://forums.fast.ai/uploads/default/optimized/3X/8/5/8546446e26005bcfb41f2dbea8f094ea6044c9cf_2_620x500.jpeg, https://forums.fast.ai/uploads/default/optimized/3X/8/5/8546446e26005bcfb41f2dbea8f094ea6044c9cf_2_930x750.jpeg 1.5x, https://forums.fast.ai/uploads/default/optimized/3X/8/5/8546446e26005bcfb41f2dbea8f094ea6044c9cf_2_1240x1000.jpeg 2x">
+
+- How to calculate binary-cross-entropy? How to understand its formula in predicting whether it is a cat or non-cat image? How to finally get the binary cross-entropy loss of a batch of 5 images?
+
+<img src="https://forums.fast.ai/uploads/default/optimized/3X/d/7/d7194a9f6353d643b0a9472756fa076dfd335597_2_690x473.jpeg" alt="binary-cross-entropy-calc" width="690" height="473" srcset="https://forums.fast.ai/uploads/default/optimized/3X/d/7/d7194a9f6353d643b0a9472756fa076dfd335597_2_690x473.jpeg, https://forums.fast.ai/uploads/default/optimized/3X/d/7/d7194a9f6353d643b0a9472756fa076dfd335597_2_1035x709.jpeg 1.5x, https://forums.fast.ai/uploads/default/optimized/3X/d/7/d7194a9f6353d643b0a9472756fa076dfd335597_2_1380x946.jpeg 2x">
+
+- What are two versions of cross-entropy in pytorch? and when to use each version? Which version do we use here?
+
+<img src="https://forums.fast.ai/uploads/default/optimized/3X/2/2/2245e4c140536aad1ef5b72a9543afda38ac65a5_2_690x264.jpeg" alt="cross-entropy-v1" width="690" height="264" srcset="https://forums.fast.ai/uploads/default/optimized/3X/2/2/2245e4c140536aad1ef5b72a9543afda38ac65a5_2_690x264.jpeg, https://forums.fast.ai/uploads/default/optimized/3X/2/2/2245e4c140536aad1ef5b72a9543afda38ac65a5_2_1035x396.jpeg 1.5x, https://forums.fast.ai/uploads/default/optimized/3X/2/2/2245e4c140536aad1ef5b72a9543afda38ac65a5_2_1380x528.jpeg 2x">
+
+
+<img src="https://forums.fast.ai/uploads/default/optimized/3X/2/a/2ab6375dd73126e7635687a7fd3110b305eedded_2_690x114.png" alt="cross-entropy-v2" width="690" height="114" srcset="https://forums.fast.ai/uploads/default/optimized/3X/2/a/2ab6375dd73126e7635687a7fd3110b305eedded_2_690x114.png, https://forums.fast.ai/uploads/default/optimized/3X/2/a/2ab6375dd73126e7635687a7fd3110b305eedded_2_1035x171.png 1.5x, https://forums.fast.ai/uploads/default/optimized/3X/2/a/2ab6375dd73126e7635687a7fd3110b305eedded_2_1380x228.png 2x">
+
+## Multi-target activations
+
+- With a dataloader having two targets, our new model needs to be informed what exactly is the loss func, metrics, and the size of output?
+
+<img src="https://forums.fast.ai/uploads/default/optimized/3X/2/2/222cd9dc5c842f4a39c8046b85ac640c65664f82_2_690x182.jpeg" alt="model-specifications" width="690" height="182" srcset="https://forums.fast.ai/uploads/default/optimized/3X/2/2/222cd9dc5c842f4a39c8046b85ac640c65664f82_2_690x182.jpeg, https://forums.fast.ai/uploads/default/optimized/3X/2/2/222cd9dc5c842f4a39c8046b85ac640c65664f82_2_1035x273.jpeg 1.5x, https://forums.fast.ai/uploads/default/optimized/3X/2/2/222cd9dc5c842f4a39c8046b85ac640c65664f82_2_1380x364.jpeg 2x">
+
+- How to create a learner for prediction two targets or 20 items? How does a learner use disease and variety losses to know which 10 items are disease predictions and which 10 are variety predictions? How to combine two loss functions together? How to understand the combined loss?
+
+<img src="https://forums.fast.ai/uploads/default/optimized/3X/a/8/a877afc66e453b40fd4194e9070c33505470975e_2_690x127.png" alt="model-output-20" width="690" height="127" srcset="https://forums.fast.ai/uploads/default/optimized/3X/a/8/a877afc66e453b40fd4194e9070c33505470975e_2_690x127.png, https://forums.fast.ai/uploads/default/optimized/3X/a/8/a877afc66e453b40fd4194e9070c33505470975e_2_1035x190.png 1.5x, https://forums.fast.ai/uploads/default/optimized/3X/a/8/a877afc66e453b40fd4194e9070c33505470975e_2_1380x254.png 2x">
+
+<img src="https://forums.fast.ai/uploads/default/optimized/3X/6/6/665c97da404c8608e3d198db8812c895e5c93660_2_690x151.png" alt="loss-disease" width="690" height="151" srcset="https://forums.fast.ai/uploads/default/optimized/3X/6/6/665c97da404c8608e3d198db8812c895e5c93660_2_690x151.png, https://forums.fast.ai/uploads/default/optimized/3X/6/6/665c97da404c8608e3d198db8812c895e5c93660_2_1035x226.png 1.5x, https://forums.fast.ai/uploads/default/optimized/3X/6/6/665c97da404c8608e3d198db8812c895e5c93660_2_1380x302.png 2x">
+
+<img src="https://forums.fast.ai/uploads/default/optimized/3X/7/b/7b91f907777aa2cb90cf68c1878c903c444694f1_2_690x139.png" alt="loss-variety" width="690" height="139" srcset="https://forums.fast.ai/uploads/default/optimized/3X/7/b/7b91f907777aa2cb90cf68c1878c903c444694f1_2_690x139.png, https://forums.fast.ai/uploads/default/optimized/3X/7/b/7b91f907777aa2cb90cf68c1878c903c444694f1_2_1035x208.png 1.5x, https://forums.fast.ai/uploads/default/optimized/3X/7/b/7b91f907777aa2cb90cf68c1878c903c444694f1_2_1380x278.png 2x">
+
+<img src="https://forums.fast.ai/uploads/default/optimized/3X/a/6/a61748d386d2c9bcbcd6f2555a88f3d058529bcf_2_690x132.png" alt="combine-loss" width="690" height="132" srcset="https://forums.fast.ai/uploads/default/optimized/3X/a/6/a61748d386d2c9bcbcd6f2555a88f3d058529bcf_2_690x132.png, https://forums.fast.ai/uploads/default/optimized/3X/a/6/a61748d386d2c9bcbcd6f2555a88f3d058529bcf_2_1035x198.png 1.5x, https://forums.fast.ai/uploads/default/optimized/3X/a/6/a61748d386d2c9bcbcd6f2555a88f3d058529bcf_2_1380x264.png 2x">
+
+- How to calc error rate for disease types and variety types? How to put them together and display them during training?
+
+<img src="https://forums.fast.ai/uploads/default/optimized/3X/9/0/90658b962d8ec66766ed27c63af27424cabe6613_2_690x279.jpeg" alt="metrics-all-together" width="690" height="279" srcset="https://forums.fast.ai/uploads/default/optimized/3X/9/0/90658b962d8ec66766ed27c63af27424cabe6613_2_690x279.jpeg, https://forums.fast.ai/uploads/default/optimized/3X/9/0/90658b962d8ec66766ed27c63af27424cabe6613_2_1035x418.jpeg 1.5x, https://forums.fast.ai/uploads/default/optimized/3X/9/0/90658b962d8ec66766ed27c63af27424cabe6613_2_1380x558.jpeg 2x">
+
+- How to make the new learner and how did it train? Why the multi-task model didn’t improve and even a little worse than the previous model? Why training the multi-task model longer could improve the accuracy on disease prediction? Why predicting a second thing together could help improve the prediction of the first thing? Using multi-task model did improve the result in a Kaggle fish prediction competition Jeremy did before. What are the reasons or benefits for building multi-task models?
+
+<img src="https://forums.fast.ai/uploads/default/optimized/3X/0/f/0f18c85770f6737745434ab2b4812fc73854baa1_2_690x138.png" alt="train-combined-loss-metrics-all" width="690" height="138" srcset="https://forums.fast.ai/uploads/default/optimized/3X/0/f/0f18c85770f6737745434ab2b4812fc73854baa1_2_690x138.png, https://forums.fast.ai/uploads/default/optimized/3X/0/f/0f18c85770f6737745434ab2b4812fc73854baa1_2_1035x207.png 1.5x, https://forums.fast.ai/uploads/default/optimized/3X/0/f/0f18c85770f6737745434ab2b4812fc73854baa1_2_1380x276.png 2x">
+
+<img src="https://forums.fast.ai/uploads/default/optimized/3X/a/0/a0ce75a163a66d0c5f00875347ea1abdb3379fb7_2_690x363.jpeg" alt="result-little-worse" width="690" height="363" srcset="https://forums.fast.ai/uploads/default/optimized/3X/a/0/a0ce75a163a66d0c5f00875347ea1abdb3379fb7_2_690x363.jpeg, https://forums.fast.ai/uploads/default/optimized/3X/a/0/a0ce75a163a66d0c5f00875347ea1abdb3379fb7_2_1035x544.jpeg 1.5x, https://forums.fast.ai/uploads/default/optimized/3X/a/0/a0ce75a163a66d0c5f00875347ea1abdb3379fb7_2_1380x726.jpeg 2x">
+
+ How to make multi-task modeling less confusing to you? (build a multi-task for Titanic dataset from scratch; explore and experiment this notebook)
+by Chris Said of binary-cross-entropy?
+
+## Collaborative filtering
+
+- Collaborative filtering deep dive as chp 8 without change. What is the dataset used? Which version of the data we are using? How to read a tsv file using pandas? How to read/understand the dataset content/columns? recommendation system industry and Radek. How does Jeremy prefer to see the data? (cross tabulated) Why the image Jeremy talking about his preferred way of seeing the data has so few empty or missing data?
+
+<img src="https://forums.fast.ai/uploads/default/optimized/3X/e/c/ec8cf3b5f0af012bc4fca4cf1b82f55fab674aae_2_690x219.jpeg" alt="dataset" width="690" height="219" srcset="https://forums.fast.ai/uploads/default/optimized/3X/e/c/ec8cf3b5f0af012bc4fca4cf1b82f55fab674aae_2_690x219.jpeg, https://forums.fast.ai/uploads/default/optimized/3X/e/c/ec8cf3b5f0af012bc4fca4cf1b82f55fab674aae_2_1035x328.jpeg 1.5x, https://forums.fast.ai/uploads/default/optimized/3X/e/c/ec8cf3b5f0af012bc4fca4cf1b82f55fab674aae_2_1380x438.jpeg 2x">
+
+<img src="https://forums.fast.ai/uploads/default/optimized/3X/a/9/a97bf7cf60d140f3b43748d771fd6a4fedb1cf3b_2_690x332.jpeg" alt="read-tsv" width="690" height="332" srcset="https://forums.fast.ai/uploads/default/optimized/3X/a/9/a97bf7cf60d140f3b43748d771fd6a4fedb1cf3b_2_690x332.jpeg, https://forums.fast.ai/uploads/default/optimized/3X/a/9/a97bf7cf60d140f3b43748d771fd6a4fedb1cf3b_2_1035x498.jpeg 1.5x, https://forums.fast.ai/uploads/default/optimized/3X/a/9/a97bf7cf60d140f3b43748d771fd6a4fedb1cf3b_2_1380x664.jpeg 2x">
+
+<img src="https://forums.fast.ai/uploads/default/optimized/3X/6/4/64d971d762156b93315e3fd15e9f49cb0987f0e8_2_690x313.jpeg" alt="Jeremy-see-this-way" width="690" height="313" srcset="https://forums.fast.ai/uploads/default/optimized/3X/6/4/64d971d762156b93315e3fd15e9f49cb0987f0e8_2_690x313.jpeg, https://forums.fast.ai/uploads/default/optimized/3X/6/4/64d971d762156b93315e3fd15e9f49cb0987f0e8_2_1035x469.jpeg 1.5x, https://forums.fast.ai/uploads/default/optimized/3X/6/4/64d971d762156b93315e3fd15e9f49cb0987f0e8_2_1380x626.jpeg 2x">
+
+- How to fill in the missing data or gaps in the cross tabulated dataset? How to figure out whether a new user would like a particular movie which he/she has not watched before? Can we figure out what kind/genre of movie is the particular movie we are talking here? What does the type probabilities of a movie look like? What does a user’s preference probabilities look like? If we match the two sets of probabilities up, can we know how much does the user like the movie? How do we calculate that?
+
+<img src="https://forums.fast.ai/uploads/default/optimized/3X/5/9/592b2fdb4fb49e0dc932863c8035b5016cbf4425_2_690x188.jpeg" alt="types-movie" width="690" height="188" srcset="https://forums.fast.ai/uploads/default/optimized/3X/5/9/592b2fdb4fb49e0dc932863c8035b5016cbf4425_2_690x188.jpeg, https://forums.fast.ai/uploads/default/optimized/3X/5/9/592b2fdb4fb49e0dc932863c8035b5016cbf4425_2_1035x282.jpeg 1.5x, https://forums.fast.ai/uploads/default/optimized/3X/5/9/592b2fdb4fb49e0dc932863c8035b5016cbf4425_2_1380x376.jpeg 2x">
+
+
+<img src="https://forums.fast.ai/uploads/default/optimized/3X/4/f/4f5531e5b7200f92d3a9af4247df3f504d1024af_2_690x292.jpeg" alt="user-preference-sum" width="690" height="292" srcset="https://forums.fast.ai/uploads/default/optimized/3X/4/f/4f5531e5b7200f92d3a9af4247df3f504d1024af_2_690x292.jpeg, https://forums.fast.ai/uploads/default/optimized/3X/4/f/4f5531e5b7200f92d3a9af4247df3f504d1024af_2_1035x438.jpeg 1.5x, https://forums.fast.ai/uploads/default/optimized/3X/4/f/4f5531e5b7200f92d3a9af4247df3f504d1024af_2_1380x584.jpeg 2x">
+
+
+<img src="https://forums.fast.ai/uploads/default/optimized/3X/c/0/c00851f68905b8243d3b73658463e979ac2ee73b_2_690x304.png" alt="lower-value" width="690" height="304" srcset="https://forums.fast.ai/uploads/default/optimized/3X/c/0/c00851f68905b8243d3b73658463e979ac2ee73b_2_690x304.png, https://forums.fast.ai/uploads/default/optimized/3X/c/0/c00851f68905b8243d3b73658463e979ac2ee73b_2_1035x456.png 1.5x, https://forums.fast.ai/uploads/default/optimized/3X/c/0/c00851f68905b8243d3b73658463e979ac2ee73b_2_1380x608.png 2x">
+
+- So far so good, what is the problem of the approach of doing dot product between user preference probabilities and movie type probabilities to find out our new user’s rating of the movie? (we don’t know neither of the probabilities). How are we going to deal with this problem? Can we create such movie type probabilities without knowing even the types?
+- What is the latent factors? If I don’t know anything about the movies, can we use SGD (stochastic gradient descent) to find them? Can we create a random 5 numbers as a movie’s 5 latent factors for describing the types of the movie, and figure them out later? Can we create latent factors for each user too? Now how to calc the probability of a user likes a movie? (mmult or dot product between two groups of latent factors).
+
+<img src="https://forums.fast.ai/uploads/default/optimized/3X/3/2/329b0259a8e6b1d8e4bd225dbf378efe9e189be0_2_690x456.jpeg" alt="latent-factors-movie" width="690" height="456" srcset="https://forums.fast.ai/uploads/default/optimized/3X/3/2/329b0259a8e6b1d8e4bd225dbf378efe9e189be0_2_690x456.jpeg, https://forums.fast.ai/uploads/default/optimized/3X/3/2/329b0259a8e6b1d8e4bd225dbf378efe9e189be0_2_1035x684.jpeg 1.5x, https://forums.fast.ai/uploads/default/optimized/3X/3/2/329b0259a8e6b1d8e4bd225dbf378efe9e189be0_2_1380x912.jpeg 2x">
+
+
+<img src="https://forums.fast.ai/uploads/default/optimized/3X/d/c/dc1b0d2e8e766a0750c94881c77bad576fee0fdd_2_690x386.jpeg" alt="latent-factor-for-all-movies" width="690" height="386" srcset="https://forums.fast.ai/uploads/default/optimized/3X/d/c/dc1b0d2e8e766a0750c94881c77bad576fee0fdd_2_690x386.jpeg, https://forums.fast.ai/uploads/default/optimized/3X/d/c/dc1b0d2e8e766a0750c94881c77bad576fee0fdd_2_1035x579.jpeg 1.5x, https://forums.fast.ai/uploads/default/optimized/3X/d/c/dc1b0d2e8e766a0750c94881c77bad576fee0fdd_2_1380x772.jpeg 2x">
+
+<img src="https://forums.fast.ai/uploads/default/original/3X/0/4/043d85eca9ca0e2198ba5f1b6fa629ba470cebfe.jpeg" alt="latent-factors-user" width="554" height="500">
+
+<img src="https://forums.fast.ai/uploads/default/optimized/3X/7/6/7628a9b85d34d0383be3c904f3a7c0c49e9a2484_2_690x405.jpeg" alt="matrix-multiply-dot-product" width="690" height="405" srcset="https://forums.fast.ai/uploads/default/optimized/3X/7/6/7628a9b85d34d0383be3c904f3a7c0c49e9a2484_2_690x405.jpeg, https://forums.fast.ai/uploads/default/optimized/3X/7/6/7628a9b85d34d0383be3c904f3a7c0c49e9a2484_2_1035x607.jpeg 1.5x, https://forums.fast.ai/uploads/default/original/3X/7/6/7628a9b85d34d0383be3c904f3a7c0c49e9a2484.jpeg 2x">
+
+- Now the mmult or dot product can give us the prediction of how much a user likes a movie, so we can compare predictions with true label. What to do when there is a missing label or data? (we make the prediction empty or zero). Can we use SGD to improve the latent factors by comparing predictions with labels using a loss function? How to use excel solver to update latent factors using SGD and the loss?
+
+<img src="https://forums.fast.ai/uploads/default/optimized/3X/e/f/ef6ab1294f1093259e4c5df1c921703361fdd384_2_670x500.jpeg" alt="missing-data-empty" width="670" height="500" srcset="https://forums.fast.ai/uploads/default/optimized/3X/e/f/ef6ab1294f1093259e4c5df1c921703361fdd384_2_670x500.jpeg, https://forums.fast.ai/uploads/default/optimized/3X/e/f/ef6ab1294f1093259e4c5df1c921703361fdd384_2_1005x750.jpeg 1.5x, https://forums.fast.ai/uploads/default/original/3X/e/f/ef6ab1294f1093259e4c5df1c921703361fdd384.jpeg 2x">
+
+<img src="https://forums.fast.ai/uploads/default/optimized/3X/0/4/04fbaa36a4c360959c0a826caba9592b0b5514c9_2_523x500.jpeg" alt="make-missing-zero" width="523" height="500" srcset="https://forums.fast.ai/uploads/default/optimized/3X/0/4/04fbaa36a4c360959c0a826caba9592b0b5514c9_2_523x500.jpeg, https://forums.fast.ai/uploads/default/optimized/3X/0/4/04fbaa36a4c360959c0a826caba9592b0b5514c9_2_784x750.jpeg 1.5x, https://forums.fast.ai/uploads/default/optimized/3X/0/4/04fbaa36a4c360959c0a826caba9592b0b5514c9_2_1046x1000.jpeg 2x">
+
+<img src="https://forums.fast.ai/uploads/default/optimized/3X/7/5/755438b324e3799f6ce766c713c6b5036ae8bf81_2_690x362.jpeg" alt="the-loss-pred-label" width="690" height="362" srcset="https://forums.fast.ai/uploads/default/optimized/3X/7/5/755438b324e3799f6ce766c713c6b5036ae8bf81_2_690x362.jpeg, https://forums.fast.ai/uploads/default/optimized/3X/7/5/755438b324e3799f6ce766c713c6b5036ae8bf81_2_1035x543.jpeg 1.5x, https://forums.fast.ai/uploads/default/optimized/3X/7/5/755438b324e3799f6ce766c713c6b5036ae8bf81_2_1380x724.jpeg 2x">
+
+<img src="https://forums.fast.ai/uploads/default/optimized/3X/0/1/0159ecab4e53556ebdad0b406b13b73805ad6616_2_690x427.jpeg" alt="excel-solver" width="690" height="427" srcset="https://forums.fast.ai/uploads/default/optimized/3X/0/1/0159ecab4e53556ebdad0b406b13b73805ad6616_2_690x427.jpeg, https://forums.fast.ai/uploads/default/optimized/3X/0/1/0159ecab4e53556ebdad0b406b13b73805ad6616_2_1035x640.jpeg 1.5x, https://forums.fast.ai/uploads/default/optimized/3X/0/1/0159ecab4e53556ebdad0b406b13b73805ad6616_2_1380x854.jpeg 2x">
+
+ Why excel is so slow on calc gradients with even small dataset? What is the basis of collaborative filtering? (if we know A likes (a, b, c) and B likes (a, b, c), then if A likes (d, e), maybe B likes (d, e) too).
+- Is the cosine of an angle between two vectors  is the same thing as the dot product?
+- How do we do the things above in pytorch as they have different data format from excel? What does the dataset would look like in pytorch?
+
+<img src="https://forums.fast.ai/uploads/default/optimized/3X/b/a/ba1b5333c95a803967c9b6b3b5922f6200aec599_2_690x326.jpeg" alt="collab-dataset-pytorch" width="690" height="326" srcset="https://forums.fast.ai/uploads/default/optimized/3X/b/a/ba1b5333c95a803967c9b6b3b5922f6200aec599_2_690x326.jpeg, https://forums.fast.ai/uploads/default/optimized/3X/b/a/ba1b5333c95a803967c9b6b3b5922f6200aec599_2_1035x489.jpeg 1.5x, https://forums.fast.ai/uploads/default/optimized/3X/b/a/ba1b5333c95a803967c9b6b3b5922f6200aec599_2_1380x652.jpeg 2x">
+
+## Embeddings
+
+- What is embedding? What are embedding matrix, user embeddings, and movie embeddings? (embeddings = look up something in an array).  The more intimidating words created in a field, the less intimidating the field actually is.
+
+<img src="https://forums.fast.ai/uploads/default/optimized/3X/2/c/2c3081a4e2471d0dc86d6a4e76751662ebb27739_2_690x279.jpeg" alt="embeddings" width="690" height="279" srcset="https://forums.fast.ai/uploads/default/optimized/3X/2/c/2c3081a4e2471d0dc86d6a4e76751662ebb27739_2_690x279.jpeg, https://forums.fast.ai/uploads/default/optimized/3X/2/c/2c3081a4e2471d0dc86d6a4e76751662ebb27739_2_1035x418.jpeg 1.5x, https://forums.fast.ai/uploads/default/optimized/3X/2/c/2c3081a4e2471d0dc86d6a4e76751662ebb27739_2_1380x558.jpeg 2x">
+
+- What does our dataset look like before building a dataloaders on it? How to create a dataloaders for collaborative filtering using `CollabDataloaders.from_df`? What does its `show_batch` look like? How do we create the user and movie latent factors algetother?
+
+<img src="https://forums.fast.ai/uploads/default/optimized/3X/7/5/758eb7bc56f1562e7dbe2525c359cc80ae55cc23_2_610x500.jpeg" alt="dataset-movie-dataloader" width="610" height="500" srcset="https://forums.fast.ai/uploads/default/optimized/3X/7/5/758eb7bc56f1562e7dbe2525c359cc80ae55cc23_2_610x500.jpeg, https://forums.fast.ai/uploads/default/optimized/3X/7/5/758eb7bc56f1562e7dbe2525c359cc80ae55cc23_2_915x750.jpeg 1.5x, https://forums.fast.ai/uploads/default/optimized/3X/7/5/758eb7bc56f1562e7dbe2525c359cc80ae55cc23_2_1220x1000.jpeg 2x">
+
+<img src="https://forums.fast.ai/uploads/default/optimized/3X/8/f/8f28b35c026c563c233282bbe7393cb9af0d4b67_2_690x172.jpeg" alt="build-dataloader-cf" width="690" height="172" srcset="https://forums.fast.ai/uploads/default/optimized/3X/8/f/8f28b35c026c563c233282bbe7393cb9af0d4b67_2_690x172.jpeg, https://forums.fast.ai/uploads/default/optimized/3X/8/f/8f28b35c026c563c233282bbe7393cb9af0d4b67_2_1035x258.jpeg 1.5x, https://forums.fast.ai/uploads/default/optimized/3X/8/f/8f28b35c026c563c233282bbe7393cb9af0d4b67_2_1380x344.jpeg 2x">
+
+<img src="https://forums.fast.ai/uploads/default/optimized/3X/a/9/a9d0bdf31e8734a7c0ed40edd1ef3e36e53c2298_2_690x397.jpeg" alt="cf-show-batch" width="690" height="397" srcset="https://forums.fast.ai/uploads/default/optimized/3X/a/9/a9d0bdf31e8734a7c0ed40edd1ef3e36e53c2298_2_690x397.jpeg, https://forums.fast.ai/uploads/default/optimized/3X/a/9/a9d0bdf31e8734a7c0ed40edd1ef3e36e53c2298_2_1035x595.jpeg 1.5x, https://forums.fast.ai/uploads/default/optimized/3X/a/9/a9d0bdf31e8734a7c0ed40edd1ef3e36e53c2298_2_1380x794.jpeg 2x">
+
+<img src="https://forums.fast.ai/uploads/default/optimized/3X/7/8/7838f8430473f724a2e3e5156a25f7d6bda54b72_2_690x211.png" alt="create-latent-factors" width="690" height="211" srcset="https://forums.fast.ai/uploads/default/optimized/3X/7/8/7838f8430473f724a2e3e5156a25f7d6bda54b72_2_690x211.png, https://forums.fast.ai/uploads/default/optimized/3X/7/8/7838f8430473f724a2e3e5156a25f7d6bda54b72_2_1035x316.png 1.5x, https://forums.fast.ai/uploads/default/original/3X/7/8/7838f8430473f724a2e3e5156a25f7d6bda54b72.png 2x">
+
+- How do you choose  the number of latent factors in fastai?
+- How to understand looking up in excel for latent factors and doing dot product with one-hot embeddings are actually the same thing? Can we think of embeddings as a computational shortcut to multiply something by a one-hot-encoded vector? Can we think of embedding as a cook math trick of speeding up the matrix multiplication with dummy variables (without creating dummy variables nor one-hot encoded vector).
+
+<img src="https://forums.fast.ai/uploads/default/optimized/3X/1/f/1f254bae3830f4f79cc07b6c16a0511ac63bbfaf_2_690x345.png" alt="look-up-dot-product" width="690" height="345" srcset="https://forums.fast.ai/uploads/default/optimized/3X/1/f/1f254bae3830f4f79cc07b6c16a0511ac63bbfaf_2_690x345.png, https://forums.fast.ai/uploads/default/optimized/3X/1/f/1f254bae3830f4f79cc07b6c16a0511ac63bbfaf_2_1035x517.png 1.5x, https://forums.fast.ai/uploads/default/original/3X/1/f/1f254bae3830f4f79cc07b6c16a0511ac63bbfaf.png 2x">
+
+<img src="https://forums.fast.ai/uploads/default/optimized/3X/6/c/6c1dd2073754edda0a1bfe7acc38db80506396ba_2_690x243.jpeg" alt="one-hot-encoding-look-up" width="690" height="243" srcset="https://forums.fast.ai/uploads/default/optimized/3X/6/c/6c1dd2073754edda0a1bfe7acc38db80506396ba_2_690x243.jpeg, https://forums.fast.ai/uploads/default/optimized/3X/6/c/6c1dd2073754edda0a1bfe7acc38db80506396ba_2_1035x364.jpeg 1.5x, https://forums.fast.ai/uploads/default/optimized/3X/6/c/6c1dd2073754edda0a1bfe7acc38db80506396ba_2_1380x486.jpeg 2x">
+
+<img src="https://forums.fast.ai/uploads/default/optimized/3X/b/0/b0b6205134341c68799a9739bf55c105edc870dd_2_690x373.jpeg" alt="mmultiplication" width="690" height="373" srcset="https://forums.fast.ai/uploads/default/optimized/3X/b/0/b0b6205134341c68799a9739bf55c105edc870dd_2_690x373.jpeg, https://forums.fast.ai/uploads/default/optimized/3X/b/0/b0b6205134341c68799a9739bf55c105edc870dd_2_1035x559.jpeg 1.5x, https://forums.fast.ai/uploads/default/optimized/3X/b/0/b0b6205134341c68799a9739bf55c105edc870dd_2_1380x746.jpeg 2x">
+
+## Object oriented programming
+
+- How to build a collaborative filtering model from scratch? How do we create a class? (as a model is a class). How do we initiate a class object by `__init__`? Does `__init__` tell us what parameters to give in order to create a class instance? How does the class function `say` do? What is a super class? Where do we put it when creating a class? What does it give us? What is the super class (Module) for pytorch and fastai to use when creating a class? What does the `DotProduct` class look like?
+
+<img src="https://forums.fast.ai/uploads/default/optimized/3X/f/3/f39bb45a2a9aeec4c50c2230dbe546bbbd8ef903_2_690x244.jpeg" alt="learn-create-class" width="690" height="244" srcset="https://forums.fast.ai/uploads/default/optimized/3X/f/3/f39bb45a2a9aeec4c50c2230dbe546bbbd8ef903_2_690x244.jpeg, https://forums.fast.ai/uploads/default/optimized/3X/f/3/f39bb45a2a9aeec4c50c2230dbe546bbbd8ef903_2_1035x366.jpeg 1.5x, https://forums.fast.ai/uploads/default/optimized/3X/f/3/f39bb45a2a9aeec4c50c2230dbe546bbbd8ef903_2_1380x488.jpeg 2x">
+
+<img src="https://forums.fast.ai/uploads/default/optimized/3X/5/2/52e85a3c36db128d42865dbb4714073ae54b1415_2_690x157.png" alt="class-example" width="690" height="157" srcset="https://forums.fast.ai/uploads/default/optimized/3X/5/2/52e85a3c36db128d42865dbb4714073ae54b1415_2_690x157.png, https://forums.fast.ai/uploads/default/optimized/3X/5/2/52e85a3c36db128d42865dbb4714073ae54b1415_2_1035x235.png 1.5x, https://forums.fast.ai/uploads/default/optimized/3X/5/2/52e85a3c36db128d42865dbb4714073ae54b1415_2_1380x314.png 2x">
+
+<img src="https://forums.fast.ai/uploads/default/optimized/3X/9/5/958dd964f8d2dc24382de7a0799e03c960a6e43a_2_690x302.jpeg" alt="super-class" width="690" height="302" srcset="https://forums.fast.ai/uploads/default/optimized/3X/9/5/958dd964f8d2dc24382de7a0799e03c960a6e43a_2_690x302.jpeg, https://forums.fast.ai/uploads/default/optimized/3X/9/5/958dd964f8d2dc24382de7a0799e03c960a6e43a_2_1035x453.jpeg 1.5x, https://forums.fast.ai/uploads/default/optimized/3X/9/5/958dd964f8d2dc24382de7a0799e03c960a6e43a_2_1380x604.jpeg 2x">
+
+<img src="https://forums.fast.ai/uploads/default/optimized/3X/4/9/49d96bdbc7ea8dc9621aba7e72e9a901de712307_2_690x215.jpeg" alt="Dot-product-class" width="690" height="215" srcset="https://forums.fast.ai/uploads/default/optimized/3X/4/9/49d96bdbc7ea8dc9621aba7e72e9a901de712307_2_690x215.jpeg, https://forums.fast.ai/uploads/default/optimized/3X/4/9/49d96bdbc7ea8dc9621aba7e72e9a901de712307_2_1035x322.jpeg 1.5x, https://forums.fast.ai/uploads/default/optimized/3X/4/9/49d96bdbc7ea8dc9621aba7e72e9a901de712307_2_1380x430.jpeg 2x">
+
+- How to understand the `forward` function in the `DotProduct` class? What does `.sum(dim=1)` mean? (sum each row).
+
+<img src="https://forums.fast.ai/uploads/default/optimized/3X/7/b/7befe31f450692edb4c008b80ea0b59b2d54b2b8_2_690x220.jpeg" alt="forward-understanding" width="690" height="220" srcset="https://forums.fast.ai/uploads/default/optimized/3X/7/b/7befe31f450692edb4c008b80ea0b59b2d54b2b8_2_690x220.jpeg, https://forums.fast.ai/uploads/default/optimized/3X/7/b/7befe31f450692edb4c008b80ea0b59b2d54b2b8_2_1035x330.jpeg 1.5x, https://forums.fast.ai/uploads/default/optimized/3X/7/b/7befe31f450692edb4c008b80ea0b59b2d54b2b8_2_1380x440.jpeg 2x">
+
+## Improving collaborative filtering
+
+- How to create a collab learner and start training? The training is very fast even on CPU.
+
+<img src="https://forums.fast.ai/uploads/default/optimized/3X/4/2/426c364888d12db84268e7fa5f3feac9babb2d55_2_690x175.png" alt="one-batch-look-like" width="690" height="175" srcset="https://forums.fast.ai/uploads/default/optimized/3X/4/2/426c364888d12db84268e7fa5f3feac9babb2d55_2_690x175.png, https://forums.fast.ai/uploads/default/optimized/3X/4/2/426c364888d12db84268e7fa5f3feac9babb2d55_2_1035x262.png 1.5x, https://forums.fast.ai/uploads/default/optimized/3X/4/2/426c364888d12db84268e7fa5f3feac9babb2d55_2_1380x350.png 2x">
+
+
+<img src="https://forums.fast.ai/uploads/default/optimized/3X/9/8/980f8b59b9e8339f4b22f4786d9eb3f8c1c6f627_2_690x262.jpeg" alt="collab-learner" width="690" height="262" srcset="https://forums.fast.ai/uploads/default/optimized/3X/9/8/980f8b59b9e8339f4b22f4786d9eb3f8c1c6f627_2_690x262.jpeg, https://forums.fast.ai/uploads/default/optimized/3X/9/8/980f8b59b9e8339f4b22f4786d9eb3f8c1c6f627_2_1035x393.jpeg 1.5x, https://forums.fast.ai/uploads/default/optimized/3X/9/8/980f8b59b9e8339f4b22f4786d9eb3f8c1c6f627_2_1380x524.jpeg 2x">
+
+- Why this collab model above is not great? (people who give ratings are people who love movies, they don’t rarely give 1, but many high ratings. Whereas the predictions have many occassions with ratings over 5). Review the sigmoid usage. How can we do sigmoid transformation to the predictions? How does this sigmoid work? Why do we use the up limit of the range `5.5` instead of `5`?  Does adding sigmoid always improve the result?
+
+<img src="https://forums.fast.ai/uploads/default/optimized/3X/e/a/ea31571a3891e95cfc3ce1b1b52007dff4b7a94b_2_690x245.jpeg" alt="sigmoid-transform" width="690" height="245" srcset="https://forums.fast.ai/uploads/default/optimized/3X/e/a/ea31571a3891e95cfc3ce1b1b52007dff4b7a94b_2_690x245.jpeg, https://forums.fast.ai/uploads/default/optimized/3X/e/a/ea31571a3891e95cfc3ce1b1b52007dff4b7a94b_2_1035x367.jpeg 1.5x, https://forums.fast.ai/uploads/default/optimized/3X/e/a/ea31571a3891e95cfc3ce1b1b52007dff4b7a94b_2_1380x490.jpeg 2x">
+
+- What interesting things did Jeremy observe from the dataset? (some users like to give high ratings to all movies, some tend to dislike all movies). Can we add one bias value to both user and movie latent factors to explain this interesting observation? How to use the bias factors inside the collab model?
+
+<img src="https://forums.fast.ai/uploads/default/optimized/3X/b/b/bbb126f8323ca2c266f1c1867b57c7acb46f4bcd_2_690x282.jpeg" alt="user-tendency" width="690" height="282" srcset="https://forums.fast.ai/uploads/default/optimized/3X/b/b/bbb126f8323ca2c266f1c1867b57c7acb46f4bcd_2_690x282.jpeg, https://forums.fast.ai/uploads/default/optimized/3X/b/b/bbb126f8323ca2c266f1c1867b57c7acb46f4bcd_2_1035x423.jpeg 1.5x, https://forums.fast.ai/uploads/default/optimized/3X/b/b/bbb126f8323ca2c266f1c1867b57c7acb46f4bcd_2_1380x564.jpeg 2x">
+
+<img src="https://forums.fast.ai/uploads/default/optimized/3X/8/8/88b82221d76673d397e4f1e605f2d80134e344c4_2_690x448.jpeg" alt="bias-factor" width="690" height="448" srcset="https://forums.fast.ai/uploads/default/optimized/3X/8/8/88b82221d76673d397e4f1e605f2d80134e344c4_2_690x448.jpeg, https://forums.fast.ai/uploads/default/optimized/3X/8/8/88b82221d76673d397e4f1e605f2d80134e344c4_2_1035x672.jpeg 1.5x, https://forums.fast.ai/uploads/default/optimized/3X/8/8/88b82221d76673d397e4f1e605f2d80134e344c4_2_1380x896.jpeg 2x">
+
+<img src="https://forums.fast.ai/uploads/default/optimized/3X/0/d/0d68c8c1c93606101295312c8c9e96aaf69f308d_2_690x319.jpeg" alt="adding-biases-to-prediction" width="690" height="319" srcset="https://forums.fast.ai/uploads/default/optimized/3X/0/d/0d68c8c1c93606101295312c8c9e96aaf69f308d_2_690x319.jpeg, https://forums.fast.ai/uploads/default/optimized/3X/0/d/0d68c8c1c93606101295312c8c9e96aaf69f308d_2_1035x478.jpeg 1.5x, https://forums.fast.ai/uploads/default/optimized/3X/0/d/0d68c8c1c93606101295312c8c9e96aaf69f308d_2_1380x638.jpeg 2x">
+
+- Why did the upgraded model with bias get worse? (overfitting).
+
+<img src="https://forums.fast.ai/uploads/default/optimized/3X/1/5/15be1b4b512651c13de6f325e98ab67837020696_2_690x268.jpeg" alt="overfitting-collab" width="690" height="268" srcset="https://forums.fast.ai/uploads/default/optimized/3X/1/5/15be1b4b512651c13de6f325e98ab67837020696_2_690x268.jpeg, https://forums.fast.ai/uploads/default/optimized/3X/1/5/15be1b4b512651c13de6f325e98ab67837020696_2_1035x402.jpeg 1.5x, https://forums.fast.ai/uploads/default/optimized/3X/1/5/15be1b4b512651c13de6f325e98ab67837020696_2_1380x536.jpeg 2x">
+
+## Weight decay
+
+- What is weight decay and How does it help? How to understand weight decay in solving the problem of overfitting?
+
+<img src="https://forums.fast.ai/uploads/default/optimized/3X/2/b/2ba175a248170dc42de2cb2a3e49a8a3c1afa777_2_690x290.jpeg" alt="weight-decay" width="690" height="290" srcset="https://forums.fast.ai/uploads/default/optimized/3X/2/b/2ba175a248170dc42de2cb2a3e49a8a3c1afa777_2_690x290.jpeg, https://forums.fast.ai/uploads/default/optimized/3X/2/b/2ba175a248170dc42de2cb2a3e49a8a3c1afa777_2_1035x435.jpeg 1.5x, https://forums.fast.ai/uploads/default/optimized/3X/2/b/2ba175a248170dc42de2cb2a3e49a8a3c1afa777_2_1380x580.jpeg 2x">
+
+- How to actually use weight decay in fastai code? Does fastai have a good default for collaborative filtering like CV? How does Jeremy suggest to find the appropriate `wd` value for your own dataset?
+
+<img src="https://forums.fast.ai/uploads/default/optimized/3X/2/d/2d240b5fcf7b6b92643497067176a390d41778d7_2_690x268.jpeg" alt="weight-decay2" width="690" height="268" srcset="https://forums.fast.ai/uploads/default/optimized/3X/2/d/2d240b5fcf7b6b92643497067176a390d41778d7_2_690x268.jpeg, https://forums.fast.ai/uploads/default/optimized/3X/2/d/2d240b5fcf7b6b92643497067176a390d41778d7_2_1035x402.jpeg 1.5x, https://forums.fast.ai/uploads/default/optimized/3X/2/d/2d240b5fcf7b6b92643497067176a390d41778d7_2_1380x536.jpeg 2x">
+
+<img src="https://forums.fast.ai/uploads/default/optimized/3X/e/7/e728e7640b79a3ead582d8feefe518e1e8b999d5_2_690x260.jpeg" alt="weight-decay3" width="690" height="260" srcset="https://forums.fast.ai/uploads/default/optimized/3X/e/7/e728e7640b79a3ead582d8feefe518e1e8b999d5_2_690x260.jpeg, https://forums.fast.ai/uploads/default/optimized/3X/e/7/e728e7640b79a3ead582d8feefe518e1e8b999d5_2_1035x390.jpeg 1.5x, https://forums.fast.ai/uploads/default/optimized/3X/e/7/e728e7640b79a3ead582d8feefe518e1e8b999d5_2_1380x520.jpeg 2x">
+
+- What is regularization? What’s wrong when the weights having high values or low values? How does weight decay help balance?
+- More questions: any other rules other than Jeremy’s rule of thumb on number of latent factors, and recommendation on average rating is viable only when there are many metadata.
+
+---
+title: "Lesson 7"
+---
+
+## Gradient accumulation and GPU memory
+
+- We have explored the simplest neural net with fully connected linear layers in earlier lectures. In this lecture we will focus on tweaking first and last layers, in the next few weeks on tweaking middle part of the neuralnet.
+- Review of the notebook <em>Road to Top part 2</em> and congrats to fastai students beat Jeremy on 1st and 2nd
+- What are the benefits of using larger models? What are the problems of larger models? (use up GPU memory as GPU is not as clever as CPU to find ways to free itself; so large model needs very expensive GPU) What can we do about it when GPU out of memory? first, to restart the notebook; then Jeremy is about to show us a trick to enable us to train extra large models on Kaggle, Wow!
+- How big is Kaggle GPU? Do you have to run notebooks on kaggle sometimes for example code competitions? Why it is good and fair to use Kaggle notebook to win leaderboard?
+- How did Jeremy use a 24G GPU to find out what can a 16G GPU do? How did Jeremy find out how much GPU memory will a model use? How did Jeremy choose the smallest subgroup of images as the training set? Will training the model longer take up more memory? (No) So, smallest training set + 1 epoch training can quickly tell us how much memory is needed for the model.
+- Jeremy then trained different models to see how much memories they used up. How much memory does convnext-small model take? Which line of code does Jeremy use to find out the GPU memory used up by the model? Which two lines of code does Jeremy use to free unnecssarily occupied memories GPU so that you don’t need to restart the kernel to run the next model?
+
+<img src="https://forums.fast.ai/uploads/default/optimized/3X/1/8/1873321e4fc2c4572c625303180eec7843967dbb_2_690x210.png" alt="gc" width="690" height="210" srcset="https://forums.fast.ai/uploads/default/optimized/3X/1/8/1873321e4fc2c4572c625303180eec7843967dbb_2_690x210.png, https://forums.fast.ai/uploads/default/optimized/3X/1/8/1873321e4fc2c4572c625303180eec7843967dbb_2_1035x315.png 1.5x, https://forums.fast.ai/uploads/default/original/3X/1/8/1873321e4fc2c4572c625303180eec7843967dbb.png 2x">
+
+- What if a model causes a crash problem of cuda out of memory? What is GradientAccumulation? What is integer divide? (`//`).
+
+<img src="https://forums.fast.ai/uploads/default/optimized/3X/2/6/26d7b272d6e0d5a3a2802981037cba31124bdd43_2_690x230.jpeg" alt="gradientaccumulation" width="690" height="230" srcset="https://forums.fast.ai/uploads/default/optimized/3X/2/6/26d7b272d6e0d5a3a2802981037cba31124bdd43_2_690x230.jpeg, https://forums.fast.ai/uploads/default/optimized/3X/2/6/26d7b272d6e0d5a3a2802981037cba31124bdd43_2_1035x345.jpeg 1.5x, https://forums.fast.ai/uploads/default/optimized/3X/2/6/26d7b272d6e0d5a3a2802981037cba31124bdd43_2_1380x460.jpeg 2x">
+
+- What is the problem of using smaller batch size? (smaller batch size, larger volatility of learning rate and weights) How can we make the model train in smaller batch size as if it is in large batch size? How to explain GradientAccumulation in code?
+
+<img src="https://forums.fast.ai/uploads/default/optimized/3X/5/f/5f5de3dc9a36ce6ef7bb0413df0816afad42742f_2_690x158.png" alt="training-loop-without-gradientaccumulation" width="690" height="158" srcset="https://forums.fast.ai/uploads/default/optimized/3X/5/f/5f5de3dc9a36ce6ef7bb0413df0816afad42742f_2_690x158.png, https://forums.fast.ai/uploads/default/optimized/3X/5/f/5f5de3dc9a36ce6ef7bb0413df0816afad42742f_2_1035x237.png 1.5x, https://forums.fast.ai/uploads/default/optimized/3X/5/f/5f5de3dc9a36ce6ef7bb0413df0816afad42742f_2_1380x316.png 2x">
+
+<img src="https://forums.fast.ai/uploads/default/optimized/3X/f/9/f9daf4e38da769cb3de7a0c8cdf20c74fd8d18b7_2_690x210.jpeg" alt="gradientaccumulation-explained" width="690" height="210" srcset="https://forums.fast.ai/uploads/default/optimized/3X/f/9/f9daf4e38da769cb3de7a0c8cdf20c74fd8d18b7_2_690x210.jpeg, https://forums.fast.ai/uploads/default/optimized/3X/f/9/f9daf4e38da769cb3de7a0c8cdf20c74fd8d18b7_2_1035x315.jpeg 1.5x, https://forums.fast.ai/uploads/default/optimized/3X/f/9/f9daf4e38da769cb3de7a0c8cdf20c74fd8d18b7_2_1380x420.jpeg 2x">
+
+- What is the implication of using GradientAccumulation? How much difference is the numeric result between using GradientAccumulation and not? What is the main cause for the difference?
+- More questions: it should be `count &gt;= 64` in the code above when doing GradientAccumulation; `lr_find` uses batch size from the DataLoader;
+- Why not just use a smaller batch size instead of GradientAccumulation? What is the rule of thumb for picking batch sizes? How about adjusting learning rate according to the batch size?
+- How did Jeremy use GradientAccumulation to find out how many `accum` is needed to run those large models on Kaggle’s 16G GPUs? (`accum=1` always out of memory, but `accum=2` works for all large models).
+
+<img src="https://forums.fast.ai/uploads/default/optimized/3X/c/c/cc4d36bc34d4f4d1c313b96cdf252b9e6c9ac33d_2_690x81.png" alt="gradientaccumulation-large-models" width="690" height="81" srcset="https://forums.fast.ai/uploads/default/optimized/3X/c/c/cc4d36bc34d4f4d1c313b96cdf252b9e6c9ac33d_2_690x81.png, https://forums.fast.ai/uploads/default/optimized/3X/c/c/cc4d36bc34d4f4d1c313b96cdf252b9e6c9ac33d_2_1035x121.png 1.5x, https://forums.fast.ai/uploads/default/optimized/3X/c/c/cc4d36bc34d4f4d1c313b96cdf252b9e6c9ac33d_2_1380x162.png 2x">
+
+## Creating an ensemble
+
+- How did Jeremy put all the models and their settings together for experimenting later? Do we have to use the size of the model’s specification for now and how about in the future?
+
+<img src="https://forums.fast.ai/uploads/default/optimized/3X/2/b/2bac3e816fa5bb631ba278430031a9561b3fffbc_2_665x500.jpeg" alt="models-testing" width="665" height="500" srcset="https://forums.fast.ai/uploads/default/optimized/3X/2/b/2bac3e816fa5bb631ba278430031a9561b3fffbc_2_665x500.jpeg, https://forums.fast.ai/uploads/default/optimized/3X/2/b/2bac3e816fa5bb631ba278430031a9561b3fffbc_2_997x750.jpeg 1.5x, https://forums.fast.ai/uploads/default/original/3X/2/b/2bac3e816fa5bb631ba278430031a9561b3fffbc.jpeg 2x">
+
+
+<img src="https://forums.fast.ai/uploads/default/optimized/3X/2/a/2a249910c04e58ec006290f08688e7b0f8aeea81_2_690x56.png" alt="training-set-images" width="690" height="56" srcset="https://forums.fast.ai/uploads/default/optimized/3X/2/a/2a249910c04e58ec006290f08688e7b0f8aeea81_2_690x56.png, https://forums.fast.ai/uploads/default/optimized/3X/2/a/2a249910c04e58ec006290f08688e7b0f8aeea81_2_1035x84.png 1.5x, https://forums.fast.ai/uploads/default/optimized/3X/2/a/2a249910c04e58ec006290f08688e7b0f8aeea81_2_1380x112.png 2x">
+
+- How to run all the models with specifications without running out of memory
+
+<img src="https://forums.fast.ai/uploads/default/optimized/3X/a/e/ae921c0da2bf64fe0e3d890f7cf3effe0e8369d5_2_690x304.jpeg" alt="run-all-models-without-out-memory" width="690" height="304" srcset="https://forums.fast.ai/uploads/default/optimized/3X/a/e/ae921c0da2bf64fe0e3d890f7cf3effe0e8369d5_2_690x304.jpeg, https://forums.fast.ai/uploads/default/optimized/3X/a/e/ae921c0da2bf64fe0e3d890f7cf3effe0e8369d5_2_1035x456.jpeg 1.5x, https://forums.fast.ai/uploads/default/optimized/3X/a/e/ae921c0da2bf64fe0e3d890f7cf3effe0e8369d5_2_1380x608.jpeg 2x">
+
+- Why does Jeremy don’t use `seed=42` here in training? What is the effect?
+- What is ensemble or bagging of different good deep learning architectures? Why it is useful?
+- How to do the ensemble of different deep learning models?
+
+<img src="https://forums.fast.ai/uploads/default/optimized/3X/e/2/e2960f76f91dcb5e888127e89ce267d08a6eb1bb_2_690x349.jpeg" alt="ensemble1" width="690" height="349" srcset="https://forums.fast.ai/uploads/default/optimized/3X/e/2/e2960f76f91dcb5e888127e89ce267d08a6eb1bb_2_690x349.jpeg, https://forums.fast.ai/uploads/default/optimized/3X/e/2/e2960f76f91dcb5e888127e89ce267d08a6eb1bb_2_1035x523.jpeg 1.5x, https://forums.fast.ai/uploads/default/optimized/3X/e/2/e2960f76f91dcb5e888127e89ce267d08a6eb1bb_2_1380x698.jpeg 2x">
+
+
+<img src="https://forums.fast.ai/uploads/default/optimized/3X/4/3/43a6e2e47b5d49d201353fff1b15279f149b8d08_2_690x295.jpeg" alt="ensemble2" width="690" height="295" srcset="https://forums.fast.ai/uploads/default/optimized/3X/4/3/43a6e2e47b5d49d201353fff1b15279f149b8d08_2_690x295.jpeg, https://forums.fast.ai/uploads/default/optimized/3X/4/3/43a6e2e47b5d49d201353fff1b15279f149b8d08_2_1035x442.jpeg 1.5x, https://forums.fast.ai/uploads/default/optimized/3X/4/3/43a6e2e47b5d49d201353fff1b15279f149b8d08_2_1380x590.jpeg 2x">
+
+
+<img src="https://forums.fast.ai/uploads/default/optimized/3X/4/5/45548cc497f861df5b5c4a1234bc17aee41d7cee_2_690x317.jpeg" alt="ensemble3" width="690" height="317" srcset="https://forums.fast.ai/uploads/default/optimized/3X/4/5/45548cc497f861df5b5c4a1234bc17aee41d7cee_2_690x317.jpeg, https://forums.fast.ai/uploads/default/optimized/3X/4/5/45548cc497f861df5b5c4a1234bc17aee41d7cee_2_1035x475.jpeg 1.5x, https://forums.fast.ai/uploads/default/optimized/3X/4/5/45548cc497f861df5b5c4a1234bc17aee41d7cee_2_1380x634.jpeg 2x">
+
+
+<img src="https://forums.fast.ai/uploads/default/optimized/3X/5/1/51f580a36eab28daedbb68779840e1963c85f03b_2_690x183.png" alt="ensemble4" width="690" height="183" srcset="https://forums.fast.ai/uploads/default/optimized/3X/5/1/51f580a36eab28daedbb68779840e1963c85f03b_2_690x183.png, https://forums.fast.ai/uploads/default/optimized/3X/5/1/51f580a36eab28daedbb68779840e1963c85f03b_2_1035x274.png 1.5x, https://forums.fast.ai/uploads/default/optimized/3X/5/1/51f580a36eab28daedbb68779840e1963c85f03b_2_1380x366.png 2x">
+
+- Why should we improve and submit to Kaggle everyday? How the submission history can help trace your models developments and improvement?
+- More questions: What is k-fold cross-validation and how can it be applied in this case? Why does Jeremy don’t use it?
+- Are there any drawbacks of GradientAccumulation? Any GPU recommendations?
+- In part 2 Jeremy may cover how to train a smaller model to do well as in large models for faster inference
+
+## Multi-target model
+
+- How to set the data split and item and batch transformations?
+
+<img src="https://forums.fast.ai/uploads/default/optimized/3X/6/7/6708adef38cb0f664442d2e9e3f846fda75a045d_2_690x235.png" alt="datablock-2-labels" width="690" height="235" srcset="https://forums.fast.ai/uploads/default/optimized/3X/6/7/6708adef38cb0f664442d2e9e3f846fda75a045d_2_690x235.png, https://forums.fast.ai/uploads/default/optimized/3X/6/7/6708adef38cb0f664442d2e9e3f846fda75a045d_2_1035x352.png 1.5x, https://forums.fast.ai/uploads/default/optimized/3X/6/7/6708adef38cb0f664442d2e9e3f846fda75a045d_2_1380x470.png 2x">
+
+- How to create a model to predict both disease and variety types? Can we see predicting both disease and variety in terms of predicting 20 things, 10 for disease, 10 for variety?
+- What does the new model (and new dataloaders) need now to make predictions on disease?
+
+<img src="https://forums.fast.ai/uploads/default/optimized/3X/4/8/48c068723f1b2f8c4205d02c96d9f5d6e2d65189_2_690x254.jpeg" alt="new-disease-error-rate-loss" width="690" height="254" srcset="https://forums.fast.ai/uploads/default/optimized/3X/4/8/48c068723f1b2f8c4205d02c96d9f5d6e2d65189_2_690x254.jpeg, https://forums.fast.ai/uploads/default/optimized/3X/4/8/48c068723f1b2f8c4205d02c96d9f5d6e2d65189_2_1035x381.jpeg 1.5x, https://forums.fast.ai/uploads/default/optimized/3X/4/8/48c068723f1b2f8c4205d02c96d9f5d6e2d65189_2_1380x508.jpeg 2x">
+
+<img src="https://forums.fast.ai/uploads/default/optimized/3X/4/e/4ee51a1545b8b3f3d8ea0a0b485d45dddc1a2a90_2_690x159.png" alt="new-model" width="690" height="159" srcset="https://forums.fast.ai/uploads/default/optimized/3X/4/e/4ee51a1545b8b3f3d8ea0a0b485d45dddc1a2a90_2_690x159.png, https://forums.fast.ai/uploads/default/optimized/3X/4/e/4ee51a1545b8b3f3d8ea0a0b485d45dddc1a2a90_2_1035x238.png 1.5x, https://forums.fast.ai/uploads/default/optimized/3X/4/e/4ee51a1545b8b3f3d8ea0a0b485d45dddc1a2a90_2_1380x318.png 2x">
+
+- When and how to provide our own loss function? fastai can detect appropriate loss for your datalaoders and use it by default in simple cases. In this special case, How do we create and use our custom loss for the new model?
+
+## Cross-entropy and softmax
+
+- What does `F.cross_entropy` do exactly? This function belong to the first and last layer, therefore we must understand them. What is the raw output of the model of predicting 5 things?
+
+<img src="https://forums.fast.ai/uploads/default/optimized/3X/5/6/563e70daa1930078e47617c7c2db3897446f3848_2_544x500.jpeg" alt="softmax1" width="544" height="500" srcset="https://forums.fast.ai/uploads/default/optimized/3X/5/6/563e70daa1930078e47617c7c2db3897446f3848_2_544x500.jpeg, https://forums.fast.ai/uploads/default/optimized/3X/5/6/563e70daa1930078e47617c7c2db3897446f3848_2_816x750.jpeg 1.5x, https://forums.fast.ai/uploads/default/optimized/3X/5/6/563e70daa1930078e47617c7c2db3897446f3848_2_1088x1000.jpeg 2x">
+
+- What is the formula of softmax and How to calculate it in the spreadsheet?
+
+<img src="https://forums.fast.ai/uploads/default/optimized/3X/0/b/0bee952ff080de7e7b050fa9e81dd483414da494_2_645x500.jpeg" alt="softmax-calculated" width="645" height="500" srcset="https://forums.fast.ai/uploads/default/optimized/3X/0/b/0bee952ff080de7e7b050fa9e81dd483414da494_2_645x500.jpeg, https://forums.fast.ai/uploads/default/optimized/3X/0/b/0bee952ff080de7e7b050fa9e81dd483414da494_2_967x750.jpeg 1.5x, https://forums.fast.ai/uploads/default/optimized/3X/0/b/0bee952ff080de7e7b050fa9e81dd483414da494_2_1290x1000.jpeg 2x">
+
+- What is the problem of softmax? How does it make the obvious wrong prediction when given a cat image to the bear classifier?
+- What can we do about the problem of the softmax above? (all prediction probabilities not adding up to 1). When do you use softmax and when not to?
+- What is the first part of the cross_entropy loss formula?
+
+<img src="https://forums.fast.ai/uploads/default/optimized/3X/6/1/613442943a389b25d30f73afe94a2172da533018_2_690x495.jpeg" alt="part1-crossentropy" width="690" height="495" srcset="https://forums.fast.ai/uploads/default/optimized/3X/6/1/613442943a389b25d30f73afe94a2172da533018_2_690x495.jpeg, https://forums.fast.ai/uploads/default/optimized/3X/6/1/613442943a389b25d30f73afe94a2172da533018_2_1035x742.jpeg 1.5x, https://forums.fast.ai/uploads/default/optimized/3X/6/1/613442943a389b25d30f73afe94a2172da533018_2_1380x990.jpeg 2x">
+
+- How to calculate cross-entropy from softmax?
+
+<img src="https://forums.fast.ai/uploads/default/optimized/3X/8/5/8546446e26005bcfb41f2dbea8f094ea6044c9cf_2_620x500.jpeg" alt="calc-cross-entropy" width="620" height="500" srcset="https://forums.fast.ai/uploads/default/optimized/3X/8/5/8546446e26005bcfb41f2dbea8f094ea6044c9cf_2_620x500.jpeg, https://forums.fast.ai/uploads/default/optimized/3X/8/5/8546446e26005bcfb41f2dbea8f094ea6044c9cf_2_930x750.jpeg 1.5x, https://forums.fast.ai/uploads/default/optimized/3X/8/5/8546446e26005bcfb41f2dbea8f094ea6044c9cf_2_1240x1000.jpeg 2x">
+
+- How to calculate binary-cross-entropy? How to understand its formula in predicting whether it is a cat or non-cat image? How to finally get the binary cross-entropy loss of a batch of 5 images?
+
+<img src="https://forums.fast.ai/uploads/default/optimized/3X/d/7/d7194a9f6353d643b0a9472756fa076dfd335597_2_690x473.jpeg" alt="binary-cross-entropy-calc" width="690" height="473" srcset="https://forums.fast.ai/uploads/default/optimized/3X/d/7/d7194a9f6353d643b0a9472756fa076dfd335597_2_690x473.jpeg, https://forums.fast.ai/uploads/default/optimized/3X/d/7/d7194a9f6353d643b0a9472756fa076dfd335597_2_1035x709.jpeg 1.5x, https://forums.fast.ai/uploads/default/optimized/3X/d/7/d7194a9f6353d643b0a9472756fa076dfd335597_2_1380x946.jpeg 2x">
+
+- What are two versions of cross-entropy in pytorch? and when to use each version? Which version do we use here?
+
+<img src="https://forums.fast.ai/uploads/default/optimized/3X/2/2/2245e4c140536aad1ef5b72a9543afda38ac65a5_2_690x264.jpeg" alt="cross-entropy-v1" width="690" height="264" srcset="https://forums.fast.ai/uploads/default/optimized/3X/2/2/2245e4c140536aad1ef5b72a9543afda38ac65a5_2_690x264.jpeg, https://forums.fast.ai/uploads/default/optimized/3X/2/2/2245e4c140536aad1ef5b72a9543afda38ac65a5_2_1035x396.jpeg 1.5x, https://forums.fast.ai/uploads/default/optimized/3X/2/2/2245e4c140536aad1ef5b72a9543afda38ac65a5_2_1380x528.jpeg 2x">
+
+
+<img src="https://forums.fast.ai/uploads/default/optimized/3X/2/a/2ab6375dd73126e7635687a7fd3110b305eedded_2_690x114.png" alt="cross-entropy-v2" width="690" height="114" srcset="https://forums.fast.ai/uploads/default/optimized/3X/2/a/2ab6375dd73126e7635687a7fd3110b305eedded_2_690x114.png, https://forums.fast.ai/uploads/default/optimized/3X/2/a/2ab6375dd73126e7635687a7fd3110b305eedded_2_1035x171.png 1.5x, https://forums.fast.ai/uploads/default/optimized/3X/2/a/2ab6375dd73126e7635687a7fd3110b305eedded_2_1380x228.png 2x">
+
+## Multi-target activations
+
+- With a dataloader having two targets, our new model needs to be informed what exactly is the loss func, metrics, and the size of output?
+
+<img src="https://forums.fast.ai/uploads/default/optimized/3X/2/2/222cd9dc5c842f4a39c8046b85ac640c65664f82_2_690x182.jpeg" alt="model-specifications" width="690" height="182" srcset="https://forums.fast.ai/uploads/default/optimized/3X/2/2/222cd9dc5c842f4a39c8046b85ac640c65664f82_2_690x182.jpeg, https://forums.fast.ai/uploads/default/optimized/3X/2/2/222cd9dc5c842f4a39c8046b85ac640c65664f82_2_1035x273.jpeg 1.5x, https://forums.fast.ai/uploads/default/optimized/3X/2/2/222cd9dc5c842f4a39c8046b85ac640c65664f82_2_1380x364.jpeg 2x">
+
+- How to create a learner for prediction two targets or 20 items? How does a learner use disease and variety losses to know which 10 items are disease predictions and which 10 are variety predictions? How to combine two loss functions together? How to understand the combined loss?
+
+<img src="https://forums.fast.ai/uploads/default/optimized/3X/a/8/a877afc66e453b40fd4194e9070c33505470975e_2_690x127.png" alt="model-output-20" width="690" height="127" srcset="https://forums.fast.ai/uploads/default/optimized/3X/a/8/a877afc66e453b40fd4194e9070c33505470975e_2_690x127.png, https://forums.fast.ai/uploads/default/optimized/3X/a/8/a877afc66e453b40fd4194e9070c33505470975e_2_1035x190.png 1.5x, https://forums.fast.ai/uploads/default/optimized/3X/a/8/a877afc66e453b40fd4194e9070c33505470975e_2_1380x254.png 2x">
+
+<img src="https://forums.fast.ai/uploads/default/optimized/3X/6/6/665c97da404c8608e3d198db8812c895e5c93660_2_690x151.png" alt="loss-disease" width="690" height="151" srcset="https://forums.fast.ai/uploads/default/optimized/3X/6/6/665c97da404c8608e3d198db8812c895e5c93660_2_690x151.png, https://forums.fast.ai/uploads/default/optimized/3X/6/6/665c97da404c8608e3d198db8812c895e5c93660_2_1035x226.png 1.5x, https://forums.fast.ai/uploads/default/optimized/3X/6/6/665c97da404c8608e3d198db8812c895e5c93660_2_1380x302.png 2x">
+
+<img src="https://forums.fast.ai/uploads/default/optimized/3X/7/b/7b91f907777aa2cb90cf68c1878c903c444694f1_2_690x139.png" alt="loss-variety" width="690" height="139" srcset="https://forums.fast.ai/uploads/default/optimized/3X/7/b/7b91f907777aa2cb90cf68c1878c903c444694f1_2_690x139.png, https://forums.fast.ai/uploads/default/optimized/3X/7/b/7b91f907777aa2cb90cf68c1878c903c444694f1_2_1035x208.png 1.5x, https://forums.fast.ai/uploads/default/optimized/3X/7/b/7b91f907777aa2cb90cf68c1878c903c444694f1_2_1380x278.png 2x">
+
+<img src="https://forums.fast.ai/uploads/default/optimized/3X/a/6/a61748d386d2c9bcbcd6f2555a88f3d058529bcf_2_690x132.png" alt="combine-loss" width="690" height="132" srcset="https://forums.fast.ai/uploads/default/optimized/3X/a/6/a61748d386d2c9bcbcd6f2555a88f3d058529bcf_2_690x132.png, https://forums.fast.ai/uploads/default/optimized/3X/a/6/a61748d386d2c9bcbcd6f2555a88f3d058529bcf_2_1035x198.png 1.5x, https://forums.fast.ai/uploads/default/optimized/3X/a/6/a61748d386d2c9bcbcd6f2555a88f3d058529bcf_2_1380x264.png 2x">
+
+- How to calc error rate for disease types and variety types? How to put them together and display them during training?
+
+<img src="https://forums.fast.ai/uploads/default/optimized/3X/9/0/90658b962d8ec66766ed27c63af27424cabe6613_2_690x279.jpeg" alt="metrics-all-together" width="690" height="279" srcset="https://forums.fast.ai/uploads/default/optimized/3X/9/0/90658b962d8ec66766ed27c63af27424cabe6613_2_690x279.jpeg, https://forums.fast.ai/uploads/default/optimized/3X/9/0/90658b962d8ec66766ed27c63af27424cabe6613_2_1035x418.jpeg 1.5x, https://forums.fast.ai/uploads/default/optimized/3X/9/0/90658b962d8ec66766ed27c63af27424cabe6613_2_1380x558.jpeg 2x">
+
+- How to make the new learner and how did it train? Why the multi-task model didn’t improve and even a little worse than the previous model? Why training the multi-task model longer could improve the accuracy on disease prediction? Why predicting a second thing together could help improve the prediction of the first thing? Using multi-task model did improve the result in a Kaggle fish prediction competition Jeremy did before. What are the reasons or benefits for building multi-task models?
+
+<img src="https://forums.fast.ai/uploads/default/optimized/3X/0/f/0f18c85770f6737745434ab2b4812fc73854baa1_2_690x138.png" alt="train-combined-loss-metrics-all" width="690" height="138" srcset="https://forums.fast.ai/uploads/default/optimized/3X/0/f/0f18c85770f6737745434ab2b4812fc73854baa1_2_690x138.png, https://forums.fast.ai/uploads/default/optimized/3X/0/f/0f18c85770f6737745434ab2b4812fc73854baa1_2_1035x207.png 1.5x, https://forums.fast.ai/uploads/default/optimized/3X/0/f/0f18c85770f6737745434ab2b4812fc73854baa1_2_1380x276.png 2x">
+
+<img src="https://forums.fast.ai/uploads/default/optimized/3X/a/0/a0ce75a163a66d0c5f00875347ea1abdb3379fb7_2_690x363.jpeg" alt="result-little-worse" width="690" height="363" srcset="https://forums.fast.ai/uploads/default/optimized/3X/a/0/a0ce75a163a66d0c5f00875347ea1abdb3379fb7_2_690x363.jpeg, https://forums.fast.ai/uploads/default/optimized/3X/a/0/a0ce75a163a66d0c5f00875347ea1abdb3379fb7_2_1035x544.jpeg 1.5x, https://forums.fast.ai/uploads/default/optimized/3X/a/0/a0ce75a163a66d0c5f00875347ea1abdb3379fb7_2_1380x726.jpeg 2x">
+
+ How to make multi-task modeling less confusing to you? (build a multi-task for Titanic dataset from scratch; explore and experiment this notebook)
+by Chris Said of binary-cross-entropy?
+
+## Collaborative filtering
+
+- Collaborative filtering deep dive as chp 8 without change. What is the dataset used? Which version of the data we are using? How to read a tsv file using pandas? How to read/understand the dataset content/columns? recommendation system industry and Radek. How does Jeremy prefer to see the data? (cross tabulated) Why the image Jeremy talking about his preferred way of seeing the data has so few empty or missing data?
+
+<img src="https://forums.fast.ai/uploads/default/optimized/3X/e/c/ec8cf3b5f0af012bc4fca4cf1b82f55fab674aae_2_690x219.jpeg" alt="dataset" width="690" height="219" srcset="https://forums.fast.ai/uploads/default/optimized/3X/e/c/ec8cf3b5f0af012bc4fca4cf1b82f55fab674aae_2_690x219.jpeg, https://forums.fast.ai/uploads/default/optimized/3X/e/c/ec8cf3b5f0af012bc4fca4cf1b82f55fab674aae_2_1035x328.jpeg 1.5x, https://forums.fast.ai/uploads/default/optimized/3X/e/c/ec8cf3b5f0af012bc4fca4cf1b82f55fab674aae_2_1380x438.jpeg 2x">
+
+<img src="https://forums.fast.ai/uploads/default/optimized/3X/a/9/a97bf7cf60d140f3b43748d771fd6a4fedb1cf3b_2_690x332.jpeg" alt="read-tsv" width="690" height="332" srcset="https://forums.fast.ai/uploads/default/optimized/3X/a/9/a97bf7cf60d140f3b43748d771fd6a4fedb1cf3b_2_690x332.jpeg, https://forums.fast.ai/uploads/default/optimized/3X/a/9/a97bf7cf60d140f3b43748d771fd6a4fedb1cf3b_2_1035x498.jpeg 1.5x, https://forums.fast.ai/uploads/default/optimized/3X/a/9/a97bf7cf60d140f3b43748d771fd6a4fedb1cf3b_2_1380x664.jpeg 2x">
+
+<img src="https://forums.fast.ai/uploads/default/optimized/3X/6/4/64d971d762156b93315e3fd15e9f49cb0987f0e8_2_690x313.jpeg" alt="Jeremy-see-this-way" width="690" height="313" srcset="https://forums.fast.ai/uploads/default/optimized/3X/6/4/64d971d762156b93315e3fd15e9f49cb0987f0e8_2_690x313.jpeg, https://forums.fast.ai/uploads/default/optimized/3X/6/4/64d971d762156b93315e3fd15e9f49cb0987f0e8_2_1035x469.jpeg 1.5x, https://forums.fast.ai/uploads/default/optimized/3X/6/4/64d971d762156b93315e3fd15e9f49cb0987f0e8_2_1380x626.jpeg 2x">
+
+- How to fill in the missing data or gaps in the cross tabulated dataset? How to figure out whether a new user would like a particular movie which he/she has not watched before? Can we figure out what kind/genre of movie is the particular movie we are talking here? What does the type probabilities of a movie look like? What does a user’s preference probabilities look like? If we match the two sets of probabilities up, can we know how much does the user like the movie? How do we calculate that?
+
+<img src="https://forums.fast.ai/uploads/default/optimized/3X/5/9/592b2fdb4fb49e0dc932863c8035b5016cbf4425_2_690x188.jpeg" alt="types-movie" width="690" height="188" srcset="https://forums.fast.ai/uploads/default/optimized/3X/5/9/592b2fdb4fb49e0dc932863c8035b5016cbf4425_2_690x188.jpeg, https://forums.fast.ai/uploads/default/optimized/3X/5/9/592b2fdb4fb49e0dc932863c8035b5016cbf4425_2_1035x282.jpeg 1.5x, https://forums.fast.ai/uploads/default/optimized/3X/5/9/592b2fdb4fb49e0dc932863c8035b5016cbf4425_2_1380x376.jpeg 2x">
+
+
+<img src="https://forums.fast.ai/uploads/default/optimized/3X/4/f/4f5531e5b7200f92d3a9af4247df3f504d1024af_2_690x292.jpeg" alt="user-preference-sum" width="690" height="292" srcset="https://forums.fast.ai/uploads/default/optimized/3X/4/f/4f5531e5b7200f92d3a9af4247df3f504d1024af_2_690x292.jpeg, https://forums.fast.ai/uploads/default/optimized/3X/4/f/4f5531e5b7200f92d3a9af4247df3f504d1024af_2_1035x438.jpeg 1.5x, https://forums.fast.ai/uploads/default/optimized/3X/4/f/4f5531e5b7200f92d3a9af4247df3f504d1024af_2_1380x584.jpeg 2x">
+
+
+<img src="https://forums.fast.ai/uploads/default/optimized/3X/c/0/c00851f68905b8243d3b73658463e979ac2ee73b_2_690x304.png" alt="lower-value" width="690" height="304" srcset="https://forums.fast.ai/uploads/default/optimized/3X/c/0/c00851f68905b8243d3b73658463e979ac2ee73b_2_690x304.png, https://forums.fast.ai/uploads/default/optimized/3X/c/0/c00851f68905b8243d3b73658463e979ac2ee73b_2_1035x456.png 1.5x, https://forums.fast.ai/uploads/default/optimized/3X/c/0/c00851f68905b8243d3b73658463e979ac2ee73b_2_1380x608.png 2x">
+
+- So far so good, what is the problem of the approach of doing dot product between user preference probabilities and movie type probabilities to find out our new user’s rating of the movie? (we don’t know neither of the probabilities). How are we going to deal with this problem? Can we create such movie type probabilities without knowing even the types?
+- What is the latent factors? If I don’t know anything about the movies, can we use SGD (stochastic gradient descent) to find them? Can we create a random 5 numbers as a movie’s 5 latent factors for describing the types of the movie, and figure them out later? Can we create latent factors for each user too? Now how to calc the probability of a user likes a movie? (mmult or dot product between two groups of latent factors).
+
+<img src="https://forums.fast.ai/uploads/default/optimized/3X/3/2/329b0259a8e6b1d8e4bd225dbf378efe9e189be0_2_690x456.jpeg" alt="latent-factors-movie" width="690" height="456" srcset="https://forums.fast.ai/uploads/default/optimized/3X/3/2/329b0259a8e6b1d8e4bd225dbf378efe9e189be0_2_690x456.jpeg, https://forums.fast.ai/uploads/default/optimized/3X/3/2/329b0259a8e6b1d8e4bd225dbf378efe9e189be0_2_1035x684.jpeg 1.5x, https://forums.fast.ai/uploads/default/optimized/3X/3/2/329b0259a8e6b1d8e4bd225dbf378efe9e189be0_2_1380x912.jpeg 2x">
+
+
+<img src="https://forums.fast.ai/uploads/default/optimized/3X/d/c/dc1b0d2e8e766a0750c94881c77bad576fee0fdd_2_690x386.jpeg" alt="latent-factor-for-all-movies" width="690" height="386" srcset="https://forums.fast.ai/uploads/default/optimized/3X/d/c/dc1b0d2e8e766a0750c94881c77bad576fee0fdd_2_690x386.jpeg, https://forums.fast.ai/uploads/default/optimized/3X/d/c/dc1b0d2e8e766a0750c94881c77bad576fee0fdd_2_1035x579.jpeg 1.5x, https://forums.fast.ai/uploads/default/optimized/3X/d/c/dc1b0d2e8e766a0750c94881c77bad576fee0fdd_2_1380x772.jpeg 2x">
+
+<img src="https://forums.fast.ai/uploads/default/original/3X/0/4/043d85eca9ca0e2198ba5f1b6fa629ba470cebfe.jpeg" alt="latent-factors-user" width="554" height="500">
+
+<img src="https://forums.fast.ai/uploads/default/optimized/3X/7/6/7628a9b85d34d0383be3c904f3a7c0c49e9a2484_2_690x405.jpeg" alt="matrix-multiply-dot-product" width="690" height="405" srcset="https://forums.fast.ai/uploads/default/optimized/3X/7/6/7628a9b85d34d0383be3c904f3a7c0c49e9a2484_2_690x405.jpeg, https://forums.fast.ai/uploads/default/optimized/3X/7/6/7628a9b85d34d0383be3c904f3a7c0c49e9a2484_2_1035x607.jpeg 1.5x, https://forums.fast.ai/uploads/default/original/3X/7/6/7628a9b85d34d0383be3c904f3a7c0c49e9a2484.jpeg 2x">
+
+- Now the mmult or dot product can give us the prediction of how much a user likes a movie, so we can compare predictions with true label. What to do when there is a missing label or data? (we make the prediction empty or zero). Can we use SGD to improve the latent factors by comparing predictions with labels using a loss function? How to use excel solver to update latent factors using SGD and the loss?
+
+<img src="https://forums.fast.ai/uploads/default/optimized/3X/e/f/ef6ab1294f1093259e4c5df1c921703361fdd384_2_670x500.jpeg" alt="missing-data-empty" width="670" height="500" srcset="https://forums.fast.ai/uploads/default/optimized/3X/e/f/ef6ab1294f1093259e4c5df1c921703361fdd384_2_670x500.jpeg, https://forums.fast.ai/uploads/default/optimized/3X/e/f/ef6ab1294f1093259e4c5df1c921703361fdd384_2_1005x750.jpeg 1.5x, https://forums.fast.ai/uploads/default/original/3X/e/f/ef6ab1294f1093259e4c5df1c921703361fdd384.jpeg 2x">
+
+<img src="https://forums.fast.ai/uploads/default/optimized/3X/0/4/04fbaa36a4c360959c0a826caba9592b0b5514c9_2_523x500.jpeg" alt="make-missing-zero" width="523" height="500" srcset="https://forums.fast.ai/uploads/default/optimized/3X/0/4/04fbaa36a4c360959c0a826caba9592b0b5514c9_2_523x500.jpeg, https://forums.fast.ai/uploads/default/optimized/3X/0/4/04fbaa36a4c360959c0a826caba9592b0b5514c9_2_784x750.jpeg 1.5x, https://forums.fast.ai/uploads/default/optimized/3X/0/4/04fbaa36a4c360959c0a826caba9592b0b5514c9_2_1046x1000.jpeg 2x">
+
+<img src="https://forums.fast.ai/uploads/default/optimized/3X/7/5/755438b324e3799f6ce766c713c6b5036ae8bf81_2_690x362.jpeg" alt="the-loss-pred-label" width="690" height="362" srcset="https://forums.fast.ai/uploads/default/optimized/3X/7/5/755438b324e3799f6ce766c713c6b5036ae8bf81_2_690x362.jpeg, https://forums.fast.ai/uploads/default/optimized/3X/7/5/755438b324e3799f6ce766c713c6b5036ae8bf81_2_1035x543.jpeg 1.5x, https://forums.fast.ai/uploads/default/optimized/3X/7/5/755438b324e3799f6ce766c713c6b5036ae8bf81_2_1380x724.jpeg 2x">
+
+<img src="https://forums.fast.ai/uploads/default/optimized/3X/0/1/0159ecab4e53556ebdad0b406b13b73805ad6616_2_690x427.jpeg" alt="excel-solver" width="690" height="427" srcset="https://forums.fast.ai/uploads/default/optimized/3X/0/1/0159ecab4e53556ebdad0b406b13b73805ad6616_2_690x427.jpeg, https://forums.fast.ai/uploads/default/optimized/3X/0/1/0159ecab4e53556ebdad0b406b13b73805ad6616_2_1035x640.jpeg 1.5x, https://forums.fast.ai/uploads/default/optimized/3X/0/1/0159ecab4e53556ebdad0b406b13b73805ad6616_2_1380x854.jpeg 2x">
+
+ Why excel is so slow on calc gradients with even small dataset? What is the basis of collaborative filtering? (if we know A likes (a, b, c) and B likes (a, b, c), then if A likes (d, e), maybe B likes (d, e) too).
+- Is the cosine of an angle between two vectors  is the same thing as the dot product?
+- How do we do the things above in pytorch as they have different data format from excel? What does the dataset would look like in pytorch?
+
+<img src="https://forums.fast.ai/uploads/default/optimized/3X/b/a/ba1b5333c95a803967c9b6b3b5922f6200aec599_2_690x326.jpeg" alt="collab-dataset-pytorch" width="690" height="326" srcset="https://forums.fast.ai/uploads/default/optimized/3X/b/a/ba1b5333c95a803967c9b6b3b5922f6200aec599_2_690x326.jpeg, https://forums.fast.ai/uploads/default/optimized/3X/b/a/ba1b5333c95a803967c9b6b3b5922f6200aec599_2_1035x489.jpeg 1.5x, https://forums.fast.ai/uploads/default/optimized/3X/b/a/ba1b5333c95a803967c9b6b3b5922f6200aec599_2_1380x652.jpeg 2x">
+
+## Embeddings
+
+- What is embedding? What are embedding matrix, user embeddings, and movie embeddings? (embeddings = look up something in an array).  The more intimidating words created in a field, the less intimidating the field actually is.
+
+<img src="https://forums.fast.ai/uploads/default/optimized/3X/2/c/2c3081a4e2471d0dc86d6a4e76751662ebb27739_2_690x279.jpeg" alt="embeddings" width="690" height="279" srcset="https://forums.fast.ai/uploads/default/optimized/3X/2/c/2c3081a4e2471d0dc86d6a4e76751662ebb27739_2_690x279.jpeg, https://forums.fast.ai/uploads/default/optimized/3X/2/c/2c3081a4e2471d0dc86d6a4e76751662ebb27739_2_1035x418.jpeg 1.5x, https://forums.fast.ai/uploads/default/optimized/3X/2/c/2c3081a4e2471d0dc86d6a4e76751662ebb27739_2_1380x558.jpeg 2x">
+
+- What does our dataset look like before building a dataloaders on it? How to create a dataloaders for collaborative filtering using `CollabDataloaders.from_df`? What does its `show_batch` look like? How do we create the user and movie latent factors algetother?
+
+<img src="https://forums.fast.ai/uploads/default/optimized/3X/7/5/758eb7bc56f1562e7dbe2525c359cc80ae55cc23_2_610x500.jpeg" alt="dataset-movie-dataloader" width="610" height="500" srcset="https://forums.fast.ai/uploads/default/optimized/3X/7/5/758eb7bc56f1562e7dbe2525c359cc80ae55cc23_2_610x500.jpeg, https://forums.fast.ai/uploads/default/optimized/3X/7/5/758eb7bc56f1562e7dbe2525c359cc80ae55cc23_2_915x750.jpeg 1.5x, https://forums.fast.ai/uploads/default/optimized/3X/7/5/758eb7bc56f1562e7dbe2525c359cc80ae55cc23_2_1220x1000.jpeg 2x">
+
+<img src="https://forums.fast.ai/uploads/default/optimized/3X/8/f/8f28b35c026c563c233282bbe7393cb9af0d4b67_2_690x172.jpeg" alt="build-dataloader-cf" width="690" height="172" srcset="https://forums.fast.ai/uploads/default/optimized/3X/8/f/8f28b35c026c563c233282bbe7393cb9af0d4b67_2_690x172.jpeg, https://forums.fast.ai/uploads/default/optimized/3X/8/f/8f28b35c026c563c233282bbe7393cb9af0d4b67_2_1035x258.jpeg 1.5x, https://forums.fast.ai/uploads/default/optimized/3X/8/f/8f28b35c026c563c233282bbe7393cb9af0d4b67_2_1380x344.jpeg 2x">
+
+<img src="https://forums.fast.ai/uploads/default/optimized/3X/a/9/a9d0bdf31e8734a7c0ed40edd1ef3e36e53c2298_2_690x397.jpeg" alt="cf-show-batch" width="690" height="397" srcset="https://forums.fast.ai/uploads/default/optimized/3X/a/9/a9d0bdf31e8734a7c0ed40edd1ef3e36e53c2298_2_690x397.jpeg, https://forums.fast.ai/uploads/default/optimized/3X/a/9/a9d0bdf31e8734a7c0ed40edd1ef3e36e53c2298_2_1035x595.jpeg 1.5x, https://forums.fast.ai/uploads/default/optimized/3X/a/9/a9d0bdf31e8734a7c0ed40edd1ef3e36e53c2298_2_1380x794.jpeg 2x">
+
+<img src="https://forums.fast.ai/uploads/default/optimized/3X/7/8/7838f8430473f724a2e3e5156a25f7d6bda54b72_2_690x211.png" alt="create-latent-factors" width="690" height="211" srcset="https://forums.fast.ai/uploads/default/optimized/3X/7/8/7838f8430473f724a2e3e5156a25f7d6bda54b72_2_690x211.png, https://forums.fast.ai/uploads/default/optimized/3X/7/8/7838f8430473f724a2e3e5156a25f7d6bda54b72_2_1035x316.png 1.5x, https://forums.fast.ai/uploads/default/original/3X/7/8/7838f8430473f724a2e3e5156a25f7d6bda54b72.png 2x">
+
+- How do you choose  the number of latent factors in fastai?
+- How to understand looking up in excel for latent factors and doing dot product with one-hot embeddings are actually the same thing? Can we think of embeddings as a computational shortcut to multiply something by a one-hot-encoded vector? Can we think of embedding as a cook math trick of speeding up the matrix multiplication with dummy variables (without creating dummy variables nor one-hot encoded vector).
+
+<img src="https://forums.fast.ai/uploads/default/optimized/3X/1/f/1f254bae3830f4f79cc07b6c16a0511ac63bbfaf_2_690x345.png" alt="look-up-dot-product" width="690" height="345" srcset="https://forums.fast.ai/uploads/default/optimized/3X/1/f/1f254bae3830f4f79cc07b6c16a0511ac63bbfaf_2_690x345.png, https://forums.fast.ai/uploads/default/optimized/3X/1/f/1f254bae3830f4f79cc07b6c16a0511ac63bbfaf_2_1035x517.png 1.5x, https://forums.fast.ai/uploads/default/original/3X/1/f/1f254bae3830f4f79cc07b6c16a0511ac63bbfaf.png 2x">
+
+<img src="https://forums.fast.ai/uploads/default/optimized/3X/6/c/6c1dd2073754edda0a1bfe7acc38db80506396ba_2_690x243.jpeg" alt="one-hot-encoding-look-up" width="690" height="243" srcset="https://forums.fast.ai/uploads/default/optimized/3X/6/c/6c1dd2073754edda0a1bfe7acc38db80506396ba_2_690x243.jpeg, https://forums.fast.ai/uploads/default/optimized/3X/6/c/6c1dd2073754edda0a1bfe7acc38db80506396ba_2_1035x364.jpeg 1.5x, https://forums.fast.ai/uploads/default/optimized/3X/6/c/6c1dd2073754edda0a1bfe7acc38db80506396ba_2_1380x486.jpeg 2x">
+
+<img src="https://forums.fast.ai/uploads/default/optimized/3X/b/0/b0b6205134341c68799a9739bf55c105edc870dd_2_690x373.jpeg" alt="mmultiplication" width="690" height="373" srcset="https://forums.fast.ai/uploads/default/optimized/3X/b/0/b0b6205134341c68799a9739bf55c105edc870dd_2_690x373.jpeg, https://forums.fast.ai/uploads/default/optimized/3X/b/0/b0b6205134341c68799a9739bf55c105edc870dd_2_1035x559.jpeg 1.5x, https://forums.fast.ai/uploads/default/optimized/3X/b/0/b0b6205134341c68799a9739bf55c105edc870dd_2_1380x746.jpeg 2x">
+
+## Object oriented programming
+
+- How to build a collaborative filtering model from scratch? How do we create a class? (as a model is a class). How do we initiate a class object by `__init__`? Does `__init__` tell us what parameters to give in order to create a class instance? How does the class function `say` do? What is a super class? Where do we put it when creating a class? What does it give us? What is the super class (Module) for pytorch and fastai to use when creating a class? What does the `DotProduct` class look like?
+
+<img src="https://forums.fast.ai/uploads/default/optimized/3X/f/3/f39bb45a2a9aeec4c50c2230dbe546bbbd8ef903_2_690x244.jpeg" alt="learn-create-class" width="690" height="244" srcset="https://forums.fast.ai/uploads/default/optimized/3X/f/3/f39bb45a2a9aeec4c50c2230dbe546bbbd8ef903_2_690x244.jpeg, https://forums.fast.ai/uploads/default/optimized/3X/f/3/f39bb45a2a9aeec4c50c2230dbe546bbbd8ef903_2_1035x366.jpeg 1.5x, https://forums.fast.ai/uploads/default/optimized/3X/f/3/f39bb45a2a9aeec4c50c2230dbe546bbbd8ef903_2_1380x488.jpeg 2x">
+
+<img src="https://forums.fast.ai/uploads/default/optimized/3X/5/2/52e85a3c36db128d42865dbb4714073ae54b1415_2_690x157.png" alt="class-example" width="690" height="157" srcset="https://forums.fast.ai/uploads/default/optimized/3X/5/2/52e85a3c36db128d42865dbb4714073ae54b1415_2_690x157.png, https://forums.fast.ai/uploads/default/optimized/3X/5/2/52e85a3c36db128d42865dbb4714073ae54b1415_2_1035x235.png 1.5x, https://forums.fast.ai/uploads/default/optimized/3X/5/2/52e85a3c36db128d42865dbb4714073ae54b1415_2_1380x314.png 2x">
+
+<img src="https://forums.fast.ai/uploads/default/optimized/3X/9/5/958dd964f8d2dc24382de7a0799e03c960a6e43a_2_690x302.jpeg" alt="super-class" width="690" height="302" srcset="https://forums.fast.ai/uploads/default/optimized/3X/9/5/958dd964f8d2dc24382de7a0799e03c960a6e43a_2_690x302.jpeg, https://forums.fast.ai/uploads/default/optimized/3X/9/5/958dd964f8d2dc24382de7a0799e03c960a6e43a_2_1035x453.jpeg 1.5x, https://forums.fast.ai/uploads/default/optimized/3X/9/5/958dd964f8d2dc24382de7a0799e03c960a6e43a_2_1380x604.jpeg 2x">
+
+<img src="https://forums.fast.ai/uploads/default/optimized/3X/4/9/49d96bdbc7ea8dc9621aba7e72e9a901de712307_2_690x215.jpeg" alt="Dot-product-class" width="690" height="215" srcset="https://forums.fast.ai/uploads/default/optimized/3X/4/9/49d96bdbc7ea8dc9621aba7e72e9a901de712307_2_690x215.jpeg, https://forums.fast.ai/uploads/default/optimized/3X/4/9/49d96bdbc7ea8dc9621aba7e72e9a901de712307_2_1035x322.jpeg 1.5x, https://forums.fast.ai/uploads/default/optimized/3X/4/9/49d96bdbc7ea8dc9621aba7e72e9a901de712307_2_1380x430.jpeg 2x">
+
+- How to understand the `forward` function in the `DotProduct` class? What does `.sum(dim=1)` mean? (sum each row).
+
+<img src="https://forums.fast.ai/uploads/default/optimized/3X/7/b/7befe31f450692edb4c008b80ea0b59b2d54b2b8_2_690x220.jpeg" alt="forward-understanding" width="690" height="220" srcset="https://forums.fast.ai/uploads/default/optimized/3X/7/b/7befe31f450692edb4c008b80ea0b59b2d54b2b8_2_690x220.jpeg, https://forums.fast.ai/uploads/default/optimized/3X/7/b/7befe31f450692edb4c008b80ea0b59b2d54b2b8_2_1035x330.jpeg 1.5x, https://forums.fast.ai/uploads/default/optimized/3X/7/b/7befe31f450692edb4c008b80ea0b59b2d54b2b8_2_1380x440.jpeg 2x">
+
+## Improving collaborative filtering
+
+- How to create a collab learner and start training? The training is very fast even on CPU.
+
+<img src="https://forums.fast.ai/uploads/default/optimized/3X/4/2/426c364888d12db84268e7fa5f3feac9babb2d55_2_690x175.png" alt="one-batch-look-like" width="690" height="175" srcset="https://forums.fast.ai/uploads/default/optimized/3X/4/2/426c364888d12db84268e7fa5f3feac9babb2d55_2_690x175.png, https://forums.fast.ai/uploads/default/optimized/3X/4/2/426c364888d12db84268e7fa5f3feac9babb2d55_2_1035x262.png 1.5x, https://forums.fast.ai/uploads/default/optimized/3X/4/2/426c364888d12db84268e7fa5f3feac9babb2d55_2_1380x350.png 2x">
+
+
+<img src="https://forums.fast.ai/uploads/default/optimized/3X/9/8/980f8b59b9e8339f4b22f4786d9eb3f8c1c6f627_2_690x262.jpeg" alt="collab-learner" width="690" height="262" srcset="https://forums.fast.ai/uploads/default/optimized/3X/9/8/980f8b59b9e8339f4b22f4786d9eb3f8c1c6f627_2_690x262.jpeg, https://forums.fast.ai/uploads/default/optimized/3X/9/8/980f8b59b9e8339f4b22f4786d9eb3f8c1c6f627_2_1035x393.jpeg 1.5x, https://forums.fast.ai/uploads/default/optimized/3X/9/8/980f8b59b9e8339f4b22f4786d9eb3f8c1c6f627_2_1380x524.jpeg 2x">
+
+- Why this collab model above is not great? (people who give ratings are people who love movies, they don’t rarely give 1, but many high ratings. Whereas the predictions have many occassions with ratings over 5). Review the sigmoid usage. How can we do sigmoid transformation to the predictions? How does this sigmoid work? Why do we use the up limit of the range `5.5` instead of `5`?  Does adding sigmoid always improve the result?
+
+<img src="https://forums.fast.ai/uploads/default/optimized/3X/e/a/ea31571a3891e95cfc3ce1b1b52007dff4b7a94b_2_690x245.jpeg" alt="sigmoid-transform" width="690" height="245" srcset="https://forums.fast.ai/uploads/default/optimized/3X/e/a/ea31571a3891e95cfc3ce1b1b52007dff4b7a94b_2_690x245.jpeg, https://forums.fast.ai/uploads/default/optimized/3X/e/a/ea31571a3891e95cfc3ce1b1b52007dff4b7a94b_2_1035x367.jpeg 1.5x, https://forums.fast.ai/uploads/default/optimized/3X/e/a/ea31571a3891e95cfc3ce1b1b52007dff4b7a94b_2_1380x490.jpeg 2x">
+
+- What interesting things did Jeremy observe from the dataset? (some users like to give high ratings to all movies, some tend to dislike all movies). Can we add one bias value to both user and movie latent factors to explain this interesting observation? How to use the bias factors inside the collab model?
+
+<img src="https://forums.fast.ai/uploads/default/optimized/3X/b/b/bbb126f8323ca2c266f1c1867b57c7acb46f4bcd_2_690x282.jpeg" alt="user-tendency" width="690" height="282" srcset="https://forums.fast.ai/uploads/default/optimized/3X/b/b/bbb126f8323ca2c266f1c1867b57c7acb46f4bcd_2_690x282.jpeg, https://forums.fast.ai/uploads/default/optimized/3X/b/b/bbb126f8323ca2c266f1c1867b57c7acb46f4bcd_2_1035x423.jpeg 1.5x, https://forums.fast.ai/uploads/default/optimized/3X/b/b/bbb126f8323ca2c266f1c1867b57c7acb46f4bcd_2_1380x564.jpeg 2x">
+
+<img src="https://forums.fast.ai/uploads/default/optimized/3X/8/8/88b82221d76673d397e4f1e605f2d80134e344c4_2_690x448.jpeg" alt="bias-factor" width="690" height="448" srcset="https://forums.fast.ai/uploads/default/optimized/3X/8/8/88b82221d76673d397e4f1e605f2d80134e344c4_2_690x448.jpeg, https://forums.fast.ai/uploads/default/optimized/3X/8/8/88b82221d76673d397e4f1e605f2d80134e344c4_2_1035x672.jpeg 1.5x, https://forums.fast.ai/uploads/default/optimized/3X/8/8/88b82221d76673d397e4f1e605f2d80134e344c4_2_1380x896.jpeg 2x">
+
+<img src="https://forums.fast.ai/uploads/default/optimized/3X/0/d/0d68c8c1c93606101295312c8c9e96aaf69f308d_2_690x319.jpeg" alt="adding-biases-to-prediction" width="690" height="319" srcset="https://forums.fast.ai/uploads/default/optimized/3X/0/d/0d68c8c1c93606101295312c8c9e96aaf69f308d_2_690x319.jpeg, https://forums.fast.ai/uploads/default/optimized/3X/0/d/0d68c8c1c93606101295312c8c9e96aaf69f308d_2_1035x478.jpeg 1.5x, https://forums.fast.ai/uploads/default/optimized/3X/0/d/0d68c8c1c93606101295312c8c9e96aaf69f308d_2_1380x638.jpeg 2x">
+
+- Why did the upgraded model with bias get worse? (overfitting).
+
+<img src="https://forums.fast.ai/uploads/default/optimized/3X/1/5/15be1b4b512651c13de6f325e98ab67837020696_2_690x268.jpeg" alt="overfitting-collab" width="690" height="268" srcset="https://forums.fast.ai/uploads/default/optimized/3X/1/5/15be1b4b512651c13de6f325e98ab67837020696_2_690x268.jpeg, https://forums.fast.ai/uploads/default/optimized/3X/1/5/15be1b4b512651c13de6f325e98ab67837020696_2_1035x402.jpeg 1.5x, https://forums.fast.ai/uploads/default/optimized/3X/1/5/15be1b4b512651c13de6f325e98ab67837020696_2_1380x536.jpeg 2x">
+
+## Weight decay
+
+- What is weight decay and How does it help? How to understand weight decay in solving the problem of overfitting?
+
+<img src="https://forums.fast.ai/uploads/default/optimized/3X/2/b/2ba175a248170dc42de2cb2a3e49a8a3c1afa777_2_690x290.jpeg" alt="weight-decay" width="690" height="290" srcset="https://forums.fast.ai/uploads/default/optimized/3X/2/b/2ba175a248170dc42de2cb2a3e49a8a3c1afa777_2_690x290.jpeg, https://forums.fast.ai/uploads/default/optimized/3X/2/b/2ba175a248170dc42de2cb2a3e49a8a3c1afa777_2_1035x435.jpeg 1.5x, https://forums.fast.ai/uploads/default/optimized/3X/2/b/2ba175a248170dc42de2cb2a3e49a8a3c1afa777_2_1380x580.jpeg 2x">
+
+- How to actually use weight decay in fastai code? Does fastai have a good default for collaborative filtering like CV? How does Jeremy suggest to find the appropriate `wd` value for your own dataset?
+
+<img src="https://forums.fast.ai/uploads/default/optimized/3X/2/d/2d240b5fcf7b6b92643497067176a390d41778d7_2_690x268.jpeg" alt="weight-decay2" width="690" height="268" srcset="https://forums.fast.ai/uploads/default/optimized/3X/2/d/2d240b5fcf7b6b92643497067176a390d41778d7_2_690x268.jpeg, https://forums.fast.ai/uploads/default/optimized/3X/2/d/2d240b5fcf7b6b92643497067176a390d41778d7_2_1035x402.jpeg 1.5x, https://forums.fast.ai/uploads/default/optimized/3X/2/d/2d240b5fcf7b6b92643497067176a390d41778d7_2_1380x536.jpeg 2x">
+
+<img src="https://forums.fast.ai/uploads/default/optimized/3X/e/7/e728e7640b79a3ead582d8feefe518e1e8b999d5_2_690x260.jpeg" alt="weight-decay3" width="690" height="260" srcset="https://forums.fast.ai/uploads/default/optimized/3X/e/7/e728e7640b79a3ead582d8feefe518e1e8b999d5_2_690x260.jpeg, https://forums.fast.ai/uploads/default/optimized/3X/e/7/e728e7640b79a3ead582d8feefe518e1e8b999d5_2_1035x390.jpeg 1.5x, https://forums.fast.ai/uploads/default/optimized/3X/e/7/e728e7640b79a3ead582d8feefe518e1e8b999d5_2_1380x520.jpeg 2x">
+
+- What is regularization? What’s wrong when the weights having high values or low values? How does weight decay help balance?
+- More questions: any other rules other than Jeremy’s rule of thumb on number of latent factors, and recommendation on average rating is viable only when there are many metadata.
+
+---
+
+# Part 2
+
+---
+title: "Part 2 overview"
+image: /images/course2022p2l1.jpg
+---
+
+In this course, containing over 30 hours of video content, we implement the astounding [Stable Diffusion](https://stability.ai/blog/stable-diffusion-public-release) algorithm from scratch! That's the [killer app](https://www.pcworld.com/article/916785/creating-ai-art-local-pc-stable-diffusion.html) that made the [internet freak out](https://devops.com/stable-diffusion-public-richixbw/), and caused the media to say "[you may never believe what you see online again](https://arstechnica.com/information-technology/2022/09/with-stable-diffusion-you-may-never-believe-what-you-see-online-again/)".
+
+We've worked closely with experts from Stability.ai and Hugging Face (creators of the Diffusers library) to ensure we have rigorous coverage of the latest techniques. The course includes coverage of papers that were released after Stable Diffusion came out -- so it actually goes well beyond even what Stable Diffusion includes! We also explain how to read research papers, and practice this skill by studying and implementing many papers throughout the course.
+
+![Stable diffusion generated image](diffusion.png){.border .preview-image}
+
+Stable diffusion, and diffusion methods in general, are a great learning goal for many reasons. For one thing, of course, you can create amazing stuff with these algorithms! To really take the technique to the next level, and create things that no-one has seen before, you need to really deeply understand what's happening under the hood. With this understanding, you can craft your own loss functions, initialization methods, multi-model mixups, and more, to create totally new applications that have never been seen before. Just as important: it's a great learning goal because nearly every key technique in modern deep learning comes together in these methods. Contrastive learning, transformer models, auto-encoders, CLIP embeddings, latent variables, u-nets, resnets, and much more are involved in creating a single image.
+
+To get the most out of this course, you should be a reasonably confident deep learning practitioner. If you've finished fast.ai's [Practical Deep Learning](https://course.fast.ai/) course then you'll be ready! If you haven't done that course, but are comfortable with building an SGD training loop from scratch in Python, being competitive in Kaggle competitions, using modern NLP and computer vision algorithms for practical problems, and working with PyTorch and fastai, then you will be ready to start the course. (If you're not sure, then we strongly recommend getting starting with *Practical Deep Learning*.)
+
+> [Get started](lesson9.qmd) now!
+
+## Content summary
+
+In this course, we'll explore diffusion methods such as Denoising Diffusion Probabilistic Models (DDPM) and Denoising Diffusion Implicit Models (DDIM). We'll get our hands dirty implementing unconditional and conditional diffusion models, experimenting with different samplers, and diving into recent tricks like textual inversion and Dreambooth.
+
+Along the way, we'll cover essential deep learning topics like neural network architectures, data augmentation approaches, and various loss functions. We'll build our own models from scratch, such as Multi-Layer Perceptrons (MLPs), ResNets, and Unets, while experimenting with generative architectures like autoencoders and transformers.
+
+Throughout the course, we'll use PyTorch to implement our models, and will create our own deep learning framework called `miniai`. We'll master Python concepts like iterators, generators, and decorators to keep our code clean and efficient. We'll also explore deep learning optimizers like stochastic gradient descent (SGD) accelerated approaches, learning rate annealing, and learning how to experiment with the impact different initialisers, batch sizes and learning rates. And of course, we'll make use of handy tools like the Python debugger (pdb) and nbdev for building Python modules from Jupyter notebooks.
+
+Lastly, we'll touch on fundamental concepts like tensors, calculus, and pseudo-random number generation to provide a solid foundation for our exploration. We'll apply these concepts to machine learning techniques like mean shift clustering and convolutional neural networks (CNNs), and will see how to use tracking with Weights and Biases (W&B).
+
+We'll also tackle mixed precision training using both NVIDIA's apex library, and the Accelerate library from Hugging Face. We'll investigate various types of normalization like Layer Normalization and Batch Normalization. By the end of the course, you'll have a deep understanding of diffusion models and the skills to implement cutting-edge deep learning techniques.
+
+> [Get started](lesson9.qmd) now!
+
+## Topics covered
+
+Here's a list of all the stuff that you'll learn in detail and build from scratch in this course. (When we say "from scratch", we mean that you'll rely on nothing other than Python and its standard library.)
+
+- Diffusion foundations
+  - Denoising Diffusion Probabilistic Models (DDPM)
+    - Forward and reverse processes
+    - Implementing a noise prediction model using a neural network
+    - Visualizing noisy images at different timesteps
+  - Denoising Diffusion Implicit Model (DDIM)
+    - DDPM/DDIM improvements
+    - Alternative noise schedules
+  - Pre-conditioning
+  - Implementation and performance of different samplers
+    - Euler sampler
+    - Ancestral Euler sampler
+    - Heuns method
+    - LMS sampler
+  - Implementing an unconditional stable diffusion model
+  - Creating a conditional stable diffusion model
+  - Inverse problems
+    - Textual inversion
+    - Dreambooth
+- Hugging Face's Diffusers library
+  - Pre-trained pipelines
+  - Image-to-image pipelines
+  - Guidance scale
+  - Negative prompts
+  - Callbacks
+  - Working with Hugging Face datasets
+- Deep learning optimizers
+  - Stochastic gradient descent (SGD) accelerated approaches
+    - Momentum
+    - RMSProp
+    - Adam
+  - Learning rate annealing
+    - PyTorch learning rate schedulers
+      - Cosine Annealing
+      - OneCycleLR
+  - Experimenting with batch sizes and learning rates
+  - Working with PyTorch optimizers
+- Python concepts
+  - Organizing and simplifying code
+  - Iterators and generators in Python
+  - Dunder methods
+  - Python data model
+  - Python debugger (pdb)
+  - Using nbdev to create Python modules from Jupyter notebooks
+  - try-except blocks
+  - decorators
+  - getattr
+  - `**kwargs` and delegates
+- Basic foundations
+  - Tensors
+    - Linear classifier using a tensor
+    - Matrix multiplication using Python and Numba
+    - Comparing APL with PyTorch
+    - Frobenius norm
+    - Broadcasting in deep learning and machine learning code
+    - Matrix multiplication
+    - Einstein summation notation and `torch.einsum`
+    - GPU acceleration and CUDA
+    - Numba
+  - Calculus
+    - Derivatives and Infinitesimals
+    - Finite differencing
+    - Analytic derivatives
+  - Loss functions
+    - Contrastive loss function
+    - Perceptual loss
+    - `log_softmax()` function and cross entropy loss
+  - Pseudo-random number generation
+    - Wickman-Hill algorithm
+    - Random state in deep learning
+- Neural network architectures
+  - Multi-Layer Perceptron (MLP) implementation
+  - Gradients and derivatives
+  - Chain rule and backpropagation
+  - PyTorch for calculating derivatives
+  - ReLU and linear function classes
+  - ResNets
+  - Generative architectures
+    - Autoencoders
+      - Convolutional autoencoders
+      - Variational autoencoders
+    - Unets
+      - Experimenting with cross connections in Unets
+    - CLIP text encoders and image encoders
+    - Transformers
+      - Self-attention and multi-headed attention
+      - Rearrange function
+      - Time embedding and sinusoidal embeddings
+    - Creating a super-resolution U-Net model
+    - Gradually unfreezing pre-trained networks
+    - Style transfer
+        - Content loss
+        - Gram Matrix
+    - Neural Cellular Automata
+        - Circular padding
+        - Gradient normalization
+- Deep learning techniques
+  - Data augmentation techniques
+    - Random erasing
+    - TrivialAugment
+    - Test time augmentation
+  - Dropout for improving model performance
+    - Test time dropout for measuring model confidence
+- PyTorch
+  - PyTorch's `nn.Module` and `nn.Sequential`
+    - Creating custom PyTorch modules
+    - Implementing optimizers, DataLoaders, and Datasets
+  - PyTorch hooks
+- Learner framework
+  - Building a flexible training framework
+  - Callbacks and exceptions (CancelFitException, CancelEpochException, CancelBatchException)
+  - Metrics and MetricsCB callback
+  - DeviceCB callback
+  - Refactoring code with context managers
+  - set_seed function
+  - Callback class and TrainLearner subclass
+  - HooksCallback and ActivationStats
+  - Experimenting with batch sizes and learning rates
+  - torcheval library
+- Machine Learning Techniques and Tools
+  - Mean shift clustering
+  - Gaussian kernel
+  - Norms
+  - Log sum exp trick
+  - Convolutional Neural Networks (CNNs)
+    - Convolutions and kernels
+    - Im2col technique
+    - Padding and stride in CNNs
+    - Receptive field
+    - Building a CNN from scratch
+  - Weights and Biases (W&B) for experiment tracking
+    - Fréchet Inception Distance (FID) metric
+    - Kernel Inception Distance (KID) metric
+  - Mixed precision training
+    - Accelerate library from HuggingFace
+    - Collation function
+  - Initialization and normalization
+    - Histograms of activations
+    - Glorot (Xavier) initialization
+    - Variance, standard deviation, and covariance
+    - General ReLU activation function
+    - Layer-wise Sequential Unit Variance (LSUV)
+    - Layer Normalization and Batch Normalization
+    - Instance Norm and Group Norm
+
+> [Get started](lesson9.qmd) now!
+
+(The "topics covered" list was taken from the concatenation of the topic list of each lesson, and using GPT 4 with this prompt: "*The input text contains a markdown list of topics discussed in a number of deep learning and stable diffusion lessons. The topics from each lesson were concatenated together into this list, therefore it may contain duplicates (or near dupes) and is not well organised. Create an organised markdown list which groups similar topics together (using a hierarchy or markdown list items as appropriate) and combine duplicate or very similar topics.*" The "content summary" section was taken from the "topics covered" list, and the GPT 4 prompt "*Summarise the following markdown course outline using 3-4 paragraphs of informal prose in the style of Jeremy Howard. Do not follow the same order as the topics in the outline, but instead arrange them such that the most foundational and key topics come first.*")
